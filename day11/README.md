@@ -15,7 +15,7 @@ adding a small musical innuendo to relax.
 My friend Chris from Florida sent me this score. Enjoy! Is this what you call
 postmodern?
 
-![](noten.png){width=100%}
+![](noten.png)
 
 
 ### Hints
