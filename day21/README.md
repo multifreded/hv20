@@ -34,10 +34,10 @@ If you uploaded a file, the cat would print out what kind of file it is and
 whether it feels threatened about it. For example if a JPG image was uploaded
 the result would be: (On the right)
 
-![](threatcat_webapp.png){width=45%} ![](threatcat_jpg.png){width=45%}
+![](threatcat_webapp.png) ![](threatcat_jpg.png)
 
 The file information the cat printed seemed to come from the canonical 
-[file(1)] command. The only way that some unusual reaction could be provoked
+[file(1)]() command. The only way that some unusual reaction could be provoked
 was if a rather big file was uploaded. This would lead to an error message
 indicating the server runtime:
 
@@ -57,7 +57,7 @@ Server runtime: Java/Tomcat (which is fitting the overall cat theming)
 While searching the web for exploits against Java/Tomcat, sooner or later the
 topic _object serialization_ came up. Since serialization attacks are quite
 intricate to build yourself, it's probably best to look for a software package
-that generates such attack payloads. \*_[ysoserial project] entering the
+that generates such attack payloads. \*_[ysoserial project]() entering the
 stage_\*
 
 [ysoserial project]: https://github.com/frohoff/ysoserial
@@ -75,7 +75,7 @@ $ java -jar ysoserial-master-6eca5bc740-1.jar CommonsCollections1 'sleep 5' > at
 $ java -jar ysoserial-master-6eca5bc740-1.jar CommonsCollections2 'sleep 5' > attack2
 ```
 
-![](threatcat_threatened.png){width=45%} ![](threatcat_really_threatened.png){width=45%}
+![](threatcat_threatened.png) ![](threatcat_really_threatened.png)
 
 So far so good. But what ever command was included into the payload, it didn't
 seem to get triggered.
@@ -97,7 +97,7 @@ In the end the whole attack went like this:
 1. _ysoserial_ was used to craft a special deserialization payload, whose sole
    purpose is to copy the flag `/usr/bin/catnip.txt` to a path that is readable
    from the web facing side – i.e. `/usr/local/uploads/catnip.txt` readable at
-   `cat/files/catnip.txt from the web.
+   `cat/files/catnip.txt` from the web.
 
    ```sh
    $ java -jar ysoserial-master-6eca5bc740-1.jar CommonsCollections2 'cp /usr/bin/catnip.txt /usr/local/uploads/catnip.txt' > cattack.session
