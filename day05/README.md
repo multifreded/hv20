@@ -19,7 +19,8 @@ can still tell them apart. Can you see the difference?
 ## Solution
 
 Reading the title _Image DNA_ I immediately thought of a hashing algorithm for
-visual similarity in pictures like [PhotoDNA]. Aaaaand that was a red herring.
+visual similarity in pictures like [PhotoDNA](). Aaaaand that was a red herring.
+
 [PhotoDNA]: https://en.wikipedia.org/wiki/PhotoDNA
 
 Calculating the visual difference between the two pictures gave this:
@@ -103,12 +104,14 @@ $ xxd hv_ball_2.jpg
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 I tried multiple things a with the DNA-Sequences. For a while I firmly believed
-that it had something to do with [Codons from dcode.fr]. Despite trying
+that it had something to do with [Codons from dcode.fr](). Despite trying
 everything imaginable in this regard, there was nothing to be gained in the end.
+
 [Codons from dcode.fr]: https://www.dcode.fr/codons-genetic-code
 
-After some web searching an [article] was found that described what a very simple
+After some web searching an [article]() was found that described what a very simple
 encryption scheme involving DNA sequences.
+
 [article]: https://www.geeksforgeeks.org/dna-cryptography/
 
 It basicly works like OTP with extra steps to involve DNA-Sequences:
