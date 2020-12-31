@@ -104,7 +104,7 @@ end, my solution was almost completly written in shell scripts which is slow
 as hell even compared to other interpreted languages but whatever, right `:-)`
 
 Before dealing with the actual extraction of bytes, the code was decomposed
-into an assembler file with [distorm3]:
+into an assembler file with [distorm3]():
 
 [distorm3]: https://github.com/gdabah/distorm
 
