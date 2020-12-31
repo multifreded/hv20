@@ -230,7 +230,7 @@ At this point a general theory of what happend could be formed as well as a
 strategy to obtain the flag:
 
 1. Santa used the original program. He created a user with a password randomly
-   chosen from the infamous [Rockyou data breach] password list. The password's
+   chosen from the infamous [Rockyou data breach]() password list. The password's
    hash was calculated and stored.
 
 2. Santa encrypted some data (the flag ;-). The keystream for this encryption
