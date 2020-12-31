@@ -37,7 +37,7 @@ Don't waste time with the attempt to brute-force the private key
 ## Solution
 
 The problem with this crypto setup is that RSA becomes vulnerable to the
-[Wiener attack] when such extreme values are chosen.
+[Wiener attack]() when such extreme values are chosen.
 
 [Wiener attack]: https://en.wikipedia.org/wiki/Wiener's_attack#Small_private_key
 
@@ -193,7 +193,7 @@ msg: 0x10000000000000000000000000000000d596f75206d616465206974212048657265206973
 ```
 
 Converting the message value into the actual message is most easily done with
-[Cyberchef]\:
+[Cyberchef]()\:
 
 [Cyberchef]: https://gchq.github.io/CyberChef/#recipe=From_Hex('None')&input=MTAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwZDU5NmY3NTIwNmQ2MTY0NjUyMDY5NzQyMTIwNDg2NTcyNjUyMDY5NzMyMDc5NmY3NTcyMjA2NjZjNjE2NzNhMjA0ODU2MzIzMDdiMzU2ODZmNzIzNzVmNTA3MjY5NzYzMzc4NzA1ZjYxMzE2ZTM3NWY2ZTMwNWYzNTZkNjE3MjM3N2QwZDBkNDc2ZjZmNjQyMDZjNzU2MzZiMjA2NjZmNzIyMDQ4NjE2MzZiNzY2NTZlNzQyYzIwNmQ2NTcyNzI3OTIwNTgyZDZkNjE3MzIwNjE2ZTY0MjA2MTZjNmMyMDc0Njg2NTIwNjI2NTczNzQyMDY2NmY3MjIwMzIzMDMyMzEyYzIwNjc3MjY1NjU3NDdhMjA1MzZkNjE3Mjc0NTM2ZDc1NzI2NjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
 
