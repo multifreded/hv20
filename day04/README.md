@@ -41,17 +41,18 @@ sequence of the colored beads on the bracelet:
 * `y` means `yellow`
 
 <!--gprypgbprgpgbprgbypgbypgbpbypbypgbyprypbyppgbypgypgypbypbypgpgbprgbpbypgbypbypgp-->
-![](color_beads_1.png){width=100%}
+![](color_beads_1.png)
 
 From here I went down multiple _wrong_ rabbit holes before finally seeing the
 light.
 
 #### Wrong rabbit holes
 
-* Assumed that the challenge's is about a [base5]-system:\
+* Assumed that the challenge's is about a [base5]()-system:\
   I thought that if there are 5 colors you could group all colors in bigrams
   (or pairs). For each bigram there would be `5 * 5 = 25` possibilities and that
   would make for a nice alphabet.
+
   [base5]: https://en.wikipedia.org/wiki/Quinary
 
   For example something like this
@@ -67,7 +68,8 @@ light.
   But no matter how I arranged the alphabet, out came only garbage.
 
 * I found a Wikipedia article about an encryption system using five characters.
-  It's called [ADFGX] and was used by WWI soldiers.
+  It's called [ADFGX]() and was used by WWI soldiers.
+
   [ADFGX]: https://de.wikipedia.org/wiki/ADFGX
 
 * Multiple meandering web searches.
@@ -85,7 +87,7 @@ $ echo $color_beads | sed 's/p/_/g'
 ```
 
 <!--g_ry_gb_rg_gb_rgby_gby_gb_by_by_gby_ry_by__gby_gy_gy_by_by_g_gb_rgb_by_gby_by_g_-->
-![](color_beads_2.png){width=100%}
+![](color_beads_2.png)
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 If you stare at this pattern for a while you start to notice, that each
@@ -110,22 +112,22 @@ $ echo $color_beads | sed 's/p/_/g' \
 ```
 
 <!--4_81_42_84_42_8421_421_42_21_21_421_81_21__421_41_41_21_21_4_42_842_21_421_21_4_-->
-![](color_beads_3.png){width=100%}
+![](color_beads_3.png)
 
 Each group of numbers was then added up (by hand)…
 
 <!--4_9._6._12_6._15.._7.._6._3._3._7.._9._3.0_7.._5._5._3._3._4_6._14._3._7.._3._4_-->
-![](color_beads_4.png){width=100%}
+![](color_beads_4.png)
 
 …then converted to hexadecimal digits…
 
 <!--4_9._6._c._6._f..._7.._6._3._3._7.._9._3.0_7.._5._5._3._3._4_6._e.._3._7.._3._4_-->
-![](color_beads_5.png){width=100%}
+![](color_beads_5.png)
 
 …and the resulting bytes were ASCII encoded.
 
 <!--I_.._l._.._o_....._v.._.._3._.._y.._.._0.._u.._.._S._.._4._._n._..._7._.._4.._._-->
-![](color_beads_6.png){width=100%}
+![](color_beads_6.png)
 
 And there it is, the meat of the flag.
 
