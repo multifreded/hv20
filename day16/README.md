@@ -30,13 +30,13 @@ All the colors have come off! Naughty Rudolph!
 
 ## Solution
 
-The challenge presented you with a 3D [STL] file containing some sort of Rubik's
+The challenge presented you with a 3D [STL]() file containing some sort of Rubik's
 Cube. Each face of the cube had 9 characters, each with a point to indicate the
 characters orientation. 
 
 [STL]: https://en.wikipedia.org/wiki/STL_(file_format)
 
-![](stl_cube.png){width=100%}
+![](stl_cube.png)
 
 Judging by the different orientations of the characters it was assumed that the
 cube would be solved, if 5 movments resulted in a cube state where each
@@ -59,7 +59,7 @@ exactly a cube movment is, how many there are and what their names are.
 | `F`  | Front side 90° | `F'` | Front side -90° | `F2` | Front side 180° |
 | `B`  | Back  side 90° | `B'` | Back  side -90° | `B2` | Back  side 180° |
  
-![](cube_movements.png){width=50%} ![](real_cube_unsolved.png){width=45%}
+![](cube_movements.png) ![](real_cube_unsolved.png)
 
 
 ### First attempt: manual solving
@@ -554,10 +554,14 @@ sys     0m0.005s
 The output from the solver program was replayed on the real life cube and the
 resulting flag was read afterwards:
 
-![](real_cube_solved.png){width=100%}
+![](real_cube_solved.png)
 
-![](real_cube_solved_1.png){width=32%} ![](real_cube_solved_2.png){width=32%} ![](real_cube_solved_3.png){width=32%}
-![](real_cube_solved_4.png){width=32%} ![](real_cube_solved_5.png){width=32%} ![](real_cube_solved_5.png){width=32%}
+![](real_cube_solved_1.png)
+![](real_cube_solved_2.png)
+![](real_cube_solved_3.png)
+![](real_cube_solved_4.png)
+![](real_cube_solved_5.png)
+![](real_cube_solved_5.png)
 
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
