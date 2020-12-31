@@ -190,7 +190,8 @@ Wrote deciphered text.
 
 Since _Package2.zip_ is compressed, the extracted _flag.comp_ file is still
 compressed and needs to be _inflated_. There is a python3 script on the bkcrack
-github site that does the inflation: [inflate.py][inflate]
+github site that does the inflation\: [inflate.py][inflate]
+
 [inflate]: https://github.com/kimci86/bkcrack/blob/master/tools/inflate.py
 
 ``` shell
