@@ -16,7 +16,7 @@ five potential scrambles,\
 four orientation bottom and right,\
 and the rest has been said previously.
 
-![](QRubiksCube.png){width=100%}
+![](QRubiksCube.png)
 
 [PDF version](QRubiksCube.pdf)\
 [Source image](QRubiksCube.pxd) (open with [pixlr.com](https://pixlr.com/e/)
@@ -56,7 +56,7 @@ to 2x2x2 Rubik's Cubes:
 | `F`  | Front side 90° | `F'` | Front side -90° | `F2` | Front side 180° |
 | `B`  | Back  side 90° | `B'` | Back  side -90° | `B2` | Back  side 180° |
 
-![](cube_movements.png){width=50%} ![](2x2x2_rubiks_cube.jpg){width=40%}
+![](cube_movements.png) ![](2x2x2_rubiks_cube.jpg)
 
 For more details see: <https://ruwix.com/the-rubiks-cube/notation/>
 
@@ -104,7 +104,7 @@ of everything that has an influence on the results.
   All QR codes have _position_, _alignment_ and _timing_ markings that allow to
   orient each quadrant without it being part of a whole QR code.
 
-  ![](QR_code_structure.png){width=50%}
+  ![](QR_code_structure.png)
 
 * What about the **black crosses** on each side ?\
   In the beginning I was worried about those. I thought I may have to stitch the
@@ -121,12 +121,12 @@ adhesive labels with numbers onto the dice instead of the actual QR codes.
 This is the numbering scheme I choose. Beneath it is a photo of the labeled
 dice.
 
-![](QRubiksCube_numbering.png){width=62%} ![](JingleCubes.png){width=33%}
+![](QRubiksCube_numbering.png) ![](JingleCubes.png)
 
 Next I used Gimp to rotate all QR code fragments in order to orient them
 correctly. The rotated numbers in indicate which quadrants had to be reoriented.
 
-![](QRubiksCube_reorientation.png){width=100%}
+![](QRubiksCube_reorientation.png)
 
 
 ### Doing a test
@@ -148,7 +148,7 @@ on how to read the numbers were derived from this test.
 * Choose a quadrant and read its _green_ number.
 * Move the quadrant to the position with the same _red_ number.
 
-![](QRubiksCube_test_case.png){width=100%}
+![](QRubiksCube_test_case.png)
 
 Clearly the quadrant movements indicated by the arrows undo the scamble.
 
@@ -164,11 +164,11 @@ quadrant, you already know that the wrong scramble was chosen.
 The **4th scramble** turned out to be the right one. Behold the overly
 complicated unscramble arrow diagram …
 
-![](QRubiksCube_scramble_4.png){width=100%}
+![](QRubiksCube_scramble_4.png)
 
 … and the result after restoring the original arrangement:
 
-![](QRubiksCube_unscrambled.png){width=100%}
+![](QRubiksCube_unscrambled.png)
 
 At this point it turned out that the black crosses are actually _needed_ to 
 successfully scan the QR codes. The missing pixels underneath the black crosses
