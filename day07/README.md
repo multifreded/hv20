@@ -29,7 +29,7 @@ Windows
 ```
 
 The good thing about .Net code is that it's bytecode and bytecode can easily be
-decompiled. This was done with the [Jetbrains doPeek] software.
+decompiled. This was done with the [Jetbrains doPeek]() software.
 
 [Jetbrains doPeek]: https://www.jetbrains.com/decompiler/
 
