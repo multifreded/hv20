@@ -15,7 +15,7 @@ eleven ships a-sailing,\
 ten (twentyfourpointone) pieces a-puzzling,\
 and the rest is history.
 
-![](rabbits.png){width=100%}
+![](rabbits.png)
 
 
 ### Hints
@@ -149,7 +149,7 @@ byte array `j` and is finally written to disk with the file name `11.7z`.
 
 Thinking the other way around, it should be possible to XOR the beginning of the
 byte array `j` = `Rabbit` = `0x52616262` with the [known beginning of 7z
-files] = `0x377abcaf` and thus receiving the first few bytes after the split
+files]() = `0x377abcaf` and thus receiving the first few bytes after the split
 string = `0x0x651BDECD`.
 
 [known beginning of 7z files]: https://7-zip.org/recover.html
@@ -172,7 +172,7 @@ $ ls -lFhd 11.7z
 ```
 
 Unpacking the the `11.7z` archive gave a tar file and finally a folder `11/`.
-The `11/` folder contained some [docker stuff]. That's probably why this section
+The `11/` folder contained some [docker stuff](). That's probably why this section
 is called "eleven ships". Docker has a whale-container-ship as logo.
 
 [docker stuff]: https://blog.knoldus.com/docker-manifest-a-peek-into-images-manifest-json-files/
@@ -297,7 +297,7 @@ $ xxd -p -r snoot.hex > ../bunnies12.jpg
 
 Here's what `bunnies12.jpg` looks like:
 
-![](bunnies12.jpg){width=100%}
+![](bunnies12.jpg)
 
 The last step was to extract the `hidden.jpg` file from the `bunnies12.jpg`.
 This step was a bit tricky as the password for the encryption was convoluted
