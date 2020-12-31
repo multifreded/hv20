@@ -37,7 +37,7 @@ his code. So now he is sure it's unpwnable.
 
 The challenge's web application looks like this:
 
-![](screenshot_man_server.png){width=100%}
+![](screenshot_man_server.png)
 
 … and here is the web app's source code:
 
