@@ -22,9 +22,10 @@ We found the following packages:
 
 ## Solution
 
-Both files are [PKZIP] files (further on called _ZIP files_). Lets take a look
+Both files are [PKZIP]() files (further on called _ZIP files_). Lets take a look
 what's inside:
-[PKZIP](https://en.wikipedia.org/wiki/PKZIP)
+
+[PKZIP]: https://en.wikipedia.org/wiki/PKZIP
 
 ``` shell
 $ unzip -Z Package1.zip
