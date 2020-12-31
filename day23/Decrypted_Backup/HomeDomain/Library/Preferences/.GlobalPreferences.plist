@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AKDeviceUnlockState</key>
+	<true/>
+	<key>AddingEmojiKeybordHandled</key>
+	<true/>
+	<key>AppleICUForce24HourTime</key>
+	<true/>
+	<key>AppleITunesStoreItemKinds</key>
+	<array>
+		<string>wemix</string>
+		<string>tone</string>
+		<string>album</string>
+		<string>ringtone</string>
+		<string>software-update</string>
+		<string>booklet</string>
+		<string>document</string>
+		<string>song</string>
+		<string>podcast-episode</string>
+		<string>eBook</string>
+		<string>audiobook</string>
+		<string>artist</string>
+		<string>music-video</string>
+		<string>itunes-u</string>
+		<string>movie</string>
+		<string>software</string>
+		<string>mix</string>
+		<string>podcast</string>
+	</array>
+	<key>AppleKeyboards</key>
+	<array>
+		<string>de_CH</string>
+		<string>emoji@sw=Emoji</string>
+	</array>
+	<key>AppleLanguages</key>
+	<array>
+		<string>pt-BR</string>
+		<string>en-BR</string>
+	</array>
+	<key>AppleLanguagesDidMigrate</key>
+	<string>9.3.6</string>
+	<key>AppleLocale</key>
+	<string>pt_BR</string>
+	<key>ApplePasscodeKeyboards</key>
+	<array>
+		<string>pt_BR@hw=Brazilian - Pro;sw=QWERTY</string>
+		<string>en_US@hw=US;sw=QWERTY</string>
+		<string>emoji@sw=Emoji</string>
+	</array>
+	<key>MSVLoggingMasterSwitchEnabledKey</key>
+	<false/>
+</dict>
+</plist>

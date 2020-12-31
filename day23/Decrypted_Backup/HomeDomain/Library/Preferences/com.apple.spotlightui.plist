@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SBSearchDisabledBundles</key>
+	<array/>
+	<key>SBSearchDisabledDomains</key>
+	<array/>
+	<key>SBSearchInternetDomainsAvailable</key>
+	<true/>
+	<key>SPUISearchFirstTimeShowCount</key>
+	<integer>2</integer>
+	<key>zkw_inactivity_base_multiplier</key>
+	<integer>1</integer>
+	<key>zkw_inactivity_interval</key>
+	<integer>864000000</integer>
+	<key>zkw_inactivity_max_multiplier</key>
+	<integer>1</integer>
+	<key>zkw_refresh_decay_multiplier</key>
+	<integer>1</integer>
+	<key>zkw_refresh_increase_divisor</key>
+	<integer>1</integer>
+	<key>zkw_refresh_time</key>
+	<integer>300</integer>
+	<key>zkw_refresh_time_max_going_down</key>
+	<integer>300</integer>
+	<key>zkw_refresh_time_max_going_up</key>
+	<integer>300</integer>
+</dict>
+</plist>

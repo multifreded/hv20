@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CachedVCCaps</key>
+	<integer>17592188010496</integer>
+	<key>GEOUsageSessionID</key>
+	<data>
+	CKiHuunomr2mywEQvs+EttD52aZe
+	</data>
+	<key>GEOUsageSessionIDGenerationTime</key>
+	<real>628467453.70897198</real>
+	<key>SBDeviceLockBlockStateGeneration</key>
+	<integer>66</integer>
+	<key>SBDisplayIDsWithBadgingEnabled</key>
+	<array>
+		<string>com.apple.MobileSMS</string>
+		<string>com.apple.mobileslideshow</string>
+		<string>com.apple.mobilecal</string>
+		<string>com.apple.reminders</string>
+		<string>com.apple.mobilephone</string>
+		<string>com.apple.Preferences</string>
+		<string>com.apple.facetime</string>
+		<string>com.apple.gamecenter</string>
+		<string>com.apple.AppStore</string>
+	</array>
+	<key>SBLastSystemVersion</key>
+	<string>13G37</string>
+	<key>SBPrototypeSettingsNeedsMigration</key>
+	<true/>
+	<key>SBRecentDisplayItemRoles</key>
+	<array>
+		<integer>2</integer>
+		<integer>2</integer>
+	</array>
+	<key>SBRecentDisplayItems</key>
+	<array>
+		<array>
+			<string>App</string>
+			<string>com.apple.Preferences</string>
+		</array>
+		<array>
+			<string>App</string>
+			<string>com.apple.mobilesafari</string>
+		</array>
+	</array>
+	<key>SBRingerMuted</key>
+	<false/>
+	<key>SBShowNonDefaultSystemApps</key>
+	<true/>
+	<key>SBSoftwareUpdateOSVersion</key>
+	<string>9.3.6:13G37</string>
+	<key>System</key>
+	<string>PAL</string>
+	<key>SystemVibrationDataMigrationVersion</key>
+	<integer>2</integer>
+	<key>XBRecentLocale</key>
+	<string>pt-BR</string>
+	<key>XBRecentScreenSize</key>
+	<string>{320, 480}</string>
+	<key>calendaralert-sound-identifier</key>
+	<string>texttone:Calendar Alert</string>
+	<key>facebookpost-sound-identifier</key>
+	<string>texttone:Sharing Post</string>
+	<key>newmail-sound-identifier</key>
+	<string>texttone:New Mail</string>
+	<key>reminderalert-sound-identifier</key>
+	<string>texttone:Reminder Alert</string>
+	<key>ringtone</key>
+	<string>&lt;default&gt;</string>
+	<key>sentmail-sound-identifier</key>
+	<string>texttone:Sent Mail</string>
+	<key>senttweet-sound-identifier</key>
+	<string>texttone:Sent Tweet</string>
+	<key>sms-sound-identifier</key>
+	<string>texttone:Tri-tone</string>
+	<key>voicemail-sound-identifier</key>
+	<string>texttone:Tri-tone</string>
+</dict>
+</plist>

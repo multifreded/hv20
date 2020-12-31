@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeyboardPredictionHelpMessageCount</key>
+	<integer>3</integer>
+	<key>KeyboardsCurrentAndNext</key>
+	<array>
+		<string>pt_BR@hw=Brazilian - Pro;sw=QWERTY</string>
+		<string>pt_BR@hw=Brazilian - Pro;sw=QWERTY</string>
+		<string>pt_BR@hw=Brazilian;sw=QWERTY</string>
+	</array>
+	<key>UserDictionaryImportedSinceMaintenance</key>
+	<integer>0</integer>
+	<key>UserDictionaryLastMaintenanceDate</key>
+	<date>2020-12-16T20:39:00Z</date>
+	<key>UserDictionaryLocalPeerIdentityCurrent</key>
+	<string>mobile~AD077074-0C3F-596E-B4DB-B836EFA85F6D</string>
+	<key>UserDictionarySampleShortcutsAdded</key>
+	<true/>
+	<key>WebDatabaseDirectory</key>
+	<string>/var/mobile/Library/WebKit/Databases</string>
+	<key>WebKitDiskImageCacheSavedCacheDirectory</key>
+	<string></string>
+	<key>WebKitLocalStorageDatabasePathPreferenceKey</key>
+	<string>/var/mobile/Library/WebKit/LocalStorage</string>
+	<key>WebKitOfflineWebApplicationCacheEnabled</key>
+	<true/>
+	<key>WebKitShrinksStandaloneImagesToFit</key>
+	<true/>
+	<key>kBadgedForSoftwareUpdateKey</key>
+	<false/>
+	<key>kPreferencePositionTimeStampKey</key>
+	<integer>1608151253</integer>
+	<key>ranLocationMigrator9.0</key>
+	<true/>
+</dict>
+</plist>

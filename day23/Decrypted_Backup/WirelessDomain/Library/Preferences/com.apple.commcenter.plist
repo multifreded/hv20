@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LASDNextUpdate</key>
+	<date>2020-12-29T20:39:48Z</date>
+	<key>NextUpdate</key>
+	<date>2020-10-24T18:41:39Z</date>
+	<key>Wallet</key>
+	<dict>
+		<key>SmsController</key>
+		<dict>
+			<key>SubscriberAccountId</key>
+			<string></string>
+		</dict>
+		<key>VoiceMailController</key>
+		<dict>
+			<key>SubscriberAccountId</key>
+			<string></string>
+		</dict>
+	</dict>
+</dict>
+</plist>

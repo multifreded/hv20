@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Data</key>
+	<dict>
+		<key>com.apple.springboard.notificationcenter.today</key>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+		</dict>
+		<key>com.apple.springboard.notificationcenter.tomorrow</key>
+		<dict>
+			<key>Enabled</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>Known</key>
+	<array>
+		<string>com.apple.springboard.notificationcenter.tomorrow</string>
+		<string>com.apple.springboard.notificationcenter.today</string>
+		<string>com.apple.mobilecal.widget</string>
+		<string>com.apple.stocks.widget</string>
+		<string>com.apple.reminders.todaywidget</string>
+	</array>
+	<key>TodayGroup</key>
+	<array>
+		<string>com.apple.springboard.notificationcenter.today</string>
+		<string>com.apple.mobilecal.widget</string>
+		<string>com.apple.reminders.todaywidget</string>
+		<string>com.apple.stocks.widget</string>
+		<string>com.apple.springboard.notificationcenter.tomorrow</string>
+	</array>
+</dict>
+</plist>

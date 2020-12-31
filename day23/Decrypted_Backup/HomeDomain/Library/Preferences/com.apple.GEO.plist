@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DeviceCountryCode</key>
+	<string>CH</string>
+	<key>ExperimentBucketGUID</key>
+	<string>BF93E757-4B88-4EE2-A015-B80D1CB6B064</string>
+	<key>ExperimentBucketGUIDTimestamp</key>
+	<real>627848027.65924299</real>
+	<key>GEOLastNetworkDefaultsURL</key>
+	<string>https://configuration.apple.com/configurations/pep/config/geo/networkDefaults-ios-9.0.plist</string>
+	<key>GEOLastResourceManifestURL</key>
+	<string>https://gspe35-ssl.ls.apple.com/geo_manifest/dynamic/config?application=geod&amp;application_version=1&amp;country_code=CH&amp;hardware=iPhone4,1&amp;os=ios&amp;os_build=13G37&amp;os_version=9.3.6</string>
+	<key>GEOUsageSessionID</key>
+	<data>
+	CIuYrPb2oJqiYBCIl6HplpPKjxU=
+	</data>
+	<key>GEOUsageSessionIDGenerationTime</key>
+	<real>627848027.68349099</real>
+	<key>HasCleanedUpOrphanedNetworkDefaults</key>
+	<true/>
+</dict>
+</plist>

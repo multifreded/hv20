@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>HDAchievementDoctorLastSuccessfulFixupVersion</key>
+	<integer>1</integer>
+	<key>HDAchievementDoctorLastSuccessfulRunDate</key>
+	<date>2020-12-16T20:31:26Z</date>
+	<key>HDAchievementDoctorWaitingToRun</key>
+	<false/>
+	<key>HDDatabasePruningCompletedKey</key>
+	<true/>
+	<key>HDDatabasePruningLastAttemptDateKey</key>
+	<date>2020-12-16T20:30:42Z</date>
+	<key>HKSourceLastObservedDeviceName</key>
+	<string>Santas Phone</string>
+</dict>
+</plist>

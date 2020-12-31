@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.apple.account.HolidayCalendar.count</key>
+	<integer>1</integer>
+	<key>com.apple.account.HolidayCalendar.exists</key>
+	<integer>1</integer>
+	<key>com.apple.account.tencentweibo.count</key>
+	<integer>0</integer>
+	<key>com.apple.account.tencentweibo.exists</key>
+	<integer>2</integer>
+	<key>com.apple.facebook.count</key>
+	<integer>0</integer>
+	<key>com.apple.facebook.exists</key>
+	<integer>2</integer>
+	<key>com.apple.sinaweibo.count</key>
+	<integer>0</integer>
+	<key>com.apple.sinaweibo.exists</key>
+	<integer>2</integer>
+	<key>com.apple.twitter.count</key>
+	<integer>0</integer>
+	<key>com.apple.twitter.exists</key>
+	<integer>2</integer>
+	<key>com.apple.vimeo.count</key>
+	<integer>0</integer>
+	<key>com.apple.vimeo.exists</key>
+	<integer>2</integer>
+</dict>
+</plist>

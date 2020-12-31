@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>RCDefaultConsoleLoggingLevel</key>
+	<integer>-1</integer>
+	<key>RCDefaultLogFileLoggingLevel</key>
+	<integer>-1</integer>
+	<key>RCLockScreenConsoleLoggingLevel</key>
+	<integer>-1</integer>
+	<key>RCLockScreenLogFileLoggingLevel</key>
+	<integer>-1</integer>
+	<key>RCServiceConsoleLoggingLevel</key>
+	<integer>-1</integer>
+	<key>RCServiceLogFileLoggingLevel</key>
+	<integer>-1</integer>
+</dict>
+</plist>

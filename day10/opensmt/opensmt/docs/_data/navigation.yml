@@ -1,0 +1,6 @@
+- name: Opensmt
+  link: index.html
+- name: Manual
+  link: manual.html
+- name: Publications
+  link: publications.html

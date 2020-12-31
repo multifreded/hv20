@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LastBoottime</key>
+	<integer>1608148093</integer>
+	<key>LastCpuUptime</key>
+	<integer>3859</integer>
+	<key>LastDailyTimerFiredTimeKey</key>
+	<integer>18612</integer>
+	<key>LastWallUptime</key>
+	<integer>3230</integer>
+	<key>NextScheduledRun</key>
+	<date>2020-12-17T00:25:21Z</date>
+</dict>
+</plist>

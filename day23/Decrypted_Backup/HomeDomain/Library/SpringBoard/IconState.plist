@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>buttonBar</key>
+	<array>
+		<string>com.apple.mobilephone</string>
+		<string>com.apple.mobilemail</string>
+		<string>com.apple.mobilesafari</string>
+		<string>com.apple.Music</string>
+	</array>
+	<key>iconLists</key>
+	<array>
+		<array>
+			<string>com.apple.MobileSMS</string>
+			<string>com.apple.mobilecal</string>
+			<string>com.apple.mobileslideshow</string>
+			<string>com.apple.camera</string>
+			<string>com.apple.videos</string>
+			<string>com.apple.Maps</string>
+			<string>com.apple.weather</string>
+			<string>com.apple.Passbook</string>
+			<string>com.apple.mobilenotes</string>
+			<string>com.apple.reminders</string>
+			<string>com.apple.mobiletimer</string>
+			<string>com.apple.gamecenter</string>
+			<string>com.apple.MobileStore</string>
+			<string>com.apple.AppStore</string>
+			<string>com.apple.facetime</string>
+		</array>
+		<array>
+			<string>com.apple.Preferences</string>
+			<string>com.apple.tips</string>
+			<string>com.apple.iBooks</string>
+			<string>com.apple.podcasts</string>
+			<string>com.apple.Health</string>
+			<string>com.apple.mobileme.fmf1</string>
+			<string>com.apple.mobileme.fmip1</string>
+			<string>com.saurik.Cydia</string>
+			<string>com.tigisoftware.Filza</string>
+		</array>
+		<array>
+			<string>com.apple.stocks</string>
+			<dict>
+				<key>defaultDisplayName</key>
+				<string>Utilities</string>
+				<key>displayName</key>
+				<string>Utilitários</string>
+				<key>iconLists</key>
+				<array>
+					<array>
+						<string>com.apple.MobileAddressBook</string>
+						<string>com.apple.calculator</string>
+						<string>com.apple.compass</string>
+						<string>com.apple.VoiceMemos</string>
+					</array>
+				</array>
+				<key>listType</key>
+				<string>folder</string>
+			</dict>
+		</array>
+		<array/>
+	</array>
+</dict>
+</plist>

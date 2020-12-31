@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>TPSDLastPublisherBulletinID</key>
+	<string>TPSIntroTip</string>
+	<key>TPSNotificationQuietPeriodEndTime</key>
+	<date>2020-12-01T15:59:04Z</date>
+	<key>TPSNotificationsIgnoreCount</key>
+	<integer>2</integer>
+	<key>TPSWaitingToShowWelcomeNotification</key>
+	<false/>
+	<key>TPSWelcomeNotificationReminderState</key>
+	<integer>2</integer>
+</dict>
+</plist>

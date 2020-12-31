@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"> <html><!--
+ Page saved with SingleFile 
+ url: http://string-functions.com/encodedecode.aspx 
+ saved date: Wed Dec 02 2020 12:49:05 GMT+0100 (Central European Standard Time)
+--><head id=Head1><meta charset=utf-8><style>body{font-family:Verdana,Arial;font-size:12px;background-repeat:no-repeat;margin:20px;width:auto}td{font-size:12px}.spaced{line-height:20px}H1{font-size:14pt}#divMain{position:absolute;left:100px;top:20px}#divAdsense{position:absolute;left:560px;top:20px}</style><title>
+ Encoding utf-16BE to utf-8
+</title><meta name=description content="Click here to encode or decode a string with our character encoder / decoder tool. Be sure to check out our other free online programming tools too!"><meta name=GENERATOR content="Microsoft Visual Studio .NET 7.1"><meta name=CODE_LANGUAGE content="Visual Basic .NET 7.1"><meta name=vs_defaultClientScript content=JavaScript><meta name=vs_targetSchema content=http://schemas.microsoft.com/intellisense/ie5>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"WebSite","@id":"http://string-functions.com/#website","url":"http://string-functions.com/","name":"String Functions"}</script>
+<style>#snapshot_label{position:fixed;z-index:2147483647!important;top:0!important;left:0!important;right:0!important;overflow-y:scroll!important;scroll-behavior:smooth!important;scrollbar-width:none!important;-ms-overflow-style:none!important;pointer-events:none!important;--col-fg:            rgb(51,51,51)                   !important;--col-bg:            #f8f8f8                         !important;--col-faint:         #c4c4c4                         !important;--col-skirt:         #dfdfdf                         !important;--col-link:          #2562dc                         !important;font-family:Helvetica Neue,Arial,sans-serif!important;font-size:15px!important;font-weight:normal!important;line-height:1.5!important;text-align:left!important;color:var(--col-fg)!important}#snapshot_label::-webkit-scrollbar{display:none!important}#snapshot_label a{color:var(--col-fg)!important;border-bottom:1px solid var(--col-fg)!important;text-decoration:none}#snapshot_label a:hover{color:var(--col-link)!important;border-color:var(--col-link)!important}#sl_double_height_wrapper{transform:translateY(100%)!important}#show_label{border-bottom:1px solid var(--col-fg)!important;padding:6px!important;transform:translateY(-100%)!important;background:repeating-linear-gradient(-45deg,var(--col-skirt),var(--col-skirt) 3px,var(--col-bg) 3px,var(--col-bg) 6px)!important;pointer-events:auto!important}#sl_content_box{padding:5px 35px 5px 5px!important;background:var(--col-bg)!important}#sl_content_box>span{display:inline-block!important;margin:1px 15px 1px 35px!important}#sl_content_box>#sl_title{margin-left:5px!important;font-family:Futura,Helvetica Neue,Arial,sans-serif!important;font-style:italic!important}#sl_content_box>span>span{color:var(--col-faint)!important}#sl_content_box>span>div{position:absolute!important;font-size:9px!important;margin-top:3px!important;margin-left:-30px!important;width:29px!important}#hide_label{position:absolute!important;top:0!important;height:100%!important;width:100%!important}#snapshot_label #sl_show_btn,#snapshot_label #sl_hide_btn{display:block!important;position:fixed!important;box-sizing:border-box!important;top:0!important;right:0!important;height:46px!important;padding:5px 10px 5px 10px!important;border-bottom:none!important;pointer-events:auto!important}a>svg{display:inline!important;position:relative!important;top:6px!important;height:25px!important;stroke:var(--col-bg)!important;fill:var(--col-fg)!important}a>svg #label{stroke:var(--col-fg)!important;fill:var(--col-bg)!important}</style><link type=image/x-icon rel="shortcut icon" href="data:image/x-icon;base64,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"><style>.sf-hidden{display:none!important}</style><link rel=canonical href=http://string-functions.com/encodedecode.aspx></head>
+<body ms_positioning=GridLayout>
+ <div id=divMain style=width:500px>
+ <form method=post action=./encodedecode.aspx id=Form1>
+<div class=aspNetHidden>
+</div>
+<div class=aspNetHidden>
+ 
+ 
+</div>
+ 
+<div id=fb-root></div>
+<a href=http://string-functions.com/>
+<img src="data:image/gif;base64,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" alt="String Functions - Online String Manipulation Tools" border=0>
+</a>
+<br>
+ <h1>
+ Character Encoder / Decoder Tool</h1>
+ <p class=spaced>
+ This is an encoding / decoding tool that lets you simulate character encoding problems
+ and errors.</p>
+ <p class=spaced>
+ Here, you can simulate what happens if you encode a text file with one encoding
+ and then decode the text with a different encoding. Try e.g. to encode the Swedish
+ characters åäö with utf-8 and then decode them with iso-8859-1, or try to encode
+ 明伯 (simplified Chinese meaning 'to understand') with utf-8 and decode with
+ GB 18030. That will yield the characters: 鏄庝集, which I really can't understand.
+ </p>
+ <p>
+ <b>Enter a string to encode / decode </b>
+ <br>
+ <textarea name=TextBox1 rows=5 cols=50 id=TextBox1>獭慬氭敬敧慮琭扵瑴敲晬礭汯癥猭杲慳猭浵搭桯牳</textarea>
+ </p>
+ <p>
+ <table>
+ <tbody><tr>
+ <td>
+ Encode with:</td>
+ <td>
+ <select name=DropDownList1 id=DropDownList1>
+ <option value=708>ASMO-708</option>
+ <option value=950>big5</option>
+ <option value=21025>cp1025</option>
+ <option value=866>cp866</option>
+ <option value=875>cp875</option>
+ <option value=50221>csISO2022JP</option>
+ <option value=720>DOS-720</option>
+ <option value=862>DOS-862</option>
+ <option value=51936>EUC-CN</option>
+ <option value=20932>EUC-JP</option>
+ <option value=51932>euc-jp</option>
+ <option value=51949>euc-kr</option>
+ <option value=54936>GB18030</option>
+ <option value=936>gb2312</option>
+ <option value=52936>hz-gb-2312</option>
+ <option value=858>IBM00858</option>
+ <option value=20924>IBM00924</option>
+ <option value=1047>IBM01047</option>
+ <option value=1140>IBM01140</option>
+ <option value=1141>IBM01141</option>
+ <option value=1142>IBM01142</option>
+ <option value=1143>IBM01143</option>
+ <option value=1144>IBM01144</option>
+ <option value=1145>IBM01145</option>
+ <option value=1146>IBM01146</option>
+ <option value=1147>IBM01147</option>
+ <option value=1148>IBM01148</option>
+ <option value=1149>IBM01149</option>
+ <option value=37>IBM037</option>
+ <option value=1026>IBM1026</option>
+ <option value=20273>IBM273</option>
+ <option value=20277>IBM277</option>
+ <option value=20278>IBM278</option>
+ <option value=20280>IBM280</option>
+ <option value=20284>IBM284</option>
+ <option value=20285>IBM285</option>
+ <option value=20290>IBM290</option>
+ <option value=20297>IBM297</option>
+ <option value=20420>IBM420</option>
+ <option value=20423>IBM423</option>
+ <option value=20424>IBM424</option>
+ <option value=437>IBM437</option>
+ <option value=500>IBM500</option>
+ <option value=737>ibm737</option>
+ <option value=775>ibm775</option>
+ <option value=850>ibm850</option>
+ <option value=852>ibm852</option>
+ <option value=855>IBM855</option>
+ <option value=857>ibm857</option>
+ <option value=860>IBM860</option>
+ <option value=861>ibm861</option>
+ <option value=863>IBM863</option>
+ <option value=864>IBM864</option>
+ <option value=865>IBM865</option>
+ <option value=869>ibm869</option>
+ <option value=870>IBM870</option>
+ <option value=20871>IBM871</option>
+ <option value=20880>IBM880</option>
+ <option value=20905>IBM905</option>
+ <option value=20838>IBM-Thai</option>
+ <option value=50220>iso-2022-jp</option>
+ <option value=50222>iso-2022-jp</option>
+ <option value=50225>iso-2022-kr</option>
+ <option value=28591>iso-8859-1</option>
+ <option value=28603>iso-8859-13</option>
+ <option value=28605>iso-8859-15</option>
+ <option value=28592>iso-8859-2</option>
+ <option value=28593>iso-8859-3</option>
+ <option value=28594>iso-8859-4</option>
+ <option value=28595>iso-8859-5</option>
+ <option value=28596>iso-8859-6</option>
+ <option value=28597>iso-8859-7</option>
+ <option value=28598>iso-8859-8</option>
+ <option value=38598>iso-8859-8-i</option>
+ <option value=28599>iso-8859-9</option>
+ <option value=1361>Johab</option>
+ <option value=20866>koi8-r</option>
+ <option value=21866>koi8-u</option>
+ <option value=949>ks_c_5601-1987</option>
+ <option value=10000>macintosh</option>
+ <option value=932>shift_jis</option>
+ <option value=20127>us-ascii</option>
+ <option value=1200>utf-16</option>
+ <option selected value=1201>utf-16BE</option>
+ <option value=12000>utf-32</option>
+ <option value=12001>utf-32BE</option>
+ <option value=65000>utf-7</option>
+ <option value=65001>utf-8</option>
+ <option value=1250>windows-1250</option>
+ <option value=1251>windows-1251</option>
+ <option value=1252>Windows-1252</option>
+ <option value=1253>windows-1253</option>
+ <option value=1254>windows-1254</option>
+ <option value=1255>windows-1255</option>
+ <option value=1256>windows-1256</option>
+ <option value=1257>windows-1257</option>
+ <option value=1258>windows-1258</option>
+ <option value=874>windows-874</option>
+ <option value=20000>x-Chinese-CNS</option>
+ <option value=20002>x-Chinese-Eten</option>
+ <option value=20001>x-cp20001</option>
+ <option value=20003>x-cp20003</option>
+ <option value=20004>x-cp20004</option>
+ <option value=20005>x-cp20005</option>
+ <option value=20261>x-cp20261</option>
+ <option value=20269>x-cp20269</option>
+ <option value=20936>x-cp20936</option>
+ <option value=20949>x-cp20949</option>
+ <option value=50227>x-cp50227</option>
+ <option value=20833>x-EBCDIC-KoreanExtended</option>
+ <option value=29001>x-Europa</option>
+ <option value=20105>x-IA5</option>
+ <option value=20106>x-IA5-German</option>
+ <option value=20108>x-IA5-Norwegian</option>
+ <option value=20107>x-IA5-Swedish</option>
+ <option value=57006>x-iscii-as</option>
+ <option value=57003>x-iscii-be</option>
+ <option value=57002>x-iscii-de</option>
+ <option value=57010>x-iscii-gu</option>
+ <option value=57008>x-iscii-ka</option>
+ <option value=57009>x-iscii-ma</option>
+ <option value=57007>x-iscii-or</option>
+ <option value=57011>x-iscii-pa</option>
+ <option value=57004>x-iscii-ta</option>
+ <option value=57005>x-iscii-te</option>
+ <option value=10004>x-mac-arabic</option>
+ <option value=10029>x-mac-ce</option>
+ <option value=10008>x-mac-chinesesimp</option>
+ <option value=10002>x-mac-chinesetrad</option>
+ <option value=10082>x-mac-croatian</option>
+ <option value=10007>x-mac-cyrillic</option>
+ <option value=10006>x-mac-greek</option>
+ <option value=10005>x-mac-hebrew</option>
+ <option value=10079>x-mac-icelandic</option>
+ <option value=10001>x-mac-japanese</option>
+ <option value=10003>x-mac-korean</option>
+ <option value=10010>x-mac-romanian</option>
+ <option value=10021>x-mac-thai</option>
+ <option value=10081>x-mac-turkish</option>
+ <option value=10017>x-mac-ukrainian</option>
+</select>
+ </td>
+ </tr>
+ <tr>
+ <td>
+ Decode with:</td>
+ <td>
+ <select name=DropDownList2 id=DropDownList2>
+ <option value=708>ASMO-708</option>
+ <option value=950>big5</option>
+ <option value=21025>cp1025</option>
+ <option value=866>cp866</option>
+ <option value=875>cp875</option>
+ <option value=50221>csISO2022JP</option>
+ <option value=720>DOS-720</option>
+ <option value=862>DOS-862</option>
+ <option value=51936>EUC-CN</option>
+ <option value=20932>EUC-JP</option>
+ <option value=51932>euc-jp</option>
+ <option value=51949>euc-kr</option>
+ <option value=54936>GB18030</option>
+ <option value=936>gb2312</option>
+ <option value=52936>hz-gb-2312</option>
+ <option value=858>IBM00858</option>
+ <option value=20924>IBM00924</option>
+ <option value=1047>IBM01047</option>
+ <option value=1140>IBM01140</option>
+ <option value=1141>IBM01141</option>
+ <option value=1142>IBM01142</option>
+ <option value=1143>IBM01143</option>
+ <option value=1144>IBM01144</option>
+ <option value=1145>IBM01145</option>
+ <option value=1146>IBM01146</option>
+ <option value=1147>IBM01147</option>
+ <option value=1148>IBM01148</option>
+ <option value=1149>IBM01149</option>
+ <option value=37>IBM037</option>
+ <option value=1026>IBM1026</option>
+ <option value=20273>IBM273</option>
+ <option value=20277>IBM277</option>
+ <option value=20278>IBM278</option>
+ <option value=20280>IBM280</option>
+ <option value=20284>IBM284</option>
+ <option value=20285>IBM285</option>
+ <option value=20290>IBM290</option>
+ <option value=20297>IBM297</option>
+ <option value=20420>IBM420</option>
+ <option value=20423>IBM423</option>
+ <option value=20424>IBM424</option>
+ <option value=437>IBM437</option>
+ <option value=500>IBM500</option>
+ <option value=737>ibm737</option>
+ <option value=775>ibm775</option>
+ <option value=850>ibm850</option>
+ <option value=852>ibm852</option>
+ <option value=855>IBM855</option>
+ <option value=857>ibm857</option>
+ <option value=860>IBM860</option>
+ <option value=861>ibm861</option>
+ <option value=863>IBM863</option>
+ <option value=864>IBM864</option>
+ <option value=865>IBM865</option>
+ <option value=869>ibm869</option>
+ <option value=870>IBM870</option>
+ <option value=20871>IBM871</option>
+ <option value=20880>IBM880</option>
+ <option value=20905>IBM905</option>
+ <option value=20838>IBM-Thai</option>
+ <option value=50220>iso-2022-jp</option>
+ <option value=50222>iso-2022-jp</option>
+ <option value=50225>iso-2022-kr</option>
+ <option value=28591>iso-8859-1</option>
+ <option value=28603>iso-8859-13</option>
+ <option value=28605>iso-8859-15</option>
+ <option value=28592>iso-8859-2</option>
+ <option value=28593>iso-8859-3</option>
+ <option value=28594>iso-8859-4</option>
+ <option value=28595>iso-8859-5</option>
+ <option value=28596>iso-8859-6</option>
+ <option value=28597>iso-8859-7</option>
+ <option value=28598>iso-8859-8</option>
+ <option value=38598>iso-8859-8-i</option>
+ <option value=28599>iso-8859-9</option>
+ <option value=1361>Johab</option>
+ <option value=20866>koi8-r</option>
+ <option value=21866>koi8-u</option>
+ <option value=949>ks_c_5601-1987</option>
+ <option value=10000>macintosh</option>
+ <option value=932>shift_jis</option>
+ <option value=20127>us-ascii</option>
+ <option value=1200>utf-16</option>
+ <option value=1201>utf-16BE</option>
+ <option value=12000>utf-32</option>
+ <option value=12001>utf-32BE</option>
+ <option value=65000>utf-7</option>
+ <option selected value=65001>utf-8</option>
+ <option value=1250>windows-1250</option>
+ <option value=1251>windows-1251</option>
+ <option value=1252>Windows-1252</option>
+ <option value=1253>windows-1253</option>
+ <option value=1254>windows-1254</option>
+ <option value=1255>windows-1255</option>
+ <option value=1256>windows-1256</option>
+ <option value=1257>windows-1257</option>
+ <option value=1258>windows-1258</option>
+ <option value=874>windows-874</option>
+ <option value=20000>x-Chinese-CNS</option>
+ <option value=20002>x-Chinese-Eten</option>
+ <option value=20001>x-cp20001</option>
+ <option value=20003>x-cp20003</option>
+ <option value=20004>x-cp20004</option>
+ <option value=20005>x-cp20005</option>
+ <option value=20261>x-cp20261</option>
+ <option value=20269>x-cp20269</option>
+ <option value=20936>x-cp20936</option>
+ <option value=20949>x-cp20949</option>
+ <option value=50227>x-cp50227</option>
+ <option value=20833>x-EBCDIC-KoreanExtended</option>
+ <option value=29001>x-Europa</option>
+ <option value=20105>x-IA5</option>
+ <option value=20106>x-IA5-German</option>
+ <option value=20108>x-IA5-Norwegian</option>
+ <option value=20107>x-IA5-Swedish</option>
+ <option value=57006>x-iscii-as</option>
+ <option value=57003>x-iscii-be</option>
+ <option value=57002>x-iscii-de</option>
+ <option value=57010>x-iscii-gu</option>
+ <option value=57008>x-iscii-ka</option>
+ <option value=57009>x-iscii-ma</option>
+ <option value=57007>x-iscii-or</option>
+ <option value=57011>x-iscii-pa</option>
+ <option value=57004>x-iscii-ta</option>
+ <option value=57005>x-iscii-te</option>
+ <option value=10004>x-mac-arabic</option>
+ <option value=10029>x-mac-ce</option>
+ <option value=10008>x-mac-chinesesimp</option>
+ <option value=10002>x-mac-chinesetrad</option>
+ <option value=10082>x-mac-croatian</option>
+ <option value=10007>x-mac-cyrillic</option>
+ <option value=10006>x-mac-greek</option>
+ <option value=10005>x-mac-hebrew</option>
+ <option value=10079>x-mac-icelandic</option>
+ <option value=10001>x-mac-japanese</option>
+ <option value=10003>x-mac-korean</option>
+ <option value=10010>x-mac-romanian</option>
+ <option value=10021>x-mac-thai</option>
+ <option value=10081>x-mac-turkish</option>
+ <option value=10017>x-mac-ukrainian</option>
+</select>
+ </td>
+ </tr>
+ </table>
+ <p>
+ <input type=submit name=Button1 value="Encode / decode!" id=Button1>
+ </p>
+ <p>
+ <b>The encoded / decoded string:</b><br>
+ <p>
+ <span id=Label1>small-elegant-butterfly-loves-grass-mud-hors</span>
+ </p>
+ <br>
+ <p class=spaced>
+ <span id=Label2>Encoding from Unicode (Big-Endian) (code page 1201, utf-16BE) to Unicode (UTF-8) (code page 65001, utf-8)</span>
+ </p>
+ <br>
+ </form>
+ <h2>What Is A Code Page?</h2>
+ <p>Code page is another name for character encoding. It consists of a table of values
+ that describes the character set for a particular language.</p>
+ <h2>What Is character encoding?</h2>
+<p>Character encoding is the process of encoding a collection of characters according to an encoding system. This process normally pairs numbers with characters to encode information that can be used by a computer.</p>
+<h2>Why do we need to encode characters?</h2>
+<p>Due to computers only being able to interpret raw zero’s and one’s (ex. 01100110), words and sentences need to be encoded when inputting information to a computer. The characters within these words and sentences are grouped into a character set that the computer can recognize.</p>
+<h2>What are character encodings?</h2>
+<p>Character encodings allow us to understand the encoding that is taking place with computers. Due to there being a variety of character encodings, errors can spring up when encoded with one character encoding and decoding with another. The above tool can be used to simulate if any errors will come up when encoding with any character encoding and decoding with another.</p>
+<h2>Types of character encodings</h2>
+<p>There is a wide variety of encodings that can be used to encode or decode a string of characters, including UTF-8, ASCII, and ISO 9959-1.</p>
+<h3>Examples of popular character encodings:</h3>
+<ul>
+<li>ASCII: American Standard Code for Information Exchange</li>
+<li>ANSI: American National Standards Institute</li>
+<li>Unicode (internal text codes used by operating systems)</li>
+<li>UTF -8 (Unicode Transformation Format that uses 1 byte to represent characters)</li>
+<li>UTF-16 (Unicode Transformation Format that uses 2 bytes to represent characters)</li>
+<li>UTF-32 (Unicode Transformation Format that uses 4 bytes to represent characters)</li>
+</ul>
+<p>While these are certainly popular encodings that are used, there are times when strings of code are encoded with encodings that aren’t as widely used, such as x-IA5-Norgwegian or DOS-720. This can cause confusion and possible errors, so it’s important to understand how to reduce these errors by simulating beforehand using String Functions’ character encoding/decoding tool.</p>
+<h2>How to use the character encoding/decoding tool</h2>
+<p>To use String Functions’ character encoding/decoding tool, start by entering a string of characters in the text box. Then, select which encoding and decoding system you would like to use to simulate from the drop-down menus.</p>
+<h2>View our character encoding index</h2>
+<p>To view encoding tables from one encoding to another, use our <a href=http://string-functions.com/encodingindex.aspx>character encoding table index</a>.</p>
+ <div id=Footer1_panMore style=width:520px>
+ 
+ <br><br>
+</div>
+<br>
+<img src="data:image/gif;base64,R0lGODlhCAIUAIAAAAAAAP///yH5BAAAAAAALAAAAAAIAhQAAAKxhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yutxgIi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipqqusra6voKGys7S1tre4ubq7vL2+v7CxwsPExcbHyMnKy8zNzsfFcAADs=" alt> <br><br>
+<a style=font-size:9px;color:#555555 href=http://string-functions.com/privacy.aspx>Privacy Policy</a>
+<a style=font-size:9px;color:#555555 href=http://string-functions.com/sitemap.aspx>Sitemap</a>
+<br><br>
+ </div>
+ 
+ <div id=divAdsense>
+ <div style="width:160px;border:1px solid black;font-size:10px;line-height:150%;background-color:#eeeeee" class=sf-hidden>
+ 
+ </div> 
+ <br>
+ <div style="width:160px;border:1px solid black;font-size:10px;line-height:150%;background-color:#eeeeee" class=sf-hidden> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ </div>
+ </div>
+ <div id=snapshot_label>
+ <div id=sl_double_height_wrapper>
+ <div id=show_label>
+ <a id=sl_hide_btn href=#hide_label>
+ 
+ <svg id=sl_hide_icon viewBox="0 0 330 330" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink>
+ <g transform=translate(165,165) stroke-width=22 stroke-linecap=round>
+ <circle cx=0 cy=0 r=120></circle>
+ <line x1=-42 y1=-42 x2=42 y2=42></line>
+ <line x1=-42 y1=42 x2=42 y2=-42></line>
+ </g>
+ </svg>
+ </a>
+ <div id=sl_content_box>
+ <span id=sl_title>WEBPAGE SNAPSHOT</span>
+ <span><div>DATE: </div>2020-12-02 12:49<span>:</span><span>05 +01h</span></span>
+ <span>
+ <div>PAGE: </div>
+ <a href=http://string-functions.com/encodedecode.aspx>
+ Encoding utf-16BE to utf-8
+ </a>
+ </span>
+ </div>
+ </div>
+ <div id=hide_label></div>
+ <a id=sl_show_btn href=#show_label>
+ 
+ <svg id=sl_show_icon viewBox="0 0 690 370" xmlns=http://www.w3.org/2000/svg xmlns:xlink=http://www.w3.org/1999/xlink>
+ <g stroke-width=22 stroke-linecap=round stroke-linejoin=round>
+ <g id=icon_label transform=translate(185,185)>
+ <g id=border stroke-width=66>
+ <polygon points="-133,29 -17,145 120,7 120,-107 6,-107"></polygon>
+ <path d="M64,-52 T100,-90 T190,-114 T220,-137  120,-110"></path>
+ </g>
+ <g id=label stroke-width=22>
+ <polygon points="-133,29 -17,145 120,7 120,-107 6,-107"></polygon>
+ <circle cx=64 cy=-52 r=11></circle>
+ <path d="M64,-52 T100,-90 T190,-114 T220,-137  120,-110"></path>
+ </g>
+ </g>
+ <g id=icon_down_arrow transform=translate(505,185)>
+ <circle cx=0 cy=0 r=120></circle>
+ <line x1=0 y1=-60 x2=0 y2=60></line>
+ <line x1=-60 y1=0 x2=0 y2=60></line>
+ <line x1=60 y1=0 x2=0 y2=60></line>
+ </g>
+ </g>
+ </svg>
+ </a>
+ </div>
+ </div><script data-template-shadow-root>(() => { document.currentScript.remove(); const processNode = node => { node.querySelectorAll("template[shadowmode]").forEach(element=>{ let shadowRoot = getShadowRoot(element.parentElement); if (!shadowRoot) { try { shadowRoot = element.parentElement.attachShadow({mode:element.getAttribute("shadowmode"),delegatesFocus:Boolean(element.getAttribute("delegatesfocus"))}); shadowRoot.innerHTML = element.innerHTML; element.remove(); } catch (error) {} processNode(shadowRoot); } }) }; const FORBIDDEN_TAG_NAMES = ["a","area","audio","base","br","col","command","embed","hr","img","iframe","input","keygen","link","meta","param","source","track","video","wbr"]; const NOTE_TAGNAME = "single-file-note"; const NOTE_CLASS = "note"; const NOTE_ANCHORED_CLASS = "note-anchored"; const NOTE_SELECTED_CLASS = "note-selected"; const NOTE_MOVING_CLASS = "note-moving"; const NOTE_MASK_MOVING_CLASS = "note-mask-moving"; const MASK_CLASS = "single-file-mask"; const HIGHLIGHT_CLASS = "single-file-highlight"; const NOTES_WEB_STYLESHEET = ".note { all: initial; display: flex; flex-direction: column; height: 150px; width: 150px; position: absolute; top: 10px; left: 10px; border: 1px solid rgb(191, 191, 191); z-index: 2147483646; box-shadow: 3px 3px 3px rgba(33, 33, 33, .7); min-height: 100px; min-width: 100px; } .note-selected { z-index: 2147483647; } .note-hidden { display: none; } .note-collapsed { min-height: 30px; max-height: 30px; overflow: hidden; } .note textarea { all: initial; white-space: pre; font-family: Arial, Helvetica, sans-serif; font-size: 14px; padding: 3px; height: 100%; border: 1px solid transparent; resize: none; } .note textarea:focus { border: 1px dotted rgb(160, 160, 160); } .note header { all: initial; min-height: 30px; cursor: grab; user-select: none; } .note .note-remove { all: initial; position: absolute; right: 0px; top: 2px; padding: 5px; opacity: .5; cursor: pointer; user-select: none; width: 16px; height: 16px; } .note .note-anchor { all: initial; position: absolute; left: 0px; top: 2px; padding: 5px; opacity: .25; cursor: pointer; width: 16px; height: 16px; } .note .note-resize { all: initial; position: absolute; bottom: -5px; right: -5px; height: 15px; width: 15px; cursor: nwse-resize; user-select: none; } .note .note-remove:hover { opacity: 1; } .note .note-anchor:hover { opacity: .5; } .note-anchored .note-anchor { opacity: .5; } .note-anchored .note-anchor:hover { opacity: 1; } .note-moving { opacity: .75; box-shadow: 6px 6px 3px rgba(33, 33, 33, .7); } .note-moving * { cursor: grabbing; } .note-yellow header { background-color: #f5f545; } .note-yellow textarea { background-color: #ffff7c; } .note-pink header { background-color: #ffa59f; } .note-pink textarea { background-color: #ffbbb6; } .note-blue header { background-color: #84c8ff; } .note-blue textarea { background-color: #95d0ff; } .note-green header { background-color: #93ef8d; } .note-green textarea { background-color: #9cff95; }"; const MASK_WEB_STYLESHEET = ".note-mask { all: initial; position: fixed; z-index: 2147483645; pointer-events: none; background-color: transparent; transition: background-color 125ms; } .note-mask-moving.note-yellow { background-color: rgba(255, 255, 124, .3); } .note-mask-moving.note-pink { background-color: rgba(255, 187, 182, .3); } .note-mask-moving.note-blue { background-color: rgba(149, 208, 255, .3); } .note-mask-moving.note-green { background-color: rgba(156, 255, 149, .3); } .page-mask { all: initial; position: fixed; top: 0; left: 0; width: 0; height: 0; z-index: 2147483646; } .page-mask-active { width: 100vw; height: 100vh; }"; const NOTE_HEADER_HEIGHT = 25; const PAGE_MASK_ACTIVE_CLASS = "page-mask-active"; const REMOVED_CONTENT_CLASS = "single-file-removed"; const reflowNotes = function reflowNotes() { document.querySelectorAll(NOTE_TAGNAME).forEach(containerElement => { const noteElement = containerElement.shadowRoot.querySelector("." + NOTE_CLASS); const noteBoundingRect = noteElement.getBoundingClientRect(); const anchorElement = getAnchorElement(containerElement); const anchorBoundingRect = anchorElement.getBoundingClientRect(); const maxX = anchorBoundingRect.x + Math.max(0, anchorBoundingRect.width - noteBoundingRect.width); const minX = anchorBoundingRect.x; const maxY = anchorBoundingRect.y + Math.max(0, anchorBoundingRect.height - NOTE_HEADER_HEIGHT); const minY = anchorBoundingRect.y; let left = parseInt(noteElement.style.getPropertyValue("left")); let top = parseInt(noteElement.style.getPropertyValue("top")); if (noteBoundingRect.x > maxX) { left -= noteBoundingRect.x - maxX; } if (noteBoundingRect.x < minX) { left += minX - noteBoundingRect.x; } if (noteBoundingRect.y > maxY) { top -= noteBoundingRect.y - maxY; } if (noteBoundingRect.y < minY) { top += minY - noteBoundingRect.y; } noteElement.style.setProperty("position", "absolute"); noteElement.style.setProperty("left", left + "px"); noteElement.style.setProperty("top", top + "px"); }); }; const addNoteRef = function addNoteRef(anchorElement, noteId) { const noteRefs = getNoteRefs(anchorElement); noteRefs.push(noteId); setNoteRefs(anchorElement, noteRefs); }; const deleteNoteRef = function deleteNoteRef(containerElement, noteId) { const anchorElement = getAnchorElement(containerElement); const noteRefs = getNoteRefs(anchorElement).filter(noteRefs => noteRefs != noteId); if (noteRefs.length) { setNoteRefs(anchorElement, noteRefs); } else { delete anchorElement.dataset.singleFileNoteRefs; } }; const getNoteRefs = function getNoteRefs(anchorElement) { return JSON.parse("[" + (anchorElement.dataset.singleFileNoteRefs || "") + "]"); }; const setNoteRefs = function setNoteRefs(anchorElement, noteRefs) { anchorElement.dataset.singleFileNoteRefs = noteRefs.toString(); }; const getAnchorElement = function getAnchorElement(containerElement) { return document.querySelector("[data-single-file-note-refs^=" + JSON.stringify(containerElement.dataset.noteId) + "], [data-single-file-note-refs$=" + JSON.stringify(containerElement.dataset.noteId) + "], [data-single-file-note-refs*=" + JSON.stringify("," + containerElement.dataset.noteId + ",") + "]") || document.documentElement; }; const getMaskElement = function getMaskElement(className, containerClassName) { let maskElement = document.documentElement.querySelector("." + className); if (!maskElement) { maskElement = document.createElement("div"); const maskContainerElement = document.createElement("div"); if (containerClassName) { maskContainerElement.classList.add(containerClassName); } maskContainerElement.classList.add(MASK_CLASS); const firstNote = document.querySelector(NOTE_TAGNAME); if (firstNote && firstNote.parentElement == document.documentElement) { document.documentElement.insertBefore(maskContainerElement, firstNote); } else { document.documentElement.appendChild(maskContainerElement); } maskElement.classList.add(className); const maskShadow = maskContainerElement.attachShadow({ mode: "open" }); maskShadow.appendChild(getStyleElement(MASK_WEB_STYLESHEET)); maskShadow.appendChild(maskElement); return maskElement; } }; const getStyleElement = function getStyleElement(stylesheet) { const linkElement = document.createElement("style"); linkElement.textContent = stylesheet; return linkElement; }; const attachNoteListeners = function attachNoteListeners(containerElement, editable = false) { const SELECT_PX_THRESHOLD = 4; const COLLAPSING_NOTE_DELAY = 750; const noteShadow = containerElement.shadowRoot; const noteElement = noteShadow.childNodes[1]; const headerElement = noteShadow.querySelector("header"); const mainElement = noteShadow.querySelector("textarea"); const noteId = containerElement.dataset.noteId; const resizeElement = noteShadow.querySelector(".note-resize"); const anchorIconElement = noteShadow.querySelector(".note-anchor"); const removeNoteElement = noteShadow.querySelector(".note-remove"); mainElement.readOnly = !editable; if (!editable) { anchorIconElement.style.setProperty("display", "none", "important"); } else { anchorIconElement.style.removeProperty("display"); } headerElement.ontouchstart = headerElement.onmousedown = event => { if (event.target == headerElement) { collapseNoteTimeout = setTimeout(() => { noteElement.classList.toggle("note-collapsed"); hideMaskNote(); }, COLLAPSING_NOTE_DELAY); event.preventDefault(); const position = getPosition(event); const clientX = position.clientX; const clientY = position.clientY; const boundingRect = noteElement.getBoundingClientRect(); const deltaX = clientX - boundingRect.left; const deltaY = clientY - boundingRect.top; maskPageElement.classList.add(PAGE_MASK_ACTIVE_CLASS); document.documentElement.style.setProperty("user-select", "none", "important"); anchorElement = getAnchorElement(containerElement); displayMaskNote(); selectNote(noteElement); moveNote(event, deltaX, deltaY); movingNoteMode = { event, deltaX, deltaY }; document.documentElement.ontouchmove = document.documentElement.onmousemove = event => { clearTimeout(collapseNoteTimeout); if (!movingNoteMode) { movingNoteMode = { deltaX, deltaY }; } movingNoteMode.event = event; moveNote(event, deltaX, deltaY); }; } }; resizeElement.ontouchstart = resizeElement.onmousedown = event => { event.preventDefault(); resizingNoteMode = true; selectNote(noteElement); maskPageElement.classList.add(PAGE_MASK_ACTIVE_CLASS); document.documentElement.style.setProperty("user-select", "none", "important"); document.documentElement.ontouchmove = document.documentElement.onmousemove = event => { event.preventDefault(); const { clientX, clientY } = getPosition(event); const boundingRectNote = noteElement.getBoundingClientRect(); noteElement.style.width = clientX - boundingRectNote.left + "px"; noteElement.style.height = clientY - boundingRectNote.top + "px"; }; }; anchorIconElement.ontouchend = anchorIconElement.onclick = event => { event.preventDefault(); noteElement.classList.toggle(NOTE_ANCHORED_CLASS); if (!noteElement.classList.contains(NOTE_ANCHORED_CLASS)) { deleteNoteRef(containerElement, noteId); addNoteRef(document.documentElement, noteId); } onUpdate(false); }; removeNoteElement.ontouchend = removeNoteElement.onclick = event => { event.preventDefault(); deleteNoteRef(containerElement, noteId); containerElement.remove(); }; noteElement.onmousedown = () => { selectNote(noteElement); }; function moveNote(event, deltaX, deltaY) { event.preventDefault(); const { clientX, clientY } = getPosition(event); noteElement.classList.add(NOTE_MOVING_CLASS); if (editable) { if (noteElement.classList.contains(NOTE_ANCHORED_CLASS)) { deleteNoteRef(containerElement, noteId); anchorElement = getTarget(clientX, clientY) || document.documentElement; addNoteRef(anchorElement, noteId); } else { anchorElement = document.documentElement; } } document.documentElement.insertBefore(containerElement, maskPageElement.getRootNode().host); noteElement.style.setProperty("left", (clientX - deltaX) + "px"); noteElement.style.setProperty("top", (clientY - deltaY) + "px"); noteElement.style.setProperty("position", "fixed"); displayMaskNote(); } function displayMaskNote() { if (anchorElement == document.documentElement || anchorElement == document.documentElement) { hideMaskNote(); } else { const boundingRectAnchor = anchorElement.getBoundingClientRect(); maskNoteElement.classList.add(NOTE_MASK_MOVING_CLASS); if (selectedNote) { maskNoteElement.classList.add(selectedNote.dataset.color); } maskNoteElement.style.setProperty("top", (boundingRectAnchor.y - 3) + "px"); maskNoteElement.style.setProperty("left", (boundingRectAnchor.x - 3) + "px"); maskNoteElement.style.setProperty("width", (boundingRectAnchor.width + 3) + "px"); maskNoteElement.style.setProperty("height", (boundingRectAnchor.height + 3) + "px"); } } function hideMaskNote() { maskNoteElement.classList.remove(NOTE_MASK_MOVING_CLASS); if (selectedNote) { maskNoteElement.classList.remove(selectedNote.dataset.color); } } function selectNote(noteElement) { if (selectedNote) { selectedNote.classList.remove(NOTE_SELECTED_CLASS); maskNoteElement.classList.remove(selectedNote.dataset.color); } noteElement.classList.add(NOTE_SELECTED_CLASS); noteElement.classList.add(noteElement.dataset.color); selectedNote = noteElement; } function getTarget(clientX, clientY) { const targets = Array.from(document.elementsFromPoint(clientX, clientY)).filter(element => element.matches("html *:not(" + NOTE_TAGNAME + "):not(." + MASK_CLASS + ")")); if (!targets.includes(document.documentElement)) { targets.push(document.documentElement); } let newTarget, target = targets[0], boundingRect = target.getBoundingClientRect(); newTarget = determineTargetElement("floor", target, clientX - boundingRect.left, getMatchedParents(target, "left")); if (newTarget == target) { newTarget = determineTargetElement("ceil", target, boundingRect.left + boundingRect.width - clientX, getMatchedParents(target, "right")); } if (newTarget == target) { newTarget = determineTargetElement("floor", target, clientY - boundingRect.top, getMatchedParents(target, "top")); } if (newTarget == target) { newTarget = determineTargetElement("ceil", target, boundingRect.top + boundingRect.height - clientY, getMatchedParents(target, "bottom")); } target = newTarget; while (boundingRect = target && target.getBoundingClientRect(), boundingRect && boundingRect.width <= SELECT_PX_THRESHOLD && boundingRect.height <= SELECT_PX_THRESHOLD) { target = target.parentElement; } return target; } function getMatchedParents(target, property) { let element = target, matchedParent, parents = []; do { const boundingRect = element.getBoundingClientRect(); if (element.parentElement && !element.parentElement.tagName.toLowerCase() != NOTE_TAGNAME && !element.classList.contains(MASK_CLASS)) { const parentBoundingRect = element.parentElement.getBoundingClientRect(); matchedParent = Math.abs(parentBoundingRect[property] - boundingRect[property]) <= SELECT_PX_THRESHOLD; if (matchedParent) { if (element.parentElement.clientWidth > SELECT_PX_THRESHOLD && element.parentElement.clientHeight > SELECT_PX_THRESHOLD && ((element.parentElement.clientWidth - element.clientWidth > SELECT_PX_THRESHOLD) || (element.parentElement.clientHeight - element.clientHeight > SELECT_PX_THRESHOLD))) { parents.push(element.parentElement); } element = element.parentElement; } } else { matchedParent = false; } } while (matchedParent && element); return parents; } function determineTargetElement(roundingMethod, target, widthDistance, parents) { if (Math[roundingMethod](widthDistance / SELECT_PX_THRESHOLD) <= parents.length) { target = parents[parents.length - Math[roundingMethod](widthDistance / SELECT_PX_THRESHOLD) - 1]; } return target; } }; const anchorNote = function anchorNote(event, noteElement, deltaX, deltaY) { event.preventDefault(); const { clientX, clientY } = getPosition(event); document.documentElement.style.removeProperty("user-select"); noteElement.classList.remove(NOTE_MOVING_CLASS); maskNoteElement.classList.remove(NOTE_MASK_MOVING_CLASS); maskPageElement.classList.remove(PAGE_MASK_ACTIVE_CLASS); maskNoteElement.classList.remove(noteElement.dataset.color); const headerElement = noteElement.querySelector("header"); headerElement.ontouchmove = document.documentElement.onmousemove = null; let currentElement = anchorElement; let positionedElement; while (currentElement.parentElement && !positionedElement) { if (!FORBIDDEN_TAG_NAMES.includes(currentElement.tagName.toLowerCase())) { const currentElementStyle = getComputedStyle(currentElement); if (currentElementStyle.position != "static") { positionedElement = currentElement; } } currentElement = currentElement.parentElement; } if (!positionedElement) { positionedElement = document.documentElement; } const containerElement = noteElement.getRootNode().host; if (positionedElement == document.documentElement) { const firstMaskElement = document.querySelector("." + MASK_CLASS); firstMaskElement.parentElement.insertBefore(containerElement, firstMaskElement); } else { positionedElement.appendChild(containerElement); } const boundingRectPositionedElement = positionedElement.getBoundingClientRect(); const stylePositionedElement = window.getComputedStyle(positionedElement); const borderX = parseInt(stylePositionedElement.getPropertyValue("border-left-width")); const borderY = parseInt(stylePositionedElement.getPropertyValue("border-top-width")); noteElement.style.setProperty("position", "absolute"); noteElement.style.setProperty("left", (clientX - boundingRectPositionedElement.x - deltaX - borderX) + "px"); noteElement.style.setProperty("top", (clientY - boundingRectPositionedElement.y - deltaY - borderY) + "px"); }; const getPosition = function getPosition(event) { if (event.touches && event.touches.length) { const touch = event.touches[0]; return touch; } else { return event; } }; const onMouseUp = function onMouseUp(event) { if (highlightSelectionMode) { highlightSelection(); onUpdate(false); } if (removeHighlightMode) { let element = event.target, done; while (element && !done) { if (element.classList.contains(HIGHLIGHT_CLASS)) { document.querySelectorAll("." + HIGHLIGHT_CLASS + "[data-singlefile-highlight-id=" + JSON.stringify(element.dataset.singlefileHighlightId) + "]").forEach(highlightedElement => { resetHighlightedElement(highlightedElement); onUpdate(false); }); done = true; } element = element.parentElement; } } if (resizingNoteMode) { resizingNoteMode = false; document.documentElement.style.removeProperty("user-select"); maskPageElement.classList.remove(PAGE_MASK_ACTIVE_CLASS); document.documentElement.ontouchmove = document.documentElement.onmousemove = null; onUpdate(false); } if (movingNoteMode) { anchorNote(movingNoteMode.event || event, selectedNote, movingNoteMode.deltaX, movingNoteMode.deltaY); movingNoteMode = null; document.documentElement.ontouchmove = document.documentElement.onmousemove = null; onUpdate(false); } if (collapseNoteTimeout) { clearTimeout(collapseNoteTimeout); collapseNoteTimeout = null; } if ((cuttingMode || cuttingOuterMode) && cuttingPath) { if (event.ctrlKey) { const element = cuttingPath[cuttingPathIndex]; element.classList.toggle(cuttingMode ? CUT_SELECTED_CLASS : CUT_OUTER_SELECTED_CLASS); } else { validateCutElement(event.shiftKey); } } }; const getShadowRoot = function getShadowRoot(element) { const chrome = window.chrome; if (element.openOrClosedShadowRoot) { return element.openOrClosedShadowRoot; } else if (chrome && chrome.dom && chrome.dom.openOrClosedShadowRoot) { try { return chrome.dom.openOrClosedShadowRoot(element); } catch (error) { return element.shadowRoot; } } else { return element.shadowRoot; } }; const maskNoteElement = getMaskElement("note-mask"); const maskPageElement = getMaskElement("page-mask", "single-file-page-mask"); let selectedNote, highlightSelectionMode, removeHighlightMode, resizingNoteMode, movingNoteMode, collapseNoteTimeout, cuttingMode, cuttingOuterMode; window.onresize = reflowNotes; window.onUpdate = () => {}; document.documentElement.onmouseup = document.documentElement.ontouchend = onMouseUp; window.addEventListener("DOMContentLoaded", () => { processNode(document); reflowNotes(); document.querySelectorAll("single-file-note").forEach(noteElement => attachNoteListeners(noteElement)); }); })()</script><style>.single-file-highlight-yellow, .single-file-highlight-yellow-mode ::selection { background-color: #ffff7c !important; color: black !important; } .single-file-highlight-pink, .single-file-highlight-pink-mode ::selection { background-color: #ffbbb6 !important; color: black !important; } .single-file-highlight-blue, .single-file-highlight-blue-mode ::selection { background-color: #95d0ff !important; color: black !important; } .single-file-highlight-green, .single-file-highlight-green-mode ::selection { background-color: #93ef8d !important; color: black !important; } span.single-file-highlight-yellow, span.single-file-highlight-pink, span.single-file-highlight-blue, span.single-file-highlight-green { display: inline !important; } .single-file-highlight-hidden { background-color: inherit !important; color: inherit !important; } .single-file-mask { all: initial; display: contents !important; } .single-file-mask.single-file-page-mask { opacity: .99 !important; } single-file-note { all: initial !important; display: contents !important; } .single-file-cut-hover, .single-file-cut-outer-hover, .single-file-cut-selected, .single-file-cut-outer-selected { transition: outline-width 125ms !important; outline-offset: -4px !important; outline-width: 4px !important; } .single-file-cut-hover, .single-file-cut-outer-hover { outline-style: dotted !important; } .single-file-cut-selected, .single-file-cut-outer-selected { outline-style: dashed !important; } .single-file-cut-hover, .single-file-cut-selected { outline-color: red !important; } .single-file-cut-outer-hover, .single-file-cut-outer-selected { outline-color: green !important; } .single-file-cut-mode, .single-file-cut-mode * { pointer-events: auto !important; } .single-file-cut-hover, .single-file-cut-outer-hover, .single-file-remove-highlights-mode .single-file-highlight:hover { cursor: crosshair !important; } .single-file-removed { display: none !important; float: none !important; position: static !important; visibility: collapse !important; }</style>

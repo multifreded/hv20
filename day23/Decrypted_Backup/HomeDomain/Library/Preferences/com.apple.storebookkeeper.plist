@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>LogAuthEvents</key>
+	<false/>
+	<key>LogSyncEventData</key>
+	<false/>
+	<key>LogSyncEvents</key>
+	<false/>
+	<key>_didRegister-LogDefaults.v1</key>
+	<true/>
+	<key>_didRegister-LogDefaults.v2</key>
+	<true/>
+</dict>
+</plist>

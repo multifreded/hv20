@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PLLanguageAndLocaleKey</key>
+	<string>pt-BR:pt_BR</string>
+	<key>PLLastGeoProviderIdKey</key>
+	<string>7618</string>
+	<key>PLLastLocationInfoFormatVer</key>
+	<integer>12</integer>
+	<key>PLLastRevGeoForcedProviderOutOfDateCheckVersionKey</key>
+	<integer>1</integer>
+	<key>PLLastRevGeoVerFileFetchDateKey</key>
+	<date>2020-11-25T02:06:14Z</date>
+	<key>PLLocationShiftVersionKey</key>
+	<integer>0</integer>
+</dict>
+</plist>

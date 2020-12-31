@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FullMode</key>
+	<false/>
+	<key>PLSalt</key>
+	<string>68A878C4-C2C4-46E3-A8E0-B5516B04F526</string>
+	<key>TimeOffset-baseband</key>
+	<real>-51.702064394950867</real>
+	<key>TimeOffset-kernel</key>
+	<real>-1602840016.619545</real>
+	<key>TimeOffset-monotonic</key>
+	<real>1606155293.119545</real>
+	<key>TimeOffset-system</key>
+	<real>-46.133085966110229</real>
+	<key>assertionCookie</key>
+	<integer>805</integer>
+</dict>
+</plist>

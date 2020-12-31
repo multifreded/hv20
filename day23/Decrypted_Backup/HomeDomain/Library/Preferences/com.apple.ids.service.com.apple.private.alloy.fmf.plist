@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Accounts</key>
+	<dict>
+		<key>E6CF7DD8-206A-4934-9AE8-6FF884F24EAC</key>
+		<dict>
+			<key>AccountType</key>
+			<integer>0</integer>
+			<key>PrimaryAccount</key>
+			<string>CFB577E1-0921-4D43-BB32-0A4AC610FD25</string>
+			<key>PrimaryService</key>
+			<string>com.apple.private.alloy.multiplex1</string>
+			<key>PushTopic</key>
+			<string>com.apple.private.alloy.fmf</string>
+			<key>Registration</key>
+			<dict>
+				<key>ErrorCode</key>
+				<integer>-1</integer>
+				<key>InternalErrorCode</key>
+				<integer>-1</integer>
+				<key>Status</key>
+				<integer>2</integer>
+			</dict>
+			<key>ServerHost</key>
+			<string>init.ess.apple.com</string>
+			<key>ServiceName</key>
+			<string>com.apple.private.alloy.fmf</string>
+			<key>UserDisabled</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>EnabledAccounts</key>
+	<array/>
+</dict>
+</plist>

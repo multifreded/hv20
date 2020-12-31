@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>BootModule</key>
+	<dict>
+		<key>FirstBootUpTime</key>
+		<integer>1608148141</integer>
+		<key>LastHardResetTime</key>
+		<integer>0</integer>
+		<key>LastRecoveryTime</key>
+		<integer>1608148141</integer>
+		<key>UpTime</key>
+		<integer>0</integer>
+	</dict>
+	<key>Trace::NumberOfLogsInSnapshotPath</key>
+	<integer>0</integer>
+</dict>
+</plist>

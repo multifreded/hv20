@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CloudBackupEnabled</key>
+	<false/>
+	<key>LastiTunesBackupDate</key>
+	<integer>629844311</integer>
+	<key>LastiTunesBackupTZ</key>
+	<string>GMT+1</string>
+	<key>RequiresEncryption</key>
+	<integer>0</integer>
+	<key>Version</key>
+	<string>2.0</string>
+	<key>WillEncrypt</key>
+	<true/>
+</dict>
+</plist>
