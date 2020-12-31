@@ -37,8 +37,8 @@ an iOS device backup. After searching the web there were two very helpful webpag
 2. [Cracking iTunes Backup Passwords with hashcat](https://irq5.io/2017/03/07/cracking-itunes-backup-passwords-with-hashcat/)
 
 First a the `manifest.plist` file was identified as it contains the keybag that
-can be used to decrypt the files in the backup. Then the [script] 
-_itunes\_backup2hashcat.pl_ was used to onvert the `manifest.plist` into hashes
+can be used to decrypt the files in the backup. Then the [script]()
+_itunes\_backup2hashcat.pl_ was used to convert the `manifest.plist` into hashes
 that can be fed into _hashcat_:
 
 [script]: https://github.com/philsmd/itunes_backup2hashcat
@@ -77,14 +77,14 @@ pointed to the backup (via its settings), it asked for and accepted Santa's PIN.
 Apart from a hilarious cat video and a RickRoll-QR-code nothing much could be
 found. There were two entries in the _Contacts_ that seemed strange:
 
-![](m_and_n.png){width=100%}
+![](m_and_n.png)
 
 Each entry had nothing but a long number in the _Notes_ section:
 
 M: `6344440980251505214334711510534398387022222632429506422215055328147354699502`\
 N: `77534090655128210476812812639070684519317429042401383232913500313570136429769`
 
-I don't no really why but I almost instantly thought of [RSA Cryptosystem]
+I don't no really why but I almost instantly thought of [RSA Cryptosystem]()
 numbers. `M` for _Message_ and `N` as the modulus number created from
 multiplying `p` and `q`.
 
@@ -103,7 +103,7 @@ Q: `310091043086715822123974886007224132083`
 
 [hit]: http://factordb.com/index.php?query=77534090655128210476812812639070684519317429042401383232913500313570136429769
 
-Thanks to a hint from _jokker_, I learned that for `E` one [usually uses] 
+Thanks to a hint from _jokker_, I learned that for `E` one [usually uses]() 
 `65537`.
 
 [usually uses]: https://en.wikipedia.org/wiki/RSA_(cryptosystem)#Faulty_key_generation
@@ -111,7 +111,7 @@ Thanks to a hint from _jokker_, I learned that for `E` one [usually uses]
 E: `65537`
 
 And with that everything was together to try a decryption of the message `M`.
-The [RsaCtfTool] was used to do this task:
+The [RsaCtfTool]() was used to do this task:
 
 [RsaCtfTool]: https://github.com/Ganapati/RsaCtfTool
 
