@@ -233,9 +233,9 @@ echo "3a 02 a7 23 b1 2f 66 bc fe aa 30 35 31 31 31 39 62 30 62 61 63 65 30 61 62
 
 The challenge description mentioned _real humans_ in a strange way. There is a
 famous password list that supposedly only contains _real human passwords_. It's
-called [`crackstation-human-only.txt`] \(Thanks for the hint, mcia\).
+called [crackstation-human-only.txt]() \(Thanks for the hint, mcia\).
 
-[`crackstation-human-only.txt`]: https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
+[crackstation-human-only.txt]: https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
 
 I downloaded the list and checked how many passwords contain the string `santa`
 in lower case as well as in upper case.
@@ -250,7 +250,7 @@ This list was further reduced since ecryptfs only accepts passwords that are
 shorter than 65 characters.
 
 For the cracking procedure _hashcat_ was used. But before that the wrapped
-password had to be converted with a [script] in order to be readable by hascat.
+password had to be converted with a [script]() in order to be readable by hascat.
 
 [script]: https://github.com/openwall/john/blob/bleeding-jumbo/run/ecryptfs2john.py
 
