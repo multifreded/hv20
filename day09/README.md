@@ -26,9 +26,9 @@ can get the goodie, which is stored in /flag.txt.
 
 ## Solution
 
-The website is a flask application and the topic is [flask injection].
+The website is a flask application and the topic is [flask injection]().
 
-[flask injection]{https://blog.nvisium.com/injecting-flask}
+[flask injection]: https://blog.nvisium.com/injecting-flask
 
 After a lot of trial and error that startet with a simple `{{ 4 * 4 }}` that
 gets evaluated to `16`. The solution was found with
