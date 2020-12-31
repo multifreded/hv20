@@ -56,7 +56,7 @@ $ file strange_file
 strange_file: compress'd data 12 bits
 ```
 
-… [Magic from Cyberchef] says its a tar file and suprisingly it can be unpacked …
+… [Magic from Cyberchef]() says its a tar file and suprisingly it can be unpacked …
 
 [Magic from Cyberchef]: https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')Magic(3,false,false,'')&input=MWYgOWQgOGMgNDIgOWEgMzggNDEgMjQgMDEgODAgNDEgODMgOGEgMGUgZjIgMzkgNzggNDIgODAgYzEgODYgMDYgMDMgMDAgMDAgMDEgNjAgYzAgNDEgNjIgODcgMGEgMWUgZGMgYzggNzEgMjM
 
@@ -81,13 +81,13 @@ fragment of a bitmap file.
 
 ### OLE objects
 
-Other than Bread's cell, there is an [OLE object] in the `Download.xls` file.
+Other than Bread's cell, there is an [OLE object]() in the `Download.xls` file.
 It's neatly placed over the picture of the gift box so hat it appears to be the
 gift in the box.
 
 [OLE object]: https://en.wikipedia.org/wiki/Object_Linking_and_Embedding
 
-The OLE object can be extracted with [oletools]…
+The OLE object can be extracted with [oletools]() …
 
 [oletools]: https://pypi.org/project/oletools/
 
@@ -200,7 +200,7 @@ $ xxd part9~ | head -n 40
 ```
 
 It seems very orderly for an encrypted file. Maybe its an image file that
-was [ECB] encrypted. In that case, the contents may become visible simply from
+was [ECB]() encrypted. In that case, the contents may become visible simply from
 adding a suitable HEADER. MAYBE A BMP HEADER. DO WE HAVE SOMETHING LIKE THAT
 LIEING AROUND ? :-D
 
@@ -209,12 +209,12 @@ LIEING AROUND ? :-D
 I experimentally placed the BMP header with different offsets in front of the
 encrypted image file and got images like the following.
 
-![](experimental_bmp_1.png){width=48%} ![](experimental_bmp_2.png){width=48%}
+![](experimental_bmp_1.png) ![](experimental_bmp_2.png)
 
 After selecting a decent one and cleaning it further with photo retouching 
 tools, I was able to scan the QR code and get hold of the flag.
 
-![](experimental_bmp_cleaned.png){width=100%}
+![](experimental_bmp_cleaned.png)
 
 --------------------------------------------------------------------------------
 
