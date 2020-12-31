@@ -22,7 +22,7 @@ out. It was the only one whose compression ratio was 12% compared to other's.
 Also the file was called _0042.bin_ it surely must contain _The Answer to the
 Ultimate Question of Life, the Universe, and Everything_ ;-)
 
-Its the same process as on the %%%%challenge of day03%%%%.
+Its the same process as on the challenge of day 3.
 
 ``` shell
 $ unzip -v Package2.zip | less
