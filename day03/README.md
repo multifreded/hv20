@@ -64,14 +64,15 @@ quite strong so brute-forcing is out of the question.
 
 Since _Package1.zip_ is unencrypted and seems to contain the same files as
 _Package2.zip_, a known plain text attack would be possible. Also there is
-software available for this called [bkcrack].
+software available for this called [bkcrack]().
 
-The cracking tool is named after the attack's inventors [Eli **B**iham][biham]
-and Paul C. **K**och. See [_A Known Plaintext Attack on the PKZIP Stream 
-Cipher_][bkcrack-paper] for the white paper about the topic.
+The cracking tool is named after the attack's inventors [Eli Biham]()
+and Paul C. Koch. See [_A Known Plaintext Attack on the PKZIP Stream 
+Cipher_][paper] for the white paper about the topic.
+
 [bkcrack]: https://github.com/kimci86/bkcrack
-[biham]: https://en.wikipedia.org/wiki/Eli_Biham
-[bkcrack-paper]: https://link.springer.com/chapter/10.1007/3-540-60590-8_12
+[Eli Biham]: https://en.wikipedia.org/wiki/Eli_Biham
+[paper]: https://link.springer.com/chapter/10.1007/3-540-60590-8_12
 
 During the attack a software tries to derive the encryption keys by comparing
 the known plain text with its corresponding cipher text.
@@ -110,8 +111,9 @@ the documentation was a bit ambiguous. It basically works like this:
 
 In order to get the names of the file that acts as known plain text, I first
 needed a way to verify that files with the same name actually have the same
-content. Luckily I found an option of unzip(1) that shows [CRC-32] checksums of
-the files in the ZIP files:
+content. Luckily I found an option of unzip(1) that shows [CRC-32]() checksums
+of the files in the ZIP files:
+
 [CRC-32]: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
 
 ``` shell
