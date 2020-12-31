@@ -42,8 +42,8 @@ Searching the web for the finger print number from the description returned the
 information that it's a [JA3 finger print](https://github.com/salesforce/ja3).
 
 There was only one project discoverable on the web that provided means to
-mimic a JA3 finger print. It's called [JA3Transport] and it's written in Go.
-Here is a [blog post] kind of article about impersonating JA3 finger prints.
+mimic a JA3 finger print. It's called [JA3Transport]() and it's written in Go.
+Here is a [blog post]() kind of article about impersonating JA3 finger prints.
 
 [JA3Transport]: https://github.com/cucyber/JA3Transport
 [blog post]: https://medium.com/cu-cyber/impersonating-ja3-fingerprints-b9f555880e42
@@ -88,13 +88,13 @@ func serveReverseProxy(target string, res http.ResponseWriter, req *http.Request
 
 The now accessible web page looked like this:
 
-![](screenshot_login.png){width=100%}
+![](screenshot_login.png)
 
 
 ### Searching and finding an additional angle
 
 After erratic trials to find any aspect about this web page that could be
-leveraged I finally arrived at the topic of [JSON Web Tokens].
+leveraged I finally arrived at the topic of [JSON Web Tokens]().
 
 [JSON Web Tokens]: https://en.wikipedia.org/wiki/JSON_Web_Token
 
@@ -107,7 +107,7 @@ things happend:
    This is probably the info leak that was mentioned in the challenge hints.
 
 There exists a set of vulnerabilities that are – at least to me – 
-astounding. See: [Critical vulnerabilites in JSON Web Token libraries]
+astounding. See: [Critical vulnerabilites in JSON Web Token libraries]()
 
 [Critical vulnerabilites in JSON Web Token libraries]: https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
 
@@ -172,7 +172,7 @@ zwIDAQAB
 -----END PUBLIC KEY-----
 ```
 
-At last a new cookie was forged (with the help of [CyberChef]) with the
+At last a new cookie was forged (with the help of [CyberChef]()) with the
 following payload:
 
 [CyberChef]: https://gchq.github.io/CyberChef/#recipe=JWT_Sign('-----BEGIN%20PUBLIC%20KEY-----%5CnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0KDtdDsZ/wpGXWRnP6DY%5CnRi7OxTWiwPVg8eTsVcmbzAkk2r4itb3NqRw9xpJeUHorgfw1f9GkuAFg/squMrXb%5CnSYM0Vcxqmtsq379xCw6s0pxIafPR7TEAVRh5Mxrudl2lwiO4vJPs%2B2tmcgui/bFn%5CnwC%2BqByZtIlsP%2BrlT/MF2wLaWe/LNAWtOXdFVDOzUy6ylLZeL6fRtt9SiuUOQkkC3%5CnUS8TmvVQYcCcwvu4GBJeGdlKrbIuXIohl7hP5i9/KZ3kIvzByp/Xk5iq%2BtH95/9u%5CnX/9FHKUSrcRE4NYVRhkqHPpn/EbqXHMX0BM0QoGETORlpZIo/lAOQ7/ezOd9z1fw%5CnzwIDAQAB%5Cn-----END%20PUBLIC%20KEY-----%5Cn','HS256')&input=ewogICJleHAiOiAxNjA5NDE2NTAyLAogICJpYXQiOiAxNjA5NDEyOTAyLAogICJzdWIiOiAic2FudGExMzM3Igp9
@@ -196,7 +196,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDk0MTY1MDIsImlhdCI6MTYwOTQxMjk
 
 And voilà, the server thinks I'm Santa and gave me access:
 
-![](screenshot_access.png){width=100%}
+![](screenshot_access.png)
 
 The flag was a comment in the HTML source code:
 
