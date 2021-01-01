@@ -34,7 +34,7 @@ Breakpoint 1, 0x0000000000007c3a in ?? ()
 
 Here's what the qemu screen was displaying:
 
-![](screenshot_hidden2.png){width=100%}
+![](screenshot_hidden2.png)
 
 --------------------------------------------------------------------------------
 
