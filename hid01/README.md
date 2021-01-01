@@ -15,7 +15,7 @@ Who knows where this could be hidden... Only the best of the best shall find it!
 
 This hidden challenge appeared on the 3rd day of Hackvent20. It seemed probable
 that there was still something funky in that encrypted _Package2.zip_ from 
-%%%%day03%%%.
+day 03.
 
 While taking a closer look at the file list of _Package2.zip_ one file stood
 out. It was the only one whose compression ratio was 12% compared to other's. 
