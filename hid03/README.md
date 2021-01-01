@@ -1,4 +1,4 @@
-#Hid 03 / HV20.H3 Hidden in Plain Sight
+# Hid 03 / HV20.H3 Hidden in Plain Sight
 
 
 ## Challenge
