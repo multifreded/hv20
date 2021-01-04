@@ -39,10 +39,15 @@ sequence of the colored beads on the bracelet:
 * `r` means `red`
 * `y` means `yellow`
 
+```sh
+$ printf "gprypgbprgpgbprgbypgbypgbpbypbypgbyprypbyppgbypgypgypbypbypgpgbprgbpbypgbypbypgp" > beads.txt
+```
+
 <!--gprypgbprgpgbprgbypgbypgbpbypbypgbyprypbyppgbypgypgypbypbypgpgbprgbpbypgbypbypgp-->
 ![](color_beads_1.png)
 
-From this point on there are multiple _wrong_ rabbit holes luring.
+
+From this point on there are multiple _wrong_ rabbit holes luring …
 
 #### Wrong rabbit holes
 
@@ -80,7 +85,7 @@ Things start to get better once `p` is assumed a delimiter (as suggested by
 jokker, thx) and then stubbornly holding on to that strategy …
 
 ```sh
-$ echo $color_beads | sed 's/p/_/g'
+$ cat beads.txt | sed 's/p/_/g'
 ```
 
 <!--g_ry_gb_rg_gb_rgby_gby_gb_by_by_gby_ry_by__gby_gy_gy_by_by_g_gb_rgb_by_gby_by_g_-->
@@ -104,7 +109,7 @@ binary digit. Each digit is either present (meaning `1`) or missing (meaning
 * `r` = `2^3` = `8`
 
 ```sh
-$ echo $color_beads | sed 's/p/_/g' \
+$ cat beads.txt | sed 's/p/_/g' \
   | sed 's/r/8/g' | sed 's/g/4/g' | sed 's/b/2/g' | sed 's/y/1/g'
 ```
 
