@@ -29,12 +29,13 @@ Have a great HACKvent,
 
 ## Solution
 
-The PNG image format can save alpha channel information for each pixel. A look
-into the file with Gimp confirmed the hunch: the missing areas in the are
-actually just set to 100% transparency. Reverting the transpanrence revealed 
+The PNG image format can store alpha channel information for each pixel. A look
+into the file with Gimp confirms the hunch: the missing areas in the picture
+are actually just transparency set to 100%. Reverting the transparency reveals
 the flag.
 
-![](day1_1_solution.png)
+|![](day1_1_solution.png)
+|-
 
 --------------------------------------------------------------------------------
 
