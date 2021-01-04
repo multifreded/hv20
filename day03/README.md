@@ -1,3 +1,6 @@
+[← Day 02](../day02/) / [↑ TOC](../README.md) / [→ Day 04](../day04/)
+
+
 # Day 03 / HV20.03 Packed gifts
 
 
@@ -6,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: [@darkstar](https://twitter.com/___darkstar__)
-* Tags:   #crypto
-* Level:  easy
+* Tags:   `#crypto`
+* Level:  Easy
 
 One of the elves has unfortunately added a password to the last presents
 delivery and we cannot open it. The elf has taken a few days off after all the
@@ -22,12 +25,11 @@ We found the following packages:
 
 ## Solution
 
-Both files are [PKZIP]() files (further on called _ZIP files_). Lets take a look
-what's inside:
+Both files are [PKZIP] files (further on called _ZIP files_) …
 
 [PKZIP]: https://en.wikipedia.org/wiki/PKZIP
 
-``` shell
+```sh
 $ unzip -Z Package1.zip
 Archive:  Package1.zip
 Zip file size: 28649 bytes, number of entries: 100
@@ -40,7 +42,7 @@ Zip file size: 28649 bytes, number of entries: 100
 100 files, 17200 bytes uncompressed, 15827 bytes compressed:  8.0%
 ```
 
-``` shell
+```sh
 $ unzip -Z Package2.zip
 Archive:  Package2.zip
 Zip file size: 30070 bytes, number of entries: 101
@@ -57,36 +59,35 @@ Zip file size: 30070 bytes, number of entries: 101
 Both ZIP files seem to contain the same 100 files with the ending `.bin`. The 
 second archive additionally contains a file called `flag.bin`. 
 
-The _Package2.zip_ is encrypted (as indicated by the upper case `B` of the
-fifth field) whereas _Package1.zip_ is unencrypted (as indicated by the lower
-case `b` of the fifth field). The encryption of these ZIP files is per se is
-quite strong so brute-forcing is out of the question.
+_Package2.zip_ is encrypted (indicated by `B` in `Bx`) whereas _Package1.zip_
+is unencrypted (indicated by `b` in `bx`). The encryption of these ZIP files
+per se is quite strong. Brute-forcing the encryption is out of the question.
 
 Since _Package1.zip_ is unencrypted and seems to contain the same files as
-_Package2.zip_, a known plain text attack would be possible. Also there is
-software available for this called [bkcrack]().
+_Package2.zip_, a known plain text attack may be possible and [bkcrack] is the
+right software for that.
 
-The cracking tool is named after the attack's inventors [Eli Biham]()
-and Paul C. Koch. See [_A Known Plaintext Attack on the PKZIP Stream 
+This cracking tool is named after the attack's inventors [Eli Biham] and Paul
+C. Koch. See [_A Known Plaintext Attack on the PKZIP Stream 
 Cipher_][paper] for the white paper about the topic.
 
 [bkcrack]: https://github.com/kimci86/bkcrack
 [Eli Biham]: https://en.wikipedia.org/wiki/Eli_Biham
 [paper]: https://link.springer.com/chapter/10.1007/3-540-60590-8_12
 
-During the attack a software tries to derive the encryption keys by comparing
-the known plain text with its corresponding cipher text.
+During the attack the software tries to derive the encryption keys by
+comparing the known plain text with its corresponding cipher text.
 
 
-### How to use the damn tool
+### Understanding the damn tool
 
-It took me a while to understand how _bkcrack_ is suppossed to be used since
-the documentation was a bit ambiguous. It basically works like this:
+It took a while to understand how to use _bkcrack_. Its documentation is a bit
+ambiguous. It basically works like this:
 
 * The first goal is to get the encryption keys. The second goal is to use the
   keys to extract files from the encrypted ZIP file.
 
-* You need 2 ZIP files:
+* Two ZIP files are required:
 
   1. The encrypted ZIP file.
   2. An unencrypted ZIP file that was made with the same compression mechanism.
@@ -94,14 +95,16 @@ the documentation was a bit ambiguous. It basically works like this:
   There must be at least 1 file in both ZIP files having the **same contents**.
   That file acts as the _known plain text_.
 
-* You need to specifiy the following things to _bkcrack_
+* The cracking program needs the following CLI options:
 
   * `-C <path to the encrypted ZIP file>` 
-  * `-c <known plain text file name>`\
-    This is the _name_ of a file in the encrypted ZIP file.
+  * `-c <known plaintext filename>`
+    This is the _name_ of a file containing the known plaintext in the
+    _encrypted_ ZIP file.
   * `-P <path to the unencrypted ZIP file>`
-  * `-p <known plain text file name>`\
-    This is the _name_ of a file in the unencrypted ZIP file.
+  * `-p <kown plaintext filename>`\
+    This is the _name_ of a file containing the known plaintext in the
+    _**un**encrypted_ ZIP file.
 
   The names of the `-c` and `-p` files can differ but their contents have to be
   the same.
@@ -109,14 +112,14 @@ the documentation was a bit ambiguous. It basically works like this:
 
 ### Using the damn tool
 
-In order to get the names of the file that acts as known plain text, I first
-needed a way to verify that files with the same name actually have the same
-content. Luckily I found an option of unzip(1) that shows [CRC-32]() checksums
-of the files in the ZIP files:
+In order to get the names of the files that act as known plain text, it's 
+necessary to have a way to compare contents without having to decrypt the
+encrypted file. Luckily _unzip(1)_ has an option that shows [CRC-32] checksums
+of a ZIP archive's files even if it is encrypted … 
 
 [CRC-32]: https://en.wikipedia.org/wiki/Cyclic_redundancy_check
 
-``` shell
+```sh
 $ unzip -v Package1.zip 
 Archive:  Package1.zip
  Length   Method    Size  Cmpr    Date    Time   CRC-32   Name
@@ -136,12 +139,11 @@ Archive:  Package2.zip
 […]
 ```
 
-<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
-To much of my suprise did **none** of the files seem to have the same contents.
-I wrote the following shellscript to compare every checksum from the first ZIP
-file with every checksum of the second ZIP file:
+Suprisingly **none** of the files seem to have the same contents. To be sure
+about that, the following shell script compares every checksum from the first
+ZIP file with every checksum of the second ZIP file …
 
-``` bash
+```sh
 #!/bin/bash
 
 for crc in $(unzip -v Package2.zip | grep -Eo ' [0-9a-f]{8} '); do
@@ -154,7 +156,7 @@ for crc in $(unzip -v Package2.zip | grep -Eo ' [0-9a-f]{8} '); do
 done
 ```
 
-Running the script gave:
+Running the script prints …
 
 ``` shell
 $ ./cmp_chksums.sh
@@ -164,9 +166,9 @@ Package2.zip:
      172  Defl:N      159   8% 11-24-2020 09:07 fcd6b08a  0053.bin
 ```
 
-Aw yiss! Onwards to cracking the keys:
+… Aw yiss! Onwards to cracking the keys …
 
-``` shell
+```sh
 $ bkcrack -P Package1.zip -p 0053.bin -C Package2.zip -c 0053.bin
 bkcrack 1.0.0 - 2020-11-11
 Generated 4194304 Z values.
@@ -180,7 +182,7 @@ Keys: 2445b967 cfb14967 dceb769b
 2445b967 cfb14967 dceb769b 
 ```
 
-Great success! How about extracting the juicy _flag.bin_ file ?
+… Great success! How about extracting the juicy _flag.bin_ file ?
 
 ``` shell
 $ bkcrack -C Package2.zip -c flag.bin -k 2445b967 cfb14967 dceb769b -d flag.comp
@@ -188,13 +190,14 @@ bkcrack 1.0.0 - 2020-11-11
 Wrote deciphered text.
 ```
 
-Since _Package2.zip_ is compressed, the extracted _flag.comp_ file is still
-compressed and needs to be _inflated_. There is a python3 script on the bkcrack
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+Since _Package2.zip_ is compressed, the extracted _flag.comp_ file is also still
+compressed and needs to be _inflated_. There is a python script on the [bkcrack]
 github site that does the inflation\: [inflate.py][inflate]
 
 [inflate]: https://github.com/kimci86/bkcrack/blob/master/tools/inflate.py
 
-``` shell
+```sh
 $ ./inflate.py < flag.comp > flag.bin
 $ xxd flag.bin
 00000000: 5346 5979 4d48 7461 6158 4244 636e 6c77  SFYyMHtaaXBDcnlw
@@ -210,11 +213,12 @@ $ xxd flag.bin
 000000a0: 5a57 4e79 6558 4230 6651 6f3d            ZWNyeXB0fQo=
 ```
 
-A look inside flag.bin revealed that the contents were [base64] encoded.
-Decoding the contents yields the flag:
+A look inside flag.bin revealed that the contents are [base64] encoded.
+Decoding the contents yields the flag …
+
 [base64]: https://en.wikipedia.org/wiki/Base64
 
-``` shell
+```sh
 $ base64 -D flag.bin
 HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}                 HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}
 ```
@@ -223,3 +227,4 @@ HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}                 HV20{Zip
 
 Flag: `HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}`
 
+[← Day 02](../day02/) / [↑ TOC](../README.md) / [→ Day 04](../day04/)
