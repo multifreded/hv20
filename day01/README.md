@@ -33,8 +33,7 @@ The PNG image format can store alpha channel information for each pixel. A look
 into the file with Gimp confirms the hunch: the missing areas in the picture
 have transparency set to 100%. Reverting the transparency reveals the flag.
 
-|![](day1_1_solution.png)
-|-
+![](day1_1_solution.png)
 
 --------------------------------------------------------------------------------
 
