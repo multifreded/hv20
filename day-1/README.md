@@ -1,3 +1,6 @@
+[↑ TOC](../README.md) / [→ Day 01](../day01/)
+
+
 # Day -1 / HV20.(-1) Twelve steps of christmas
 
 
@@ -55,6 +58,4 @@ The flag is obtained by scanning the QR code.
 
 Flag: `HV20{34t-sl33p-haxx-rep34t}`
 
---------------------------------------------------------------------------------
-
-[↑ Intro](../README.md) [→ Day 01](../day01/)
+[↑ TOC](../README.md) / [→ Day 01](../day01/)
