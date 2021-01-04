@@ -76,8 +76,8 @@ From this point on there are multiple _wrong_ rabbit holes luring.
 #### Getting out by going deeper
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
-Things start to go in the right direction once `p` is assumed a delimiter (as
-suggested by jokker, thx) …
+Things start to get better once `p` is assumed a delimiter (as suggested by
+jokker, thx) and then stubbornly holding on to that strategy …
 
 ```sh
 $ echo $color_beads | sed 's/p/_/g'
