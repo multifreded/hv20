@@ -1,3 +1,6 @@
+[← Day -1](../day-1/) / [↑ TOC](../README.md) / [→ Day 01](../day02/)
+
+
 # Day 1 / HV20.01 Happy HACKvent 2020
 
 
@@ -37,3 +40,4 @@ the flag.
 
 Flag: `HV20{7vxFXB-ItHnqf-PuGNqZ}`
 
+[← Day -1](../day-1/) / [↑ TOC](../README.md) / [→ Day 01](../day02/)
