@@ -21,31 +21,34 @@ one quick response.
 
 ## Solution
 
-It's written right there \(\^-\^\)
+It's written right there `(^_^)`
 
 > three casear salads
 
-meaning do a [Caesar Cipher]() shift by 3 on the message text. The leading
-sentence in the message is readable after that.
+… means [Caesar Cipher] shifting the message text by 3. Afterwards the leading
+sentence is readable.
 
 [Caesar Cipher]: https://en.wikipedia.org/wiki/Caesar_cipher
 
 > two to (the) six basic arguments,
 
-i.e. 2^6 = 64, together with the word _basic_ meaning do a [base64]() decoding.
-You than have to notice that the resulting binary is a [PNG]() image file.
+… i.e. `2^6 = 64`, together with the word _basic_ means decoding with [base64].
+The resulting binary is a [PNG] image file.
 
 [PNG]: https://en.wikipedia.org/wiki/Portable_Network_Graphics
 [base64]: https://en.wikipedia.org/wiki/Base64
-[QR code]: https://en.wikipedia.org/wiki/QR_code
 
 > one quick response
 
-meaning scan the [QR code]() in the file. But its just a white square ?! Well it
-not _absolutly_ white. You have to first stretch out the grey levels of the
-image (with Gimp) to make the QR code visible:
+… means [QR code]. But its just a white square ?! Well it not _absolutly_ white.
+Streching out the grey levels (with Gimp) makes the QR code visible …
 
-![](decoded.png) -> ![](adjusted_levels.png)
+[QR code]: https://en.wikipedia.org/wiki/QR_code
+
+<kbd>![](decoded.png)</kbd>
+
+|![](adjusted_levels.png)|
+
 
 The flag is obtained by scanning the QR code.
 
