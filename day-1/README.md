@@ -55,3 +55,6 @@ The flag is obtained by scanning the QR code.
 
 Flag: `HV20{34t-sl33p-haxx-rep34t}`
 
+--------------------------------------------------------------------------------
+
+[↑ Intro](../) [→ Day 01](../day01/)
