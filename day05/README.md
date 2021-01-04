@@ -114,7 +114,7 @@ trying everything imaginable in this regard, nothing was gained in the end.
 [Codons from dcode.fr]: https://www.dcode.fr/codons-genetic-code
 
 Some web search foo brings up this [article]. It describes a DNA related
-encryption scheme. It basicly works like [OTP] with extra steps to involve DNA
+encryption scheme. It basically works like [OTP] with extra steps to involve DNA
 sequences …
 
 [article]: https://www.geeksforgeeks.org/dna-cryptography/
@@ -126,7 +126,7 @@ sequences …
 2. XOR the two byte sequences thus producing the cipher byte sequence.
 
 3. For the cipher text and the key, replace each bit pair with one of the 4 DNA
-   building blocks (Adenine, Thymine, Cytosine and Guanin) with the following
+   building blocks (Adenine, Thymine, Cytosine and Guanine) with the following
    encoding scheme:
 
    * `00` becomes `A`
