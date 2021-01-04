@@ -6,8 +6,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: Bread ([@nonsxd](https://twitter.com/nonsxd))
-* Tags:   #fun
-* Level:  easy
+* Tags:   `#fun`
+* Level:  Easy
 
 On the third day of christmas my true love sent to me...
 
@@ -47,7 +47,7 @@ white. Streching out the grey levels (with Gimp) makes the QR code visible …
 
 | Decoded PNG image | Same image with adjusted levels |
 |-------------------|---------------------------------|
-|![](decoded.png)   |![](adjusted_levels.png)         |
+| ![](decoded.png)  | ![](adjusted_levels.png)        |
 
 The flag is obtained by scanning the QR code.
 
