@@ -48,6 +48,14 @@ Streching out the grey levels (with Gimp) makes the QR code visible …
 <kbd>![](decoded.png)</kbd>
 
 |![](adjusted_levels.png)|
+|-
+
+[label text]
+|-
+![](adjusted_levels.png)
+
+|![](decoded.png)|![](adjusted_levels.png)
+|-|-
 
 
 The flag is obtained by scanning the QR code.
