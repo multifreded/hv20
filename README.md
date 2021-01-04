@@ -1,4 +1,4 @@
-# hv20 - multifred
+# HV20 write-up - multifred
 
 This is the semi official write-up for hackvent 2020 from multifred.
 
