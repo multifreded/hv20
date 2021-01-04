@@ -1,3 +1,6 @@
+[← Day 01](../day01/) / [↑ TOC](../README.md) / [→ Day 03](../day03/)
+
+
 # Day 2 / HV20.02 Chinese Animals
 
 
@@ -6,8 +9,8 @@
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: The Compiler ([@the_compiler](https://twitter.com/the_compiler)
                          <https://bruhin.software/>)
-* Tags:   #fun
-* Level:  easy
+* Tags:   `#fun`
+* Level:  Easy
 
 I've received this note from a friend, who is a Chinese CTF player:
 
@@ -27,34 +30,41 @@ install WeChat on my phone.
 
 ## Solution
 
-The topic of the challenge is wrong text encoding. Software sometimes does not
-handle text encoding correctly which (usually) results in obviously mangled 
-text presentation. Sometimes though wrongly encoded text looks OK, even more so
-to someone whom doesn't know the language – like me and Chinese.
+The challenge's topic is text encoding gone wrong. Usually wrong text encoding
+results in obviously mangled text output. Sometimes though wrongly encoded text
+seems to look OK, even more so in the eyes of someone who doesn't know the
+language of the displayed glyphs – like multifred and Chinese symbols `:-)`.
 
-The text from the CTF player can be split up in:
+The text from the CTF player can be split up in …
 
 >   恭喜！收旗爲：
 
-which means something like "Congratulations! Here is the flag:",
+… which means something like "Congratulations! Here is the flag:",
 
 >   ＨＶ２０｛
 
-which is naturally the beginning of a flag but for some confusing reason written
-in full width glyps (which makes no sense IMO), 
+… which is the well known beginning of a flag. But for some confusing reason
+it is written in [full width glyphs] \(which makes no sense IMO),
+
+[full width glyphs]: https://en.wikipedia.org/wiki/Halfwidth_and_fullwidth_forms
 
 >   獭慬氭敬敧慮琭扵瑴敲晬礭汯癥猭杲慳猭浵搭桯牳
 
-which doesn't mean anything but is the wrongly encoded part of the flag and
+… which doesn't mean anything but instead is a part of the flag with wrong text
+encoding. And finally …
 
 >   ｅ｝
 
-which is the end of the flag, again in full width glyphs.
+… which is the end of the flag, again in [full width glyphs].
 
-I wrote the following shell script to try out all available text encodings to
-find the right one:
 
-``` bash
+### Trying out different encodings
+
+The following shell script goes through all available text encodings and tries
+to decode a given text string. Using it let's you discover a fitting encoding
+scheme …
+
+``` sh
 #!/bin/bash 
 
 if [ -z "$1" ]; then >&2 echo "Missing text string."; exit 1; fi
@@ -70,9 +80,9 @@ for enc in $(iconv -l); do
 done
 ```
 
-Running the script with the supposedly wrongly encoded string:
+Running the script with the supposedly wrongly encoded string …
 
-``` shell
+``` sh
 $ ./try_all_the_encodings.sh "獭慬氭敬敧慮琭扵瑴敲晬礭汯癥猭杲慳猭浵搭桯牳"
 Encoding: ANSI_X3.4-1968
 ERROR
@@ -127,14 +137,15 @@ small-elegant-butterfly-loves-grass-mud-hors
 …
 ```
 
-The string is UCS-2 (or UTF-16BE or similar) encoded text that is wrongly
-decoded as UTF-8. It's a rare example in which each UCS-2 byte sequence is a
-_valid_ UTF-8 byte sequence _as well_. That's why there are no non printable 
-characters.
+The string is _UCS-2_ (or _UTF-16BE_ or similar) encoded text that is wrongly
+decoded as UTF-8. The given string has a pretty nifty property: It's a byte
+sequence that gives sensible glyphs in _UCS-2_ and _UTF-8_ encoding at the same
+time. That's why there are no non printable characters.
 
-The flag can now be pieced together manually.
+The flag can be pieced together manually now.
 
 --------------------------------------------------------------------------------
 
 Flag: `HV20{small-elegant-butterfly-loves-grass-mud-horse}`
 
+[← Day 01](../day01/) / [↑ TOC](../README.md) / [→ Day 03](../day03/)
