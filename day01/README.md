@@ -9,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: mij-the-dj ([@janicmikes](https://twitter.com/janicmikes)
-* Tags:   #forensic
-* Level:  easy
+* Tags:   `#forensic`
+* Level:  Easy
 
 Welcome to this year's HACKvent.
 
