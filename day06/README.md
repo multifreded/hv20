@@ -72,7 +72,7 @@ of everything that might have an influence on the results.
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 
-* Do the _Scrambles_ have to be applied or undone ?\
+* Do the Scrambles have to be **applied** or **undone** ?\
   The gut feeling is _undo_.
 
 * Was **just one line** of scramble movements applied **or all of them** ?\
