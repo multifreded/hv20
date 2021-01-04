@@ -40,23 +40,14 @@ The resulting binary is a [PNG] image file.
 
 > one quick response
 
-… means [QR code]. But its just a white square ?! Well it not _absolutly_ white.
-Streching out the grey levels (with Gimp) makes the QR code visible …
+… means [QR code]. But it's just a white square ?! Well it not _absolutly_
+white. Streching out the grey levels (with Gimp) makes the QR code visible …
 
 [QR code]: https://en.wikipedia.org/wiki/QR_code
 
-<kbd>![](decoded.png)</kbd>
-
-|![](adjusted_levels.png)|
-|-
-
-[label text]
-|-
-![](adjusted_levels.png)
-
-|![](decoded.png)|![](adjusted_levels.png)
-|-|-
-
+| Decoded PNG image | Same image with adjusted levels |
+|-------------------|---------------------------------|
+|![](decoded.png)   |![](adjusted_levels.png)         |
 
 The flag is obtained by scanning the QR code.
 
