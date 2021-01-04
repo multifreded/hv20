@@ -64,7 +64,7 @@ The following shell script goes through all available text encodings and tries
 to decode a given text string. Using it let's you discover a fitting encoding
 scheme …
 
-``` sh
+```sh
 #!/bin/bash 
 
 if [ -z "$1" ]; then >&2 echo "Missing text string."; exit 1; fi
@@ -82,7 +82,7 @@ done
 
 Running the script with the supposedly wrongly encoded string …
 
-``` sh
+```sh
 $ ./try_all_the_encodings.sh "獭慬氭敬敧慮琭扵瑴敲晬礭汯癥猭杲慳猭浵搭桯牳"
 Encoding: ANSI_X3.4-1968
 ERROR
