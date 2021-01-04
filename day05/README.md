@@ -1,3 +1,6 @@
+[← Day 04](../day04/) / [↑ TOC](../README.md) / [→ Day 06](../day06/)
+
+
 # Day 05 / HV20.05 Image DNA
 
 
@@ -6,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: blaknyte0
-* Tags:   #crypto #forensic
-* Level:  easy
+* Tags:   `#crypto` `#forensic`
+* Level:  Easy
 
 Santa has thousands of Christmas balls in stock. They all look the same, but he
 can still tell them apart. Can you see the difference?
@@ -18,25 +21,25 @@ can still tell them apart. Can you see the difference?
 
 ## Solution
 
-Reading the title _Image DNA_ I immediately thought of a hashing algorithm for
-visual similarity in pictures like [PhotoDNA](). Aaaaand that was a red herring.
+Reading the title _Image DNA_ an immediate thought is that of a hashing
+algorithm for visual similarity in pictures like [PhotoDNA]. Aaaaand that's a
+red herring `><((°>`.
 
 [PhotoDNA]: https://en.wikipedia.org/wiki/PhotoDNA
 
-Calculating the visual difference between the two pictures gave this:
+Calculating the visual difference between the two pictures gives …
 
 ![](hv_ball_diff.jpg)
 
 Although it looks pretty glitchy hacky interesting, it doesn't help at all.
+Doing a binary diff shows that the two files are almost completely different.
 
-Doing a binary diff showed that the two files were almost completely diffrent.
+Running _binwalk_ on the second image brings up a ZIP file containing a text
+file with the name `A`. Inside the `A`-file is nothing but the text `00`. 
 
-Running _binwalk_ on the second image brought up a ZIP file containing a text
-file with the name `A`. Inside the `A`-file was only the Text `00`. 
+_Ok, then ?! `(o_O)`_
 
-_Ok, then ?!_
-
-``` shell
+```sh
 $ binwalk -e hv_ball_2.jpg
 
 DECIMAL       HEXADECIMAL     DESCRIPTION
@@ -55,11 +58,12 @@ $ cat A
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 
-Looking through the image files with xxd(1) revealed some interesting codes. 
-Both files contained character sequences that can be identified as 
-DNA-sequences.
+Looking through the image files with xxd(1) reveals some interesting codes. Both
+files contain character sequences that can be identified as [DNA sequences].
 
-``` shell
+[DNA sequences]: https://en.wikipedia.org/wiki/Nucleic_acid_sequence
+
+```sh
 $ xxd hv_ball_1.jpg
 […]
 000020a0: 0a28 a280 0a28 a280 0a28 a280 0a28 a280  .(...(...(...(..
@@ -103,23 +107,23 @@ $ xxd hv_ball_2.jpg
 ``` 
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
-I tried multiple things a with the DNA-Sequences. For a while I firmly believed
-that it had something to do with [Codons from dcode.fr](). Despite trying
-everything imaginable in this regard, there was nothing to be gained in the end.
+Multiple things were tried out a with the DNA-Sequences. For a while there was 
+a firm believe that it had something to do with [Codons from dcode.fr]. Despite
+trying everything imaginable in this regard, nothing was gained in the end.
 
 [Codons from dcode.fr]: https://www.dcode.fr/codons-genetic-code
 
-After some web searching an [article]() was found that described what a very simple
-encryption scheme involving DNA sequences.
+Some web search foo brings up this [article]. It describes a DNA related
+encryption scheme. It basicly works like [OTP] with extra steps to involve DNA
+sequences …
 
 [article]: https://www.geeksforgeeks.org/dna-cryptography/
-
-It basicly works like OTP with extra steps to involve DNA-Sequences:
+[OTP]: https://en.wikipedia.org/wiki/One-time_pad
 
 1. Write a message and choose an equally long sequence of random bytes.
-   The message is the plain text and the random bytes the key.
+   The message is the plain text and the random bytes are the key.
 
-2. XOR the two byte sequences. Thus producing the cipher byte sequence.
+2. XOR the two byte sequences thus producing the cipher byte sequence.
 
 3. For the cipher text and the key, replace each bit pair with one of the 4 DNA
    building blocks (Adenine, Thymine, Cytosine and Guanin) with the following
@@ -130,12 +134,13 @@ It basicly works like OTP with extra steps to involve DNA-Sequences:
    * `10` becomes `C`
    * `11` becomes `G`
 
-4. Your done
+4. You're done.
 
 
-The following script was produced to do the the above in reverse order:
+To decrypt the found DNA sequences the following script does the above scheme
+in reverse order …
 
-``` python
+```python
 def bitstring_to_bytes(s):
     return int(s, 2).to_bytes(len(s) // 8, byteorder='big')
 
@@ -182,9 +187,9 @@ print()
 print(byte_xor(dna1Bytes, dna2Bytes))
 ```
 
-Running the script gave:
+Running the script …
 
-``` shell
+```sh
 $ python3 dna_script.py
 b'HV20{s4m3s4m3bu7diff3r3nt}'
 ```
@@ -193,3 +198,4 @@ b'HV20{s4m3s4m3bu7diff3r3nt}'
 
 Flag: `HV20{s4m3s4m3bu7diff3r3nt}`
 
+[← Day 04](../day04/) / [↑ TOC](../README.md) / [→ Day 06](../day06/)
