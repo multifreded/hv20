@@ -102,7 +102,7 @@ ambiguous. It basically works like this:
     This is the _name_ of a file containing the known plaintext in the
     _encrypted_ ZIP file.
   * `-P <path to the unencrypted ZIP file>`
-  * `-p <kown plaintext filename>`\
+  * `-p <known plaintext filename>`\
     This is the _name_ of a file containing the known plaintext in the
     _**un**encrypted_ ZIP file.
 
@@ -139,7 +139,7 @@ Archive:  Package2.zip
 […]
 ```
 
-Suprisingly **none** of the files seem to have the same contents. To be sure
+Surprisingly **none** of the files seem to have the same contents. To be sure
 about that, the following shell script compares every checksum from the first
 ZIP file with every checksum of the second ZIP file …
 
@@ -158,7 +158,7 @@ done
 
 Running the script prints …
 
-``` shell
+```sh
 $ ./cmp_chksums.sh
 Package1.zip:
      172  Defl:N      159   8% 11-24-2020 09:07 fcd6b08a  0053.bin
@@ -213,7 +213,7 @@ $ xxd flag.bin
 000000a0: 5a57 4e79 6558 4230 6651 6f3d            ZWNyeXB0fQo=
 ```
 
-A look inside flag.bin revealed that the contents are [base64] encoded.
+A look inside flag.bin reveals that the contents are [base64] encoded.
 Decoding the contents yields the flag …
 
 [base64]: https://en.wikipedia.org/wiki/Base64
