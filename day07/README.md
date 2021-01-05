@@ -1,3 +1,6 @@
+[← Day 06](../day06/) / [↑ TOC](../README.md) / [→ Day 08](../day08/)
+
+
 # Day 07 / HV20.07 Bad morals
 
 
@@ -5,7 +8,9 @@
 ## Challenge
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
-by kuyaya
+* Author: kuyaya
+* Tags:   `#programming` `#reverse-engineering`
+* Level:  Medium
 
 One of the elves recently took a programming 101 course. Trying to be helpful,
 he implemented a program for Santa to generate all the flags for him for this
@@ -20,22 +25,22 @@ Can you help him get the flag back?
 
 ## Solution
 
-The executable turned out to be a x86 .Net program:
+The executable _BadMorals.exe_ is a _.Net_ program …
 
-``` shell
+```sh
 $ file BadMorals.exe 
 BadMorals.exe: PE32 executable (console) Intel 80386 Mono/.Net assembly, for MS 
 Windows
 ```
 
-The good thing about .Net code is that it's bytecode and bytecode can easily be
-decompiled. This was done with the [Jetbrains doPeek]() software.
+The good thing about _.Net_ code is that it's [Bytecode] and Bytecode can easily
+be decompiled/decomposed, for example with [Jetbrains doPeek].
 
+[Bytecode]: https://en.wikipedia.org/wiki/Bytecode
 [Jetbrains doPeek]: https://www.jetbrains.com/decompiler/
 
-Apart from a handful tricky spots reading the code was pretty straight forward.
-
-Here are the pseudocode notes that lead to uncover the flag eventually:
+Reading the code was pretty straight forward apart from a handful of tricky
+spots. Here are the pseudo code notes that lead to uncover the flag …
 
 ```
 First input
@@ -97,3 +102,4 @@ SFYyMHtyMz8zcnMzXzNuZzFuMzNyMW5nX200ZDNfMzRzeX0=
 
 Flag: `HV20{r3?3rs3_3ng1n33r1ng_m4d3_34sy}`
 
+[← Day 06](../day06/) / [↑ TOC](../README.md) / [→ Day 08](../day08/)
