@@ -34,7 +34,7 @@ was too difficult for the Easy category.]_
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 This challenge is hairier than it appears. The first step is to write down the
-sequence of the bracelet's colored beads
+sequence of the bracelet's colored beads …
 
 * `b` means `blue`
 * `g` means `green`
