@@ -1,3 +1,6 @@
+[← Day 11](../day11/) / [↑ TOC](../README.md) / [→ Day 13](../day13/)
+
+
 # Day 12 / HV20.12 Wiener waltz
 
 
@@ -6,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: SmartSmurf
-* Tags:   #crypto
-* Level:  medium
+* Tags:   `#crypto`
+* Level:  Medium
 
 
 ### Introduction
@@ -36,18 +39,19 @@ Don't waste time with the attempt to brute-force the private key
 
 ## Solution
 
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 The problem with this crypto setup is that RSA becomes vulnerable to the
-[Wiener attack]() when such extreme values are chosen.
+[Wiener attack] when such extreme values are chosen.
 
 [Wiener attack]: https://en.wikipedia.org/wiki/Wiener's_attack#Small_private_key
 
-To launch a Wiener attack all that is needed is are the public key values
-`e` and `n`.
+All that is needed to launch a Wiener attack are the public key values `e` and
+`n`.
 
-In the PCAP file the packet 1952 containes such a public key …
+In the PCAP file the packet 1952 contains such a public key …
 
 ```
-Paket 1952:
+Packet 1952:
 
 n: "dbn25TSjDhUge4L68AYooIqwo0HC2mIYxK/ICnc+8/0fZi1CHo/QwiPCcHM94jYdfj3PIQFTri9j/za3oO+3gVK39bj2O9OekGPG2M1GtN0Sp+ltellLl1oV+TBpgGyDt8vcCAR1B6shOJbjPAFqL8iTaW1C4KyGDVQhQrfkXtAdYv3ZaHcV8tC4ztgA4euP9o1q+kZux0fTv31kJSE7K1iJDpGfy1HiJ5gOX5T9fEyzSR0kA3sk3a35qTuUU1OWkH5MqysLVKZXiGcStNErlaggvJb6oKkx1dr9nYbqFxaQHev0EFX4EVfPqQzEzesa9ZAZTtxbwgcV9ZmTp25MZg=="
 
@@ -67,12 +71,10 @@ e: "S/0OzzzDRdsps+I85tNi4d1i3d0Eu8pimcP5SBaqTeBzcADturDYHk1QuoqdTtwX9XY1Wii6AnyS
 sessionId: "RmERqOnbsA/oua67sID4Eg=="
 ```
 
-What's a bit of a problem is on the one hand the special `mpz_export` notation 
-that first has to be sorted out and on the other the fact that the message to be 
-decrypted is spread over 4 network packets and first needs to be put together
-correctly. 
-
-Individual message packets:
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+What's a bit of a problem on one hand is the special `mpz_export` format that 
+has to be sorted out. On the other hand the fact that the encrypted message is
+spread over 4 network packets and first needs to be put together correctly …
 
 ```
 Packet 1956
@@ -104,24 +106,31 @@ data:      "vzwheJ3akhr1LJTFzmFxdhBgViykRpUldFyU6qTu5cjxd1fOM3xkn49GYEM+2cUVk22T
 format:    "plain"
 ```
 
-Combined single encrypted message:
+The data from these packets are combined into a complete encrypted message …
 
 ```
-block 0: 7c 97 52 22 80 bd ab 3d bb a5 65 69 91 74 c8 74 93 ee 47 d1 62 75 f9 2a d4 82 4f 45 07 67 4c cd 97 9a 1a dc 65 3a 32 72 81 28 a8 9c bd d4 1c 62 91 15 d0 b6 2a 05 29 b4 bb 12 e9 fb a1 54 b4 cb
+block 0:
+7c 97 52 22 80 bd ab 3d bb a5 65 69 91 74 c8 74 93 ee 47 d1 62 75 f9 2a d4 82 4f 45 07 67 4c cd 97 9a 1a dc 65 3a 32 72 81 28 a8 9c bd d4 1c 62 91 15 d0 b6 2a 05 29 b4 bb 12 e9 fb a1 54 b4 cb
 
-block 1: bf 3c 21 78 9d da 92 1a f5 2c 94 c5 ce 61 71 76 10 60 56 2c a4 46 95 25 74 5c 94 ea a4 ee e5 c8 f1 77 57 ce 33 7c 64 9f 8f 46 60 43 3e d9 c5 15 93 6d 93 bb 92 2c 60 36 f3 27 8f f3 48 37 f3 28
+block 1:
+bf 3c 21 78 9d da 92 1a f5 2c 94 c5 ce 61 71 76 10 60 56 2c a4 46 95 25 74 5c 94 ea a4 ee e5 c8 f1 77 57 ce 33 7c 64 9f 8f 46 60 43 3e d9 c5 15 93 6d 93 bb 92 2c 60 36 f3 27 8f f3 48 37 f3 28
 
-block 2: 7d 16 14 c9 81 08 34 0e 62 fe 10 ac 12 d2 a4 68 29 f6 1e c0 a9 f7 cf a4 b2 2f fc 97 0d 47 35 33 fe 28 5c a3 c2 1d a0 64 7f a7 93 32 f0 23 e7 dd 24 56 c2 37 98 b0 14 55 e8 f8 ec e0 70 43 05 ab
+block 2:
+7d 16 14 c9 81 08 34 0e 62 fe 10 ac 12 d2 a4 68 29 f6 1e c0 a9 f7 cf a4 b2 2f fc 97 0d 47 35 33 fe 28 5c a3 c2 1d a0 64 7f a7 93 32 f0 23 e7 dd 24 56 c2 37 98 b0 14 55 e8 f8 ec e0 70 43 05 ab
 
-block 3: fb 2d 9f 32 c1 34 bb 61 7a 6e 9d 95 3f 6e c4 68 b3 7a f2 e8 f6 09 79 bd 27 55 95 17 22 e0 a9 e4 2b ca 1e 63 33 2a f2 2f 0b 89 36 8f e9 cf 8b 57 cd 1a 95 e1 af 20 33 42 46 76 3b c5 f3 89 9f fb
+block 3:
+fb 2d 9f 32 c1 34 bb 61 7a 6e 9d 95 3f 6e c4 68 b3 7a f2 e8 f6 09 79 bd 27 55 95 17 22 e0 a9 e4 2b ca 1e 63 33 2a f2 2f 0b 89 36 8f e9 cf 8b 57 cd 1a 95 e1 af 20 33 42 46 76 3b c5 f3 89 9f fb
 
-Combined: 7c 97 52 22 80 bd ab 3d bb a5 65 69 91 74 c8 74 93 ee 47 d1 62 75 f9 2a d4 82 4f 45 07 67 4c cd 97 9a 1a dc 65 3a 32 72 81 28 a8 9c bd d4 1c 62 91 15 d0 b6 2a 05 29 b4 bb 12 e9 fb a1 54 b4 cb bf 3c 21 78 9d da 92 1a f5 2c 94 c5 ce 61 71 76 10 60 56 2c a4 46 95 25 74 5c 94 ea a4 ee e5 c8 f1 77 57 ce 33 7c 64 9f 8f 46 60 43 3e d9 c5 15 93 6d 93 bb 92 2c 60 36 f3 27 8f f3 48 37 f3 28 7d 16 14 c9 81 08 34 0e 62 fe 10 ac 12 d2 a4 68 29 f6 1e c0 a9 f7 cf a4 b2 2f fc 97 0d 47 35 33 fe 28 5c a3 c2 1d a0 64 7f a7 93 32 f0 23 e7 dd 24 56 c2 37 98 b0 14 55 e8 f8 ec e0 70 43 05 ab fb 2d 9f 32 c1 34 bb 61 7a 6e 9d 95 3f 6e c4 68 b3 7a f2 e8 f6 09 79 bd 27 55 95 17 22 e0 a9 e4 2b ca 1e 63 33 2a f2 2f 0b 89 36 8f e9 cf 8b 57 cd 1a 95 e1 af 20 33 42 46 76 3b c5 f3 89 9f fb
+combined:
+7c 97 52 22 80 bd ab 3d bb a5 65 69 91 74 c8 74 93 ee 47 d1 62 75 f9 2a d4 82 4f 45 07 67 4c cd 97 9a 1a dc 65 3a 32 72 81 28 a8 9c bd d4 1c 62 91 15 d0 b6 2a 05 29 b4 bb 12 e9 fb a1 54 b4 cb bf 3c 21 78 9d da 92 1a f5 2c 94 c5 ce 61 71 76 10 60 56 2c a4 46 95 25 74 5c 94 ea a4 ee e5 c8 f1 77 57 ce 33 7c 64 9f 8f 46 60 43 3e d9 c5 15 93 6d 93 bb 92 2c 60 36 f3 27 8f f3 48 37 f3 28 7d 16 14 c9 81 08 34 0e 62 fe 10 ac 12 d2 a4 68 29 f6 1e c0 a9 f7 cf a4 b2 2f fc 97 0d 47 35 33 fe 28 5c a3 c2 1d a0 64 7f a7 93 32 f0 23 e7 dd 24 56 c2 37 98 b0 14 55 e8 f8 ec e0 70 43 05 ab fb 2d 9f 32 c1 34 bb 61 7a 6e 9d 95 3f 6e c4 68 b3 7a f2 e8 f6 09 79 bd 27 55 95 17 22 e0 a9 e4 2b ca 1e 63 33 2a f2 2f 0b 89 36 8f e9 cf 8b 57 cd 1a 95 e1 af 20 33 42 46 76 3b c5 f3 89 9f fb
 ```
 
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 After all theses intricacies have been sorted out, the actual Wiener attack can
-be executed. This is done with the following python script that already contains
-all the sampled key and cipher text data. The message is decrypted in a
-"mathematical" way. So the result has to be handled further more.
+be executed. This is done with the following python script. The individual key
+and message pieces are integrated into the script. The message is decrypted in a
+"mathematical" way i.e. `m = (c^d) mod n`. Therefore the result is just one long
+decimal value and has to be handled further more …
 
 ```python
 import owiener
@@ -193,7 +202,7 @@ msg: 0x10000000000000000000000000000000d596f75206d616465206974212048657265206973
 ```
 
 Converting the message value into the actual message is most easily done with
-[Cyberchef]()\:
+[Cyberchef] …
 
 [Cyberchef]: https://gchq.github.io/CyberChef/#recipe=From_Hex('None')&input=MTAgMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwZDU5NmY3NTIwNmQ2MTY0NjUyMDY5NzQyMTIwNDg2NTcyNjUyMDY5NzMyMDc5NmY3NTcyMjA2NjZjNjE2NzNhMjA0ODU2MzIzMDdiMzU2ODZmNzIzNzVmNTA3MjY5NzYzMzc4NzA1ZjYxMzE2ZTM3NWY2ZTMwNWYzNTZkNjE3MjM3N2QwZDBkNDc2ZjZmNjQyMDZjNzU2MzZiMjA2NjZmNzIyMDQ4NjE2MzZiNzY2NTZlNzQyYzIwNmQ2NTcyNzI3OTIwNTgyZDZkNjE3MzIwNjE2ZTY0MjA2MTZjNmMyMDc0Njg2NTIwNjI2NTczNzQyMDY2NmY3MjIwMzIzMDMyMzEyYzIwNjc3MjY1NjU3NDdhMjA1MzZkNjE3Mjc0NTM2ZDc1NzI2NjAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDA
 
@@ -209,3 +218,4 @@ Good luck for Hackvent, merry X-mas and all the best for 2021, greetz SmartSmurf
 
 Flag: `HV20{5hor7_Priv3xp_a1n7_n0_5mar7}`
 
+[← Day 11](../day11/) / [↑ TOC](../README.md) / [→ Day 13](../day13/)
