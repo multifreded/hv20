@@ -1,8 +1,0 @@
-(set-option :produce-model 1)
-(set-logic QF_UF)
-(declare-fun b () Bool)
-(declare-fun c () Bool)
-(assert (= b c ))
-(assert (not b))
-(check-sat)
-(get-value (b c))

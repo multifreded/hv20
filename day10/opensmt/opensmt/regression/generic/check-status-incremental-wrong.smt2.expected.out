@@ -1,5 +1,0 @@
-sat
-unsat
-sat
-unsat
-(error "check status which says sat")

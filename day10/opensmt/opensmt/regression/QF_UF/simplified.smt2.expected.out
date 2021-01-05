@@ -1,6 +1,0 @@
-(error "No such symbol ?v_52: Unknown symbol `?v_52'")
-
-(error "assertion returns an unknown sort")
-
-sat
-(error "check status which says unsat")

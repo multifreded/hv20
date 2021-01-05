@@ -1,5 +1,0 @@
-(set-logic QF_LRA)
-(declare-fun v () Real)
-(assert (= 0.0 (+ v v)))
-(check-sat)
-(exit)

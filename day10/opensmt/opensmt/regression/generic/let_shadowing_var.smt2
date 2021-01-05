@@ -1,5 +1,0 @@
-(set-logic QF_LRA)
-(declare-fun x () Real)
-(assert (>= x 0))
-(assert (let ((x (< x 0))) x))
-(check-sat)
