@@ -46,7 +46,7 @@ purposes.
 
 After that the [NetworkX] software is used to generate all cliques and identify
 those cliques that contain the children from _Santa's reminder_ in the `col`
-file.
+file …
 
 ```
 c -------------------------------- 
@@ -64,7 +64,7 @@ e 42 29
 [NetworkX]: https://en.wikipedia.org/wiki/NetworkX
 
 The individual node count of these cliques can then be interpreted as byte
-values of the flag.
+values of the flag …
 
 ```sh
 $ cat cliques_max.txt | sed "s/'[0-9]*'/X/g" | sed 's/[^X]//g' | while read -r line; do echo "$(echo "$line" | wc -c | xargs) - 1 " | bc; done | xxd -p | sed 's/\(..\)/\1/g' | sed 's/0a/20/g' | xxd -p -r
