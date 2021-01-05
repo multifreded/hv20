@@ -46,9 +46,7 @@ The problem with this crypto setup is that RSA becomes vulnerable to the
 [Wiener attack]: https://en.wikipedia.org/wiki/Wiener's_attack#Small_private_key
 
 All that is needed to launch a Wiener attack are the public key values `e` and
-`n`.
-
-In the PCAP file the packet 1952 contains such a public key …
+`n`. Packet 1952 in the PCAP file contains such a public key …
 
 ```
 Packet 1952:
@@ -73,8 +71,8 @@ sessionId: "RmERqOnbsA/oua67sID4Eg=="
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 What's a bit of a problem on one hand is the special `mpz_export` format that 
-has to be sorted out. On the other hand the fact that the encrypted message is
-spread over 4 network packets and first needs to be put together correctly …
+has to be sorted out. On the other hand the encrypted message is spread over 4
+network packets and first needs to be put together correctly …
 
 ```
 Packet 1956
@@ -106,7 +104,7 @@ data:      "vzwheJ3akhr1LJTFzmFxdhBgViykRpUldFyU6qTu5cjxd1fOM3xkn49GYEM+2cUVk22T
 format:    "plain"
 ```
 
-The data from these packets are combined into a complete encrypted message …
+… the data from these packets are combined into a complete encrypted message …
 
 ```
 block 0:
