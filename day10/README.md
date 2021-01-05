@@ -1,3 +1,6 @@
+[← Day 09](../day09/) / [↑ TOC](../README.md) / [→ Day 11](../day11/)
+
+
 # Day 10 / HV20.10 Be patient with the adjacent
 
 
@@ -5,8 +8,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: Bread ([@nonsxd](https://twitter.com/nonsxd))
-* Tags:   #programming
-* Level:  medium
+* Tags:   `#programming`
+* Level:  Medium
 
 Ever wondered how Santa delivers presents, and knows which groups of friends
 should be provided with the best gifts? It should be as great or as large as
@@ -32,21 +35,36 @@ Hmm, I cannot seem to read the file either, maybe the internet knows?
 
 ## Solution
 
-The basic idea was the cliques in a graph are groups of nodes within which
-every node is connected to every other node. The aim is to find the biggest 
-cliques.
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+The basic idea is that cliques in a graph are groups of nodes within which
+every node is connected to every other node. The aim is often to find the
+biggest cliques of a graph.
 
-To be able to do that first the file format had to be converted from `col.b` 
-to `col`. `col.b` is the more compact binary variant of `col` and is intended
-for archival purposes.
+But first the file format had to be converted from `col.b` to `col`. `col.b`
+is the more compact binary variant of `col` and is intended for archival
+purposes.
 
-After that the [NetworkX] software had to be used to identify the biggest
-cliques.
+After that the [NetworkX] software is used to generate all cliques and identify
+those cliques that contain the children from _Santa's reminder_ in the `col`
+file.
+
+```
+c -------------------------------- 
+c Reminder for Santa:
+c   104 118 55 51 123 110 111 116 95 84 72 69 126 70 76 65 71 33 61 40 124 115 48 60 62 83 79 42 82 121 125 45 98 114 101 97 100 are the nicest kids.
+c   - bread.
+c -------------------------------- 
+p edges 18876 439050
+e 30 18
+e 42 24
+e 42 29
+…
+```
 
 [NetworkX]: https://en.wikipedia.org/wiki/NetworkX
 
-The indiviual member count of the longest cliques could then be interpreted as
-byte values which gave the flag.
+The individual node count of these cliques can then be interpreted as byte
+values of the flag.
 
 ```sh
 $ cat cliques_max.txt | sed "s/'[0-9]*'/X/g" | sed 's/[^X]//g' | while read -r line; do echo "$(echo "$line" | wc -c | xargs) - 1 " | bc; done | xxd -p | sed 's/\(..\)/\1/g' | sed 's/0a/20/g' | xxd -p -r
@@ -59,3 +77,4 @@ The values are decimal representations of ASCII characters.
 
 Flag: `HV20{Max1mal_Cl1qu3_Enum3r@t10n_Fun!}`
 
+[← Day 09](../day09/) / [↑ TOC](../README.md) / [→ Day 11](../day11/)
