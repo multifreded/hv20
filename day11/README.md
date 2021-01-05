@@ -1,3 +1,6 @@
+[← Day 10](../day10/) / [↑ TOC](../README.md) / [→ Day 12](../day12/)
+
+
 # Day 11 / HV20.11 Chris'mas carol
 
 
@@ -6,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: Chris
-* Tags:   #crypto #forensic
-* Level:  medium
+* Tags:   `#crypto` `#forensic`
+* Level:  Medium
 
 Since yesterday's challenge seems to have been a bit on the hard side, we're
 adding a small musical innuendo to relax.
@@ -31,7 +34,13 @@ postmodern?
 
 ### Notes
 
-The notes from the picture can be translated to hex code:
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+The notes from the picture can be translated to hex code (see [Scientific pitch
+notation]). The `0x` is unusual for musical notation and probably meant as a
+hint. If both byte sequences are XOR'd it results in the string
+`PW!0p3raV1s1t0r` …
+
+[Scientific pitch notation]: https://en.wikipedia.org/wiki/Scientific_pitch_notation
 
 ```
 treble clef:       e3 b4 f4 e3 d3 e2 d3 a5 b5 d5 a2 e5 a5 e3 a3                    
@@ -43,18 +52,18 @@ from hex:          ;  >  ]  =  :  .  .  L  >  N  .  M  .  =  .
 XOR (From Hex):    P  W  !  0  p  3  r  a  V  1  s  1  t  0  r
 ```
 
-See [Scientific pitch notation](https://en.wikipedia.org/wiki/Scientific_pitch_notation)
 
 
-### The Hongkong picture
+### The Hong Kong picture
 
-The picture of Hongkong is an example from a steganography online server called
-[Mobilefish.com](https://www.mobilefish.com/services/steganography/steganography.php)
-and is probably just meant as a hint to find this particular web service.
+The picture of Hong Kong is an example file from a steganography website called
+[Mobilefish.com] and probably is a hint to find this particular web service.
+
+[Mobilefish.com]: https://www.mobilefish.com/services/steganography/steganography.php
 
 The picture with the notes can be uploaded to the service and decrypted
 **without** a password. The result is a file that can be downloaded called:
-`flag.zip`. The file is an encrypted ZIP archive.
+`flag.zip`. It is an encrypted ZIP archive.
 
 ```sh
 $ $ file flag.zip 
@@ -113,11 +122,12 @@ Central directory entry #1:
   There is no file comment.
 ```
 
-After some trial and error I noticed that the 7-Zip tool on Windows is able
-to open the file. It asks for a password and `PW!0p3raV1s1t0r` is the correct
-one. Inside the archive is the flag.
+After initially failing to open the ZIP file it was noticed that the 7-Zip tool
+on Windows is able to do so. It asks for a password and `PW!0p3raV1s1t0r` is the
+correct one. Inside it is the flag.
 
 --------------------------------------------------------------------------------
 
 Flag: `HV20{r3ad-th3-mus1c!}`
 
+[← Day 10](../day10/) / [↑ TOC](../README.md) / [→ Day 12](../day12/)
