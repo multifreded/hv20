@@ -151,8 +151,10 @@ ReadMode(0);
 print "\ec";
 ```
 
-The flag is a Youtube URL with an over the top funny video about the cruel God
+The flag is a [Youtube URL] with an over the top funny video about the cruel God
 of Tetris.
+
+[Youtube URL]: https://www.youtube.com/watch?v=Alw5hs0chj0
 
 > LINE PIECE ! 👹
 
