@@ -1,3 +1,6 @@
+[← Day 07](../day07/) / [↑ TOC](../README.md) / [→ Day 09](../day09/)
+
+
 # Day 08 / HV20.08 The game
 
 
@@ -6,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: M (who else)
-* Tags:   #reverse-engineering #fun
-* Level:  medium
+* Tags:   `#reverse-engineering` `#fun`
+* Level:  Medium
 
 Let's play another little game this year. Once again, as every year, I promise
 it is hardly obfuscated.
@@ -25,23 +28,25 @@ for debian / ubuntu based systems)
 ## Solution
 
 First this: If you zoom out of the source code really far by reducing the 
-font size, you will – after a while – get to see this glorious look out:
+font size, you will – after a few zoom levels – get to see this glorious sight:
 
-![](screenshot.png)
+![](code_zoom_out.png)
 
 How cool is that! `B-)`
 
-About solving the challenge: I deobfuscated the code with [decode-stunix.pl](http://perlobfuscator.com/decode-stunnix-5.17.1.pl).
+About solving the challenge: deobfuscating the game code with 
+[decode-stunix.pl](http://perlobfuscator.com/decode-stunnix-5.17.1.pl) results
+in something some what readable (it's still Perl though `;-)`).
 
-The only things that I changed from there on out were:
+The only things that needs to be changed from here on out is …
 
-1. a much longer playing field
-2. better colors through terminal settings
+1. a much longer playing field: `$h = 100;`
+2. better colors via terminal settings
 
-The rest was just playing the game and taking notes of the characters until
-the URL was complete.
+The rest is (or was at least in my case) just playing the game and taking
+notes of the characters until the flag/URL is complete.
 
-Here is the deobfuscated and slightly modified game code:
+Here is the deobfuscated and slightly modified game source code:
 
 ```perl
 use Term::ReadKey;
@@ -146,7 +151,13 @@ ReadMode(0);
 print "\ec";
 ```
 
+The flag is a Youtube URL with an over the top funny video about the cruel God
+of Tetris.
+
+> LINE PIECE ! 👹
+
 --------------------------------------------------------------------------------
 
 Flag: `HV20{https://www.youtube.com/watch?v=Alw5hs0chj0}`
 
+[← Day 07](../day07/) / [↑ TOC](../README.md) / [→ Day 09](../day09/)
