@@ -104,7 +104,7 @@ data:      "vzwheJ3akhr1LJTFzmFxdhBgViykRpUldFyU6qTu5cjxd1fOM3xkn49GYEM+2cUVk22T
 format:    "plain"
 ```
 
-… the data from these packets are combined into a complete encrypted message …
+… the packet's data is combined into a single encrypted message …
 
 ```
 block 0:
