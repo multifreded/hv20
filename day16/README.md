@@ -42,16 +42,16 @@ point indicating the character's orientation.
 ![](stl_cube.png)
 
 Focusing on the different orientations of the characters it can be assumed that
-the cube will be solved, if all orientions on a cube face match the orientation
-of their face's center field after 5 cube movments. Then the flag will be
-readable.
+the cube will be solved, if all orientations on a cube face match the
+orientation of their face's center field after 5 cube movements. Then the flag
+will be readable.
 
 Since I had a Rubik's Cube at home, I used it to recreate the challenge's cube
 in real life:
 
-As with the other Rubic's Cube challenge there is a notation standard that
-defines what exactly a cube movment is, how many there are and what their names
-are …
+As with the other Rubik's Cube challenge there is a notation standard that
+defines what exactly a cube movement is, how many there are and what their
+names are …
 
 | Code | Meaning        | Code | Meaning         | Code | Meaning         |
 |------|----------------|------|-----------------|------|-----------------|
@@ -558,7 +558,7 @@ sys     0m0.005s
 ```
 
 The output from the solver program is then replayed on the real life cube and
-the resulting flag is read afterwards:
+the resulting flag is read afterwards …
 
 ![](real_cube_solved.png)
 
