@@ -66,7 +66,8 @@ $ gdb
 The following screenshot is the output that the MBR produces. It looks like an
 unfinished QR code:
 
-![](screenshot_half_qr.png)
+| ![](screenshot_half_qr.png)
+|-
 
 The unfinished QR code has a side length of 25. That means that the height
 should also be 25. Maybe the number controlling the number of lines can be
@@ -100,7 +101,8 @@ $ gdb
 
 … indeed. The whole QR code is now printed …
 
-![](screenshot_full_qr.png)
+| ![](screenshot_full_qr.png)
+|-
 
 --------------------------------------------------------------------------------
 
