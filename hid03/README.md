@@ -9,17 +9,18 @@
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 Who knows where this could be hidden... Only the best of the best shall find it!
 
-* Level: medium
+* Level: Medium
 
 
 
 ## Solution
 
-On day 23 in Santa's iOS backup there is a remenant probably from a former
-challenge that was turned into a hidden challenge mid CTF.
+On [Day 23](../day23/) in Santa's iOS backup, there is a remnant flag – probably
+from a earlier version of the challenge – that was turned into a hidden
+challenge mid CTF.
 
-In the SQLite address book database where `N` and `M` where stored, there is
-some fragment as a base64 encoded HTTP-URL:
+In the SQLite address book database where `N` and `M` are stored, there is
+some dormant fragment in the form of a base64 encoded HTTP-URL:
 
 ```sh
 $ cd Decrypted_Backup/HomeDomain/Library/AddressBook
