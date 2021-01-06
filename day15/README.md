@@ -1,4 +1,4 @@
-[← Day 14](../day14/) / [↑ TOC](../README.md) / [→ Day 16](../day16/)
+[← Hidden 02](../hid02/) / [↑ TOC](../README.md) / [→ Day 16](../day16/)
 
 
 # Day 15 / HV20.15 Man Commands, Server Lost
@@ -153,4 +153,4 @@ Here follows a list of increasingly better injections …
 
 Flag: `HV20{D0nt_f0rg3t_1nputV4l1d4t10n!!!}`
 
-[← Day 14](../day14/) / [↑ TOC](../README.md) / [→ Day 16](../day16/)
+[← Hidden 02](../hid02/) / [↑ TOC](../README.md) / [→ Day 16](../day16/)

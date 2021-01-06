@@ -1,3 +1,6 @@
+[← Day 14](../day14/) / [↑ TOC](../README.md) / [→ Day 15](../day15/)
+
+
 # Hid 02 / HV20.H2 Oh, another secret!
 
 
@@ -12,7 +15,7 @@ Who knows where this could be hidden... Only the best of the best shall find it!
 
 ## Solution
 
-On day 08 in the `file.gif` there is a code section where a lot of screen 
+On day 14 in the `file.gif` there is a code section where a lot of screen 
 scrolling is happening as if something existing is being wiped out. It made me
 curious and I set a break point in the debugger at an address directly before 
 the section: `0x7c3a`
@@ -40,3 +43,4 @@ Here's what the qemu screen was displaying:
 
 Flag: `HV20{h1dd3n-1n-pl41n-516h7}`
 
+[← Day 14](../day14/) / [↑ TOC](../README.md) / [→ Day 15](../day15/)

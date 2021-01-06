@@ -1,4 +1,4 @@
-[← Day 13](../day13/) / [↑ TOC](../README.md) / [→ Day 15](../day15/)
+[← Day 13](../day13/) / [↑ TOC](../README.md) / [→ Hidden 02](../hid02/)
 
 
 # Day 14 / HV20.14 Santa's Special GIFt
@@ -108,4 +108,4 @@ $ gdb
 
 Flag: `HV20{54n74'5-m461c-b00t-l04d3r}`
 
-[← Day 13](../day13/) / [↑ TOC](../README.md) / [→ Day 15](../day15/)
+[← Day 13](../day13/) / [↑ TOC](../README.md) / [→ Hidden 02](../hid02/)
