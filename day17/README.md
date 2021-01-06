@@ -1,3 +1,6 @@
+[← Day 16](../day16/) / [↑ TOC](../README.md) / [→ Day 18](../day18/)
+
+
 # Day 17 / HV20.17 Santa's Gift Factory Control
 
 
@@ -223,3 +226,4 @@ The flag was a comment in the HTML source code:
 
 Flag: `HV20{ja3_h45h_1mp3r50n4710n_15_fun}`
 
+[← Day 16](../day16/) / [↑ TOC](../README.md) / [→ Day 18](../day18/)
