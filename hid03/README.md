@@ -1,3 +1,6 @@
+[← Day 23](../day23/) / [↑ TOC](../README.md) / [→ Day 24](../day24/)
+
+
 # Hid 03 / HV20.H3 Hidden in Plain Sight
 
 
@@ -53,3 +56,4 @@ HV20{iTun3s_backup_f0rensix_FTW}
 
 Flag: `HV20{iTun3s_backup_f0rensix_FTW}`
 
+[← Day 23](../day23/) / [↑ TOC](../README.md) / [→ Day 24](../day24/)

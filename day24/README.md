@@ -1,4 +1,4 @@
-[← Day 23](../day23/) / [↑ TOC](../README.md)
+[← Hidden 03](../hid03/) / [↑ TOC](../README.md)
 
 
 # Day 24 / HV20.24 Santa's Secure Data Storage
@@ -644,4 +644,4 @@ sys     0m4.645s
 
 Flag: `HV20{0h_n0es_fl4g_g0t_l34k3d!1}`
 
-[← Day 23](../day23/) / [↑ TOC](../README.md)
+[← Hidden 03](../hid03/) / [↑ TOC](../README.md)
