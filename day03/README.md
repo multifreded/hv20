@@ -1,4 +1,4 @@
-[← Day 02](../day02/) / [↑ TOC](../README.md) / [→ Day 04](../day04/)
+[← Day 02](../day02/) / [↑ TOC](../README.md) / [→ Hidden 01](../hid01/)
 
 
 # Day 03 / HV20.03 Packed gifts
@@ -227,4 +227,4 @@ HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}                 HV20{Zip
 
 Flag: `HV20{ZipCrypt0_w1th_kn0wn_pla1ntext_1s_easy_t0_decrypt}`
 
-[← Day 02](../day02/) / [↑ TOC](../README.md) / [→ Day 04](../day04/)
+[← Day 02](../day02/) / [↑ TOC](../README.md) / [→ Hidden 01](../hid01/)

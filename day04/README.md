@@ -1,4 +1,4 @@
-[← Day 03](../day03/) / [↑ TOC](../README.md) / [→ Day 05](../day05/)
+[← Hidden 01](../hid01/) / [↑ TOC](../README.md) / [→ Day 05](../day05/)
 
 
 # Day 04 / HV20.04 Br❤️celet
@@ -140,4 +140,4 @@ And there it is, the meat of the flag.
 
 Flag: `HV20{Ilov3y0uS4n74}`
 
-[← Day 03](../day03/) / [↑ TOC](../README.md) / [→ Day 05](../day05/)
+[← Hidden 01](../hid01/) / [↑ TOC](../README.md) / [→ Day 05](../day05/)

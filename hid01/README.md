@@ -1,3 +1,6 @@
+[← Day 03](../day03/) / [↑ TOC](../README.md) / [→ Day 04](../day04/)
+
+
 # Hidden 01 / HV20.H1 It's a secret!
 
 
@@ -52,3 +55,4 @@ Noice! (\*_\*)
 
 Flag: `HV20{it_is_always_worth_checking_everywhere_and_congratulations,_you_have_found_a_hidden_flag}`
 
+[← Day 03](../day03/) / [↑ TOC](../README.md) / [→ Day 04](../day04/)
