@@ -16,7 +16,7 @@ Happy hacking! `\(^_^)/`
 ## TOC - Table Of Contents
 
 * Easy:\
-  [Day -1](day-1/) / [Day 01](day01/) / [Day 02](day02/) / [Day 03](day03/) / 
+  <kbd>[Day -1](day-1/)</kbd> / [Day 01](day01/) / [Day 02](day02/) / [Day 03](day03/) / 
   [Day 04](day04/) / [Day 05](day05/) / [Day 06](day06/) / [Hidden 01](hid01/)
 
 * Medium:\
