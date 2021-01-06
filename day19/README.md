@@ -1,3 +1,6 @@
+[← Day 18](../day18/) / [↑ TOC](../README.md) / [→ Day 20](../day20/)
+
+
 # Day 19 / HV20.19 Docker Linter Service
 
 
@@ -97,3 +100,4 @@ HV20{pyy4ml-full-l04d-15-1n53cur3-4nd-b0rk3d}
 
 Flag: `HV20{pyy4ml-full-l04d-15-1n53cur3-4nd-b0rk3d}`
 
+[← Day 18](../day18/) / [↑ TOC](../README.md) / [→ Day 20](../day20/)
