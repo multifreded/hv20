@@ -16,16 +16,16 @@ Who knows where this could be hidden... Only the best of the best shall find it!
 
 ## Solution
 
-This hidden challenge appeared on the 3rd day of Hackvent20. It seemed probable
-that there was still something funky in that encrypted _Package2.zip_ from 
+This hidden challenge appeared on the 3rd day. It seemed probable that there
+was still something funky in that encrypted _Package2.zip_ from
 [Day 03](../day03/).
 
-While taking a closer look at the file list of _Package2.zip_ one file stands
+When taking a closer look at the file list of _Package2.zip_ one file stands
 out. It is the only one whose compression ratio is 12% compared to other's.
 Also the file is called _0042.bin_ it surely must contain _The Answer to the
 Ultimate Question of Life, the Universe, and Everything_ ;-)
 
-It's the same process as on the challenge of [Day 03](../day03/) …
+It's the same process as in the challenge of [Day 03](../day03/) …
 
 ``` shell
 $ unzip -v Package2.zip | less
