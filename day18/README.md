@@ -1,3 +1,6 @@
+[← Day 17](../day17/) / [↑ TOC](../README.md) / [→ Day 19](../day19/)
+
+
 # Day 18 / HV20.18 Santa's lost home
 
 
@@ -352,3 +355,4 @@ HV20{a_b4ckup_of_1mp0rt4nt_f1l35_15_3553nt14l}
 
 Flag: `HV20{a_b4ckup_of_1mp0rt4nt_f1l35_15_3553nt14l}`
 
+[← Day 17](../day17/) / [↑ TOC](../README.md) / [→ Day 19](../day19/)
