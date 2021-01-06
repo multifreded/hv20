@@ -1,3 +1,6 @@
+[← Day 19](../day19/) / [↑ TOC](../README.md) / [→ Day 21](../day21/)
+
+
 # Day 20 / HV20.20 Twelve steps of Christmas
 
 
@@ -316,3 +319,4 @@ The resulting `hidden.png` is a QR code and contains the flag:
 
 Flag: `HV20{My_pr3c10u5_my_r363x!!!,_7hr0w_17_1n70_7h3_X1._-_64l4dr13l}`
 
+[← Day 19](../day19/) / [↑ TOC](../README.md) / [→ Day 21](../day21/)
