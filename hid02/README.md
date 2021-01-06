@@ -9,16 +9,18 @@
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 Who knows where this could be hidden... Only the best of the best shall find it!
 
-* Level: hard
+* Level: Hard
 
 
 
 ## Solution
 
-On day 14 in the `file.gif` there is a code section where a lot of screen 
-scrolling is happening as if something existing is being wiped out. It made me
-curious and I set a break point in the debugger at an address directly before 
-the section: `0x7c3a`
+On [Day 14](../day14) in the `file.gif` there is a code section where a lot of
+screen scrolling is happening as if something on the screen is being wiped out.
+It made me curious and I set a break point in the debugger at an address
+directly before the section: `0x7c3a`
+
+The procedure is similar to that of [Day 14](../day14) … 
 
 ```sh
 $ qemu-system-x86_64 -s -S -m 512 -hda file.gif
@@ -35,7 +37,7 @@ Continuing.
 Breakpoint 1, 0x0000000000007c3a in ?? ()
 ```
 
-Here's what the qemu screen was displaying:
+Here's what the qemu screen was displaying …
 
 ![](screenshot_hidden2.png)
 
