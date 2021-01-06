@@ -1,3 +1,6 @@
+[← Day 15](../day15/) / [↑ TOC](../README.md) / [→ Day 17](../day17/)
+
+
 # Day 16 / HV20.16 Naughty Rudolph
 
 
@@ -6,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: dr_nick
-* Tags:   #fun #programming
-* Level:  hard
+* Tags:   `#fun` `#programming`
+* Level:  Hard
 
 Santa loves to keep his personal secrets on a little toy cube he got from a kid
 called Bread. Turns out that was not a very good idea. Last night Rudolph got
@@ -30,25 +33,25 @@ All the colors have come off! Naughty Rudolph!
 
 ## Solution
 
-The challenge presented you with a 3D [STL]() file containing some sort of Rubik's
-Cube. Each face of the cube had 9 characters, each with a point to indicate the
-characters orientation. 
+The challenge presents you with a 3D [STL] file containing some sort of Rubik's
+Cube. Each face of the cube has 9 characters. For each character there is a
+point indicating the character's orientation.
 
 [STL]: https://en.wikipedia.org/wiki/STL_(file_format)
 
 ![](stl_cube.png)
 
-Judging by the different orientations of the characters it was assumed that the
-cube would be solved, if 5 movments resulted in a cube state where each
-surrounding field's character would have the same orientation as the
-character of the center field. The goal is to find the correct 5 movments. Then
-the flag would be readable.
+Focusing on the different orientations of the characters it can be assumed that
+the cube will be solved, if all orientions on a cube face match the orientation
+of their face's center field after 5 cube movments. Then the flag will be
+readable.
 
 Since I had a Rubik's Cube at home, I used it to recreate the challenge's cube
 in real life:
 
-As with the other Rubic's Cube challenge there is a standard to define what
-exactly a cube movment is, how many there are and what their names are.
+As with the other Rubic's Cube challenge there is a notation standard that
+defines what exactly a cube movment is, how many there are and what their names
+are …
 
 | Code | Meaning        | Code | Meaning         | Code | Meaning         |
 |------|----------------|------|-----------------|------|-----------------|
@@ -67,19 +70,19 @@ exactly a cube movment is, how many there are and what their names are.
 With the real life recreation in my hands I thought that it should easily
 be possible to find those correct 5 movements. Sure, there are 18^5 = 
 1'889'568 possible combinations of 5 movements. But when solving it by
-hand – i guessed – most of the wrong combinations could be left out from
-the get go. I was wrong.
+hand – I guessed – most of the wrong combinations could be left out from
+the get-go. I was wrong.
 
-After 3 hourse of trying to solve it by hand, I gave up altought it permanently
+After 3 hours of trying to solve it by hand, I gave up although I constantly
 felt as if the cube would be solved any minute now.
 
 
 ### Second attempt: writing a program that solves the cube for me
 
-The program is written in C because computing performance was deemed important
+The program is written in C because computing performance is deemed important
 for this task.
 
-In order to program a solver for the cube, the first thing setup was a numbering
+In order to program a solver for the cube, the first thing setup is a numbering
 scheme for the fields and cube faces:
 
 ```
@@ -109,9 +112,12 @@ same length as there are fields, i.e. 54. Stored in the buffer elements are not
 the characters but solely their orientation. The orientation is expressed as
 an integer number representing:
 
-` 0 = ^ = "up"    1 = > = "left"   2 = v = "down"   3 = < = "right" `
+```
+  0 = ^ = "up"    1 = > = "left"   2 = v = "down"   3 = < = "right"
+```
 
-The initial orientations of each field is stored in the array buffer 
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+The initial orientation of each field is stored in the array buffer
 `original_cube[]`. Field 26 corresponds with the field the holds the `{`
 character.
 
@@ -124,9 +130,9 @@ represented as a combination of row 1 (90° rotations) in order to save
 implementation time. 
 
 The rest of the program is a loop that goes through every possible combination
-of 5 movements and checks for each variant whether the surrounding fields of a
-face all have the same orientation as the center field. If such a combination
-is found, it is printed to standart out.
+of 5 movements and checks for each variant whether the surrounding fields all
+have the same orientation as the face's center field. If such a combination
+is found, it is printed to standard out.
 
 
 ### Solver source code
@@ -540,7 +546,7 @@ void print_cube() {
 
 ### Running the solver and reading the solution
 
-Running the program took just a few seconds and the output looked like this:
+Running the program takes just a few seconds and the output looks like this …
 
 ```sh
 $ time ./solve
@@ -551,21 +557,18 @@ user    0m2.427s
 sys     0m0.005s
 ```
 
-The output from the solver program was replayed on the real life cube and the
-resulting flag was read afterwards:
+The output from the solver program is then replayed on the real life cube and
+the resulting flag is read afterwards:
 
 ![](real_cube_solved.png)
 
-![](real_cube_solved_1.png)
-![](real_cube_solved_2.png)
-![](real_cube_solved_3.png)
-![](real_cube_solved_4.png)
-![](real_cube_solved_5.png)
-![](real_cube_solved_5.png)
+| ![](real_cube_solved_1.png) | ![](real_cube_solved_2.png) |
+|-----------------------------|-----------------------------|
+| ![](real_cube_solved_3.png) | ![](real_cube_solved_4.png) |
+| ![](real_cube_solved_5.png) | ![](real_cube_solved_6.png) |
 
-
-<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 --------------------------------------------------------------------------------
 
 Flag: `HV20{no_sle3p_since_4wks_lead5_to_@_hi6hscore_a7_last}`
 
+[← Day 15](../day15/) / [↑ TOC](../README.md) / [→ Day 17](../day17/)
