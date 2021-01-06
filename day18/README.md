@@ -8,9 +8,9 @@
 ## Challenge
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
-* Author: darstar ([@darkstar](https://twitter.com/___darkstar__))
-* Tags:   #forensic #crypto #linux
-* Level:  hard
+* Author: darkstar ([@darkstar](https://twitter.com/___darkstar__))
+* Tags:   `#forensic` `#crypto` `#linux`
+* Level:  Hard
 
 Santa has forgotten his password and can no longer access his data. While trying
 to read the hard disk from another computer he also destroyed an important file.
@@ -32,8 +32,8 @@ password... I thought this was something only a _real human_ would do...
 
 ## Solution
 
-The Backup image was copied to a Raspberry Pi (that's what i head available at
-the time), decompressed and inspected.
+The backup image is copied to a Raspberry Pi (that's what I had available at
+the time), decompressed and inspected …
 
 ```sh
 $ bunzip2 Backup.img.bz2 
@@ -82,7 +82,7 @@ Durchgang 5: Zusammengefasste Gruppeninformation wird geprüft
           38 Dateien
 ```
 
-Then the image was mounted and its contents inspected.
+Then the image is mounted and its contents inspected …
 
 ```sh
 $ sudo mount /dev/loop0 /mnt
@@ -132,7 +132,10 @@ $ sudo tree -a
 16 directories, 21 files
 ```
 
-Necessary software was installed:
+It seems Santa used a file system encryption software called [eCryptfs].
+Obviously the necessary software has to be installed:
+
+[eCryptfs]: https://en.wikipedia.org/wiki/ECryptfs
 
 ```sh
 $ sudo apt-get install ecryptfs-utils
@@ -144,10 +147,11 @@ Paketlisten werden gelesen... Fertig
 ### Ideas about how everything fits together
 
 The challenge description says, that Santa not only had a password that he
-cannot remember but also deleted an important file by accident. My suspicion
-is, that the file Santa deleted was the so called _wrapped passphrase_. It
-contains the actual passphrase needed to decrypt the ecryptfs data. The
-_wrapped passphrase_ file was encrypted with Santa's password.
+cannot remember but the ding dong also deleted an important file by accident.
+The suspicion is, that the deleted is a so called _wrapped passphrase_, a vital
+part of the eCryptfs encryption scheme. It contains the actual passphrase
+needed to decrypt the ecryptfs data. The _wrapped passphrase_ file itself was
+encrypted with Santa's password.
 
 What needs to be done first is to recover the accidentally lost _wrapped
 passphrase_-file and secondly to crack the password for the _wrapped passphrase_
@@ -156,11 +160,11 @@ file in order to gain the actual passphrase for decrypting the files.
 
 ### Recovering the lost wrapped passphrase file
 
-Before a search through out the raw data of the image can be done, some
-identifying property that wrapped passphrases have needs to be determined. Since
-I couldn't find anything readily on the web, the next best thing is to produce
-my own _dummy_ wrapped passphrase file and look at to maybe find a identifying
-head byte sequence.
+Before beginning to search through the raw data of the backup image, some
+identifying property of _wrapped passphrase_ files needs to be determined. Since
+wasn't anything readily retreivable on the web, the next best thing is to
+produce _dummy_ wrapped passphrase file and look at it. Maybe there is some
+identifying header byte sequence …
 
 ```sh
 $ ecryptfs-wrap-passphrase dummy
@@ -173,8 +177,8 @@ $ xxd dummy
 00000020: 122a 7b20 0404 53e4 e8e9                 .*{ ..S...
 ```
 
-My hope is that the byte sequence `0x3a02` may be unique and identifying
-enough.
+… the new hope is that the byte sequence `0x3a02` may be unique and identifying
+enough …
 
 ```sh
 $ xxd -p Backup.img | sed 's/\(..\)/\1 /g' | grep -C 10 '3a 02'
@@ -223,25 +227,26 @@ dd 00 47 8f a1 89 ae c3 cb e5 22 94 f4 ca d1 57 fe 2d 78 65 67 74 61 1f 32 1b 99
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 ```
 
-Indead searching for the byte sequence in the `Backup.img` only yielded two
-matches. My guess is that the second one is the missing wrapped passphrase file.
+Indeed searching for the byte sequence in `Backup.img` yielded two matches. Standing so
+alone the second one is probably the missing wrapped passphrase file.
 
 ```sh
-echo "3a 02 a7 23 b1 2f 66 bc fe aa 30 35 31 31 31 39 62 30 62 61 63 65 30 61 62 36 db b8 dd 00 47 8f a1 89 ae c3 cb e5 22 94 f4 ca d1 57 fe 2d 78 65 67 74 61 1f 32 1b 99 30 6f c7"\
+$ echo "3a 02 a7 23 b1 2f 66 bc fe aa 30 35 31 31 31 39 62 30 62 61 63 65 30 61 62 36 db b8 dd 00 47 8f a1 89 ae c3 cb e5 22 94 f4 ca d1 57 fe 2d 78 65 67 74 61 1f 32 1b 99 30 6f c7"\
 | sed 's/ //g' | xxd -p -r > recovered_wrapped-passphrase
 ```
 
 
 ### Cracking Santa's password.
 
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 The challenge description mentioned _real humans_ in a strange way. There is a
 famous password list that supposedly only contains _real human passwords_. It's
-called [crackstation-human-only.txt]() \(Thanks for the hint, mcia\).
+called [crackstation-human-only.txt]() \(Thanks for the hint, jokker\).
 
 [crackstation-human-only.txt]: https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
 
-I downloaded the list and checked how many passwords contain the string `santa`
-in lower case as well as in upper case.
+The list is downloaded and checked for how many passwords contain the string
+`santa` in lower and upper case.
 
 ```sh
 $ grep -i 'santa' crackstation-human-only.txt > santa_passwords.txt \
@@ -249,11 +254,12 @@ $ grep -i 'santa' crackstation-human-only.txt > santa_passwords.txt \
 13852 santa_passwords.txt
 ```
 
-This list was further reduced since ecryptfs only accepts passwords that are
+This list is further reduced since ecryptfs only accepts passwords that are
 shorter than 65 characters.
 
-For the cracking procedure _hashcat_ was used. But before that the wrapped
-password had to be converted with a [script]() in order to be readable by hascat.
+For the cracking procedure _hashcat_ is used. But before that, the _wrapped
+passphrase_ file has to be converted with a [script] in order to be digestible
+by _hashcat_ …
 
 [script]: https://github.com/openwall/john/blob/bleeding-jumbo/run/ecryptfs2john.py
 
@@ -321,14 +327,14 @@ $ printf "think-santa-lives-at-north-pole" | ecryptfs-unwrap-passphrase recovere
 eeafa1586db2365d5f263ef867f586e4
 ```
 
-The password is `think-santa-lives-at-north-pole`.
-The passphrase is `eeafa1586db2365d5f263ef867f586e4`
+The password is `think-santa-lives-at-north-pole`.\
+The passphrase is `eeafa1586db2365d5f263ef867f586e4`.
 
 
 
 ### Decrypting the files
 
-Lastly decrypting the files gave way to the flag.
+Lastly decrypting the files unveils the flag file …
 
 ```sh
 $ sudo ecryptfs-recover-private .ecrypfts/santa/.Private
@@ -343,11 +349,14 @@ INFO: It should be 32 characters long, consisting of [0-9] and [a-f].
 
 Enter your MOUNT passphrase: 
 INFO: Success!  Private data mounted at [/tmp/ecryptfs.TLj7L23X].
-pi@raspberrypi:/home $ cd /tmp/ecryptfs.TLj7L23X/
-pi@raspberrypi:/tmp/ecryptfs.TLj7L23X $ ls
+
+$ cd /tmp/ecryptfs.TLj7L23X/
+
+$ ls
 .bash_history  .bashrc	.config/    flag.txt	.gtkrc-xfce  .local/	.profile
 .bash_logout   .cache/	.ecryptfs@  .gtkrc-2.0	.joe_state   .Private@
-pi@raspberrypi:/tmp/ecryptfs.TLj7L23X $ cat flag.txt 
+
+$ cat flag.txt 
 HV20{a_b4ckup_of_1mp0rt4nt_f1l35_15_3553nt14l}
 ```
 
