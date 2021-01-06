@@ -1,3 +1,6 @@
+[← Day 21](../day21/) / [↑ TOC](../README.md) / [→ Day 23](../day23/)
+
+
 # Day 22 / HV20.22 Padawanlock
 
 
@@ -262,3 +265,4 @@ Flag: HV20{C0NF1GUR4T10N_AS_C0D3_N0T_D0N3_R1GHT}
 
 Flag: `HV20{C0NF1GUR4T10N_AS_C0D3_N0T_D0N3_R1GHT}`
 
+[← Day 21](../day21/) / [↑ TOC](../README.md) / [→ Day 23](../day23/)
