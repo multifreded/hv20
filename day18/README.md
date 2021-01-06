@@ -241,7 +241,7 @@ $ echo "3a 02 a7 23 b1 2f 66 bc fe aa 30 35 31 31 31 39 62 30 62 61 63 65 30 61 
 ```
 
 
-### Cracking Santa's password.
+### Cracking Santa's password
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 The challenge description mentioned _real humans_ in a strange way. There is a
