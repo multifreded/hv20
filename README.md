@@ -81,3 +81,6 @@ solely for the purpose of:
 * correcting grammar and spelling mistakes,
 * correcting markup mistakes,
 * adding or changing meta information (for example this README.md)
+* removing superfluous files
+* fixing image presentation
+
