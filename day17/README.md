@@ -183,18 +183,14 @@ payload …
 
 [CyberChef]: https://gchq.github.io/CyberChef/#recipe=JWT_Sign('-----BEGIN%20PUBLIC%20KEY-----%5CnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0KDtdDsZ/wpGXWRnP6DY%5CnRi7OxTWiwPVg8eTsVcmbzAkk2r4itb3NqRw9xpJeUHorgfw1f9GkuAFg/squMrXb%5CnSYM0Vcxqmtsq379xCw6s0pxIafPR7TEAVRh5Mxrudl2lwiO4vJPs%2B2tmcgui/bFn%5CnwC%2BqByZtIlsP%2BrlT/MF2wLaWe/LNAWtOXdFVDOzUy6ylLZeL6fRtt9SiuUOQkkC3%5CnUS8TmvVQYcCcwvu4GBJeGdlKrbIuXIohl7hP5i9/KZ3kIvzByp/Xk5iq%2BtH95/9u%5CnX/9FHKUSrcRE4NYVRhkqHPpn/EbqXHMX0BM0QoGETORlpZIo/lAOQ7/ezOd9z1fw%5CnzwIDAQAB%5Cn-----END%20PUBLIC%20KEY-----%5Cn','HS256')&input=ewogICJleHAiOiAxNjA5NDE2NTAyLAogICJpYXQiOiAxNjA5NDEyOTAyLAogICJzdWIiOiAic2FudGExMzM3Igp9
 
-JWT Header …
-
 ```json
+Header:
 {
   "alg" : "HS256",
   "typ" : "JWT"
 }
-```
 
-Payload …
-
-```json
+Payload:
 {
   "exp": 1609416502,
   "iat": 1609412902,
