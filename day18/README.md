@@ -32,6 +32,11 @@ password... I thought this was something only a _real human_ would do...
 
 ## Solution
 
+_[This was a nerve wracking challenge for me as I started way too late. It was
+nail-biting-only-seconds-to-defuse-the-bomb kinda submission. But I made it
+in time. Thank you to jokker for hand holding during the last half hour or so
+`(@_@)`]_
+
 The backup image is copied to a Raspberry Pi (that's what I had available at
 the time), decompressed and inspected …
 
@@ -133,7 +138,7 @@ $ sudo tree -a
 ```
 
 It seems Santa used a file system encryption software called [eCryptfs].
-Obviously the necessary software has to be installed:
+Obviously the necessary software has to be installed …
 
 [eCryptfs]: https://en.wikipedia.org/wiki/ECryptfs
 
@@ -148,23 +153,23 @@ Paketlisten werden gelesen... Fertig
 
 The challenge description says, that Santa not only had a password that he
 cannot remember but the ding dong also deleted an important file by accident.
-The suspicion is, that the deleted is a so called _wrapped passphrase_, a vital
-part of the eCryptfs encryption scheme. It contains the actual passphrase
-needed to decrypt the ecryptfs data. The _wrapped passphrase_ file itself was
-encrypted with Santa's password.
+The suspicion is, that the deleted file is a so called _wrapped passphrase_, 
+a vital part of the eCryptfs encryption scheme. It contains the actual
+passphrase needed to decrypt the _eCryptfs_ data. The _wrapped passphrase_
+file itself was encrypted with Santa's password.
 
 What needs to be done first is to recover the accidentally lost _wrapped
-passphrase_-file and secondly to crack the password for the _wrapped passphrase_
+passphrase_ file and secondly to crack the password for the _wrapped passphrase_
 file in order to gain the actual passphrase for decrypting the files.
 
 
 ### Recovering the lost wrapped passphrase file
 
-Before beginning to search through the raw data of the backup image, some
+In order to search for a _wrapped passphrase_ file in the backup image, some
 identifying property of _wrapped passphrase_ files needs to be determined. Since
-wasn't anything readily retreivable on the web, the next best thing is to
-produce _dummy_ wrapped passphrase file and look at it. Maybe there is some
-identifying header byte sequence …
+there wasn't anything readily available on the web, the next best thing is to
+produce a dummy _wrapped passphrase_ file and look at it. Maybe there is some
+header byte sequence that can be leveraged …
 
 ```sh
 $ ecryptfs-wrap-passphrase dummy
@@ -227,7 +232,7 @@ dd 00 47 8f a1 89 ae c3 cb e5 22 94 f4 ca d1 57 fe 2d 78 65 67 74 61 1f 32 1b 99
 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
 ```
 
-Indeed searching for the byte sequence in `Backup.img` yielded two matches. Standing so
+Indeed searching for the byte sequence in `Backup.img` yields two matches. Standing so
 alone the second one is probably the missing wrapped passphrase file.
 
 ```sh
@@ -246,7 +251,7 @@ called [crackstation-human-only.txt]() \(Thanks for the hint, jokker\).
 [crackstation-human-only.txt]: https://crackstation.net/crackstation-wordlist-password-cracking-dictionary.htm
 
 The list is downloaded and checked for how many passwords contain the string
-`santa` in lower and upper case.
+`santa` in lower and upper case …
 
 ```sh
 $ grep -i 'santa' crackstation-human-only.txt > santa_passwords.txt \
@@ -254,13 +259,18 @@ $ grep -i 'santa' crackstation-human-only.txt > santa_passwords.txt \
 13852 santa_passwords.txt
 ```
 
-This list is further reduced since ecryptfs only accepts passwords that are
-shorter than 65 characters.
+This list is further reduced since _eCryptfs_ only accepts passwords that are
+shorter than 65 characters …
 
-For the cracking procedure _hashcat_ is used. But before that, the _wrapped
-passphrase_ file has to be converted with a [script] in order to be digestible
-by _hashcat_ …
+```sh
+$ egrep -o '^.{1,64}$' santa_passwords.txt > santa_passwords_max64.txt
+```
 
+For the cracking procedure [_hashcat_][hashcat] is used. But before that, the
+_wrapped passphrase_ file has to be converted with a [script] in order to be
+digestible by _hashcat_ …
+
+[hashcat]: https://en.wikipedia.org/wiki/Hashcat
 [script]: https://github.com/openwall/john/blob/bleeding-jumbo/run/ecryptfs2john.py
 
 ```sh
