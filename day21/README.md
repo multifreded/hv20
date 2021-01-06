@@ -1,3 +1,6 @@
+[← Day 20](../day20/) / [↑ TOC](../README.md) / [→ Day 22](../day22/)
+
+
 # Day 21 / HV20.21 Threatened Cat
 
 
@@ -121,3 +124,4 @@ In the end the whole attack went like this:
 
 Flag: `HV20{!D3s3ri4liz4t10n_rulz!}`
 
+[← Day 20](../day20/) / [↑ TOC](../README.md) / [→ Day 22](../day22/)
