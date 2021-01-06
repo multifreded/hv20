@@ -117,11 +117,12 @@ challenge is the sweetest of the bunch.
 
 [vuls]: https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
 
-In a [JSON Web Token] there are at least the following two methods to sign and
-verify a token: _RSA_ and _HMAC_. 
+For a [JSON Web Token] there are at least two signing algorithms available:
+_RSA_ and _HMAC_
 
-With _HMAC_ the idea is that the signing key is kept secret and is used only by
-the server to verify authenticity.
+With _HMAC_ the idea is that the signing key is kept secret i.e. is available
+only to the server. As a consequence only the server can verify authenticity of
+a token.
 
 With _RSA_ the signing key is a secret private key and the verification key is
 a public key. Not only the server but everybody can verify the authenticity of
@@ -178,8 +179,8 @@ zwIDAQAB
 ```
 
 At last a new cookie is forged (with the help of [CyberChef]) intentionally with
-the _wrong_ signing method _HMAC_. This produces the following cookie header and
-payload …
+the _wrong_ signing method _HMAC_. The user name from the information leak is
+also included. This produces the following cookie header and payload …
 
 [CyberChef]: https://gchq.github.io/CyberChef/#recipe=JWT_Sign('-----BEGIN%20PUBLIC%20KEY-----%5CnMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0KDtdDsZ/wpGXWRnP6DY%5CnRi7OxTWiwPVg8eTsVcmbzAkk2r4itb3NqRw9xpJeUHorgfw1f9GkuAFg/squMrXb%5CnSYM0Vcxqmtsq379xCw6s0pxIafPR7TEAVRh5Mxrudl2lwiO4vJPs%2B2tmcgui/bFn%5CnwC%2BqByZtIlsP%2BrlT/MF2wLaWe/LNAWtOXdFVDOzUy6ylLZeL6fRtt9SiuUOQkkC3%5CnUS8TmvVQYcCcwvu4GBJeGdlKrbIuXIohl7hP5i9/KZ3kIvzByp/Xk5iq%2BtH95/9u%5CnX/9FHKUSrcRE4NYVRhkqHPpn/EbqXHMX0BM0QoGETORlpZIo/lAOQ7/ezOd9z1fw%5CnzwIDAQAB%5Cn-----END%20PUBLIC%20KEY-----%5Cn','HS256')&input=ewogICJleHAiOiAxNjA5NDE2NTAyLAogICJpYXQiOiAxNjA5NDEyOTAyLAogICJzdWIiOiAic2FudGExMzM3Igp9
 
