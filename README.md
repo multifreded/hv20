@@ -13,6 +13,12 @@ Happy hacking! `\(^_^)/`
 
 -----
 
+## TOC - Table Of Contents
+
+Easy: [Day -1](day-1/)
+
+-----
+
 After 2020-01-01 00:00 UTC+1 all changes committed to this repository were
 solely for the purpose of:
 
