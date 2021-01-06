@@ -31,14 +31,13 @@ Wait, Bread is on the Nice list? Better check that comment again...
 ## Solution
 
 The Excel file has a sheet password. To make the contents of the Excel file
-accessible without knowning the sheet password, it is sufficient to simply
-select everything `[Ctrl] + [A]`, copy it to the clip board and paste it into
-a new Excel file.
+accessible without knowing the sheet password, it is sufficient to simply select
+everything `[Ctrl] + [A]`, copy it to the clip board and paste it into a new
+Excel file.
 
 
 ### Bread's cell
 
-<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 As hinted by the challenge text, _C9_ is a special cell. It's Bread's cell. Its
 contents are …
 
@@ -57,8 +56,8 @@ The hex values are extracted …
 c0 41 62 87 0a 1e dc c8 71 23
 ```
 
-… and poured into file as binary. Asking _file(1)_ what kind of file it is
-gives a vague result …
+… and poured into a file as binary. Asking _file(1)_ what kind it is gives a
+vague result …
 
 ```sh
 $ echo "1f 9d 8c 42 9a 38 41 24 01 80 41 83 8a 0e f2 39 78 42 80 c1 86 06 03 00 00 01 60 c0 41 62 87 0a 1e dc c8 71 23" \
@@ -68,7 +67,8 @@ $ file strange_file.bin
 strange_file.bin: compress'd data 12 bits
 ```
 
-[Magic from Cyberchef]() says it's a _tar_ file and it can be unpacked …
+[Magic from Cyberchef]() says it's a _tar_ file and it can be unpacked as
+that …
 
 [Magic from Cyberchef]: https://gchq.github.io/CyberChef/#recipe=From_Hex('Auto')Magic(3,false,false,'')&input=MWYgOWQgOGMgNDIgOWEgMzggNDEgMjQgMDEgODAgNDEgODMgOGEgMGUgZjIgMzkgNzggNDIgODAgYzEgODYgMDYgMDMgMDAgMDAgMDEgNjAgYzAgNDEgNjIgODcgMGEgMWUgZGMgYzggNzEgMjM
 
@@ -95,9 +95,10 @@ of a bitmap file.
 
 ### OLE objects
 
-Other than Bread's cell, there is an [OLE object] in the `Download.xls` file.
-It's neatly placed over the picture of a gift box in order to appear to be the
-gift in the box …
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+Other than Bread's cell, there is an [OLE object] in the `Download.xls`. It's
+neatly placed over the picture of a gift box in order to appear to be the gift
+in the box …
 
 [OLE object]: https://en.wikipedia.org/wiki/Object_Linking_and_Embedding
 
@@ -139,7 +140,7 @@ d0e4d599176f03a6770306e8cb3042862f08d5487003264f9c0717054af4
 […]
 ```
 
-`Download.xls_part9` seems to be an Hex encoded file. Decoding it and sending it
+`Download.xls_part9` seems to be a Hex encoded file. Decoding it and sending it
 through _file(1)_ and _xxd(1)_ reveals that again it's a compressed archive file
 of sorts …
 
@@ -163,9 +164,10 @@ $ xxd Download.xls_part9.bin | head -n 10
 […]
 ```
 
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 After some trial and error it was discovered that the 7-Zip tool on Windows can
-decompress the file. The archive contains one file with the name `part9~` and
-seems to be an encrypted file (probably 70ies encryption ?) …
+decompress the file. The archive contains a single file with the name `part9~`
+and has some weird encryption (probably 70ies encryption ?) …
 
 ```sh
 $ file part9~
@@ -216,7 +218,7 @@ $ xxd part9~ | head -n 40
 ```
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
-It looks too orderly for an encrypted file. Maybe its an image file that was 
+It looks too orderly for an encrypted file. Maybe it's an image file that was 
 [ECB] encrypted ? In that case, the contents may become visible simply by
 adding a suitable HEADER. MAYBE A BMP HEADER ? DO WE HAVE SOMETHING LIKE THAT
 LIEING AROUND ? :-D
