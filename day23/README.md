@@ -1,3 +1,6 @@
+[← Day 22](../day22/) / [↑ TOC](../README.md) / [→ Day 24](../day24/)
+
+
 # Day 23 / HV20.23 Those who make backups are cowards!
 
 
@@ -141,3 +144,4 @@ Aw yiss! Sweet flag.
 
 Flag: `HV20{s0rry_n0_gam3_to_play}`
 
+[← Day 22](../day22/) / [↑ TOC](../README.md) / [→ Day 24](../day24/)
