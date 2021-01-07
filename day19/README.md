@@ -68,7 +68,7 @@ library which allows arbitrary code execution and thus including setting up a
 reverse shell.
 
 The payload is constructed according to the [script gist] available on the same
-webpage as the PoC and a [cheat sheet kinda resource for reverse shells]\:
+webpage as the PoC and a [cheat sheet kinda resource for reverse shells] …
 
 [script gist]: https://gist.github.com/adamczi/23a3b6d4bb7b2be35e79b0667d6682e1
 [cheat sheet kinda resource for reverse shells]: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#bash-tcp
