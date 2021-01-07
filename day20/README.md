@@ -9,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: Bread ([@nonsxd](https://twitter.com/nonsxd))
-* Tags:   #forensic #linux #programming
-* Level:  leet
+* Tags:   `#forensic` `#linux` `#programming`
+* Level:  1337
 
 On the twelfth day of Christmas my true love sent to me...\
 twelve rabbits a-rebeling,\
@@ -30,13 +30,16 @@ black pepper bread](recipe.txt) a try this Christmas!
 
 ## Solution
 
-On the picture are probably the _"twelve rabbits a-rebeling"_ (?) (Altough I
+On the picture are probably the _"twelve rabbits a-rebeling"_ (?) (Although I
 count 17 rabbits.)
 
 
 ### Twelve rabbits
 
-Looking into the exif data there seems to be a whole html document embedded.
+Looking into the [EXIF] meta data, there seems to be a whole HTML document
+embedded …
+
+[EXIF]: https://en.wikipedia.org/wiki/Exif
 
 ```sh
 $ exiftool rabbits.png
@@ -66,12 +69,15 @@ Tag                             : r¤ÞC‡}¸ÄEr¥8K°3°V¯»j¢#§PE„éXÃ
 …
 ```
 
-I tried to extract the html code as well as I could but it still seemed to be
-broken since the javascript code inside of it didn't seem to be working
-correctly and there was a broken image symbol. While looking at the file with
-xxd(1) I noticed that maybe the whole file is a PNG and a HTML file at the same
-time `:-D`. So I simply copied the whole file while changing its ending to 
-`html` and opened it in a web browser.
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+Attempts to extract the HTML code end in broken documents. The Javascript code
+within the HTML seems to not be working correctly and there is a broken image
+symbol.
+
+While looking at the file with _xxd(1)_ the idea arose that maybe the whole
+file is a PNG and a HTML file at the same time `:-D`: Simply making a copy of
+the PNG file and changing its file name ending to `.html` is sufficient to
+turn it into a fully functioning HTML document.
 
 ```sh
 $ xxd rabbits.png
@@ -86,32 +92,37 @@ $ xxd rabbits.png
 $ cp rabbits.png rabbits.html && firefox rabbits.html
 ```
 
-It seemed to work now. The picture was intact and showing the rabbits again.
-But I couldn't understand what it does or is supposed to do. The previously
-extracted code was prettified to make it human readable. The result can be 
-seen here: [rabbits\_prettified\_code.txt](rabbits_prettified_code.txt)
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+The formerly broken picture is now intact and showing the rabbits again. It's
+still unclear, what the Javascript does though. The HTML document is therefore
+prettified to make it human readable. The result can be seen here:
+[rabbits\_prettified\_code.txt](rabbits_prettified_code.txt)
 
-The file is separated into three sections:
+The file is separated into three sections …
 
 1. The `<html>` tag immediately followed by some binary data in a comment tag.
 
-2. A substantial amount of javascript. Some of the functions present were:
+2. A substantial amount of javascript. Some of the functions present are:
 
-   * `SHA1(msg)`: a complete SHA1 implementation
-   * `B64(h)`: a base64 implementation
-   * `The main function `dID()` that seems to draw something into a canvas
+   * `SHA1(msg)`: a complete [SHA1] implementation
+   * `B64(h)`: a [Base64] implementation
+   * The main function `dID()` that seems to draw something into a canvas
      element.
 
+[SHA1]: https://en.wikipedia.org/wiki/SHA-1
+[Base64]: https://en.wikipedia.org/wiki/Base64
+
 3. A short html body containing the rabbit picture (which is freaking crazy
-   as the document seems to contain itself as image ?!) and an empty textarea
+   as the document seems to contain itself as image ?!) and an empty `textarea`
    named `log`.
 
-The `dID()` function contained a few lines that seem to parse the URL for the
-parameter `p` and comparing its SHA1 hashed value to the hash value
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+The `dID()` function contains a few lines that parse the URL for the parameter
+`p` and compare its [SHA1] hashed value to the hash value
 `60DB15C4E452C71C5670119E7889351242A83505`.
 
-I couldn't find a string the turns into that value when hashed so i modified
-the SHA1 in the rabbit file to a value that's known to me:
+I couldn't find a string the turns into that value when hashed, so I modified
+the hash value in the `rabbit.html` file to a value that's known to me …
 
 ```sh
 $ printf "ladida" | shasum
@@ -126,14 +137,14 @@ $ dd if=rabbits.png bs=1 skip=4515 >> rabbits_fake_sha.html
 $ firefox rabbits_fake_sha.html
 ```
 
-The now known parameter `?p=ladida` was added to the URL. Clicking the rabbit
-picture executed the javascript code and the browser prompted me to download
-a file called `11.py`.
+The now known parameter `?p=ladida` is added to the URL. Clicking the rabbit
+picture executes the Javascript code and the browser presents a prompt to
+download a file called `11.py`.
 
 
 ### Eleven ships
 
-The contents of `11.py` was
+The contents of `11.py` is
 
 ```python
 import sys
@@ -144,28 +155,30 @@ open('11.7z', 'wb').write(bytearray([i[_] ^ j[_%len(j)] for _ in range(len(i))])
 
 The code wants two inputs as CLI arguments:
 
-1. A binary file and
-2. a string the is used to split the binary file in two halfs.
+1. A binary file: `open(sys.argv[1], 'rb').read()`
+2. A UTF-8 string: `sys.argv[2].encode('utf-8') + b"\n")
 
-The second half of the split gets XOR'd over and over with the contents of the
-byte array `j` and is finally written to disk with the file name `11.7z`.
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+The string is used to split the file into to halves. The second half gets XOR'd
+over and over with the contents of the byte array `j` and is finally written to
+disk with the file name `11.7z`.
 
 Thinking the other way around, it should be possible to XOR the beginning of the
 byte array `j` = `Rabbit` = `0x52616262` with the [known beginning of 7z
-files]() = `0x377abcaf` and thus receiving the first few bytes after the split
-string = `0x0x651BDECD`.
+files]() = `0x377abcaf` and thus receive the first few bytes after the split
+string = `0x651BDECD`.
 
 [known beginning of 7z files]: https://7-zip.org/recover.html
 
-A spontanous search through the `rabbits.png` file for the bytes sequence 
-`0x651b` resulted in a hit:
+A spontaneous search through the `rabbits.png` file for the bytes sequence 
+`0x651b` resulted in a match …
 
 ```sh
 $ xxd rabbits.png | egrep '65[ ]{0,1}1b[ ]{0,1}de[ ]{0,1}cd'
 00386a10: 8262 7265 6164 6272 6561 640a 651b decd  .breadbread.e...
 ```
 
-So `breadbread` must be the splitting string.
+So `breadbread` must be the splitting string …
 
 ```sh
 $ python3 11.py rabbits.png breadbread
@@ -174,23 +187,24 @@ $ ls -lFhd 11.7z
 -rw-r--r--  1 hacker  staff   8.1M Dec 20 03:35 11.7z
 ```
 
-Unpacking the the `11.7z` archive gave a tar file and finally a folder `11/`.
-The `11/` folder contained some [docker stuff](). That's probably why this section
-is called "eleven ships". Docker has a whale-container-ship as logo.
+Unpacking the the `11.7z` archive returns a tar file that in turn contains the
+folder `11/`. The `11/` folder contains some [docker stuff]. That's probably
+why this section is called "eleven ships". Docker has a whale-container-ship as
+logo.
 
 [docker stuff]: https://blog.knoldus.com/docker-manifest-a-peek-into-images-manifest-json-files/
 
 
-### Ten (twentyfoupointone) pieces = 10 * 24.1 pieces = 241 pieces
+### Ten (twentyfourpointone) pieces = 10 * 24.1 pieces = 241 pieces
 
 While investigating the docker files there was an interesting file named
-`repositories` the contained the following:
+`repositories` that contains the following …
 
 `{"12stepsofchristmas":{"11":"ab2b751e14409f169383b5802e61764fb4114839874ff342586ffa4f968de0c1"}}`
 
-… suggesting that the layer whose name begins with `ab2b…` may contains shizzle
-of interest. Said layer's tar file was unpacked and contained the following
-file tree:
+… suggesting that the Docker image layer with the name `ab2b…` may contains
+shizzle of interest. Said layer's tar file is unpacked and contains the
+following file tree …
 
 ```sh
 $ cd ab2b751e14409f169383b5802e61764fb4114839874ff342586ffa4f968de0c1/
@@ -231,13 +245,15 @@ $ tree
 
 16 directories, 6 files
 ```
-Further more the file
-`1d66b052bd26bb9725d5c15a5915bed7300e690facb51465f2d0e62c7d644649.json`
-was also remarkable as it included a shell script containing such strings
-as `steghide` oder `bunnies12.jpg`.
 
-Its contents were prettified (see [11.json](11.json)) and the interesting
-shell script was extracted as [11.sh](11.sh):
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+Further more the file
+`1d66b052bd26bb9725d5c15a5915bed7300e690facb51465f2d0e62c7d644649.json` is also
+remarkable as it includes a shell script containing such strings as `steghide`
+and `bunnies12.jpg`.
+
+Its contents were prettified (see [11.json](11.json)) and the shell script was
+extracted as [11.sh](11.sh) …
 
 ```sh
 /bin/sh -c 
@@ -253,9 +269,9 @@ chmod 0000 /home/bread/flimflam && \
 apk del steghide xxd # buildkit
 ```
 
-This script suggested that a file named `hidden.png` was hidden in another file
-called `bunnies12.jpg` which was further converted and chopped into pieces. The
-following steps were taken to reverse the process.
+This script allows for the following conclusions: the file named `hidden.png`
+was hidden in another file called `bunnies12.jpg` which was further converted
+and chopped into pieces. The following steps reverse the process …
 
 ```sh
 $ cd ab2b751e14409f169383b5802e61764fb4114839874ff342586ffa4f968de0c1/
@@ -302,15 +318,16 @@ Here's what `bunnies12.jpg` looks like:
 
 ![](bunnies12.jpg)
 
-The last step was to extract the `hidden.jpg` file from the `bunnies12.jpg`.
-This step was a bit tricky as the password for the encryption was convoluted
-mess of character escaping. In the end, the following command proofed correct:
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+The last step is to extract the `hidden.jpg` file from the `bunnies12.jpg`. This
+step is a bit tricky as the password for the encryption is a convoluted mess of
+character escaping. In the end, the following command proofs correct …
 
 ```sh
 $ steghide extract --stegofile bunnies12.jpg --extractfile hidden.png -p "bunnies12.jpg\\\" -ef /tmp/t/hidden.png -p \\\"SecretPassword"
 ```
 
-The resulting `hidden.png` is a QR code and contains the flag:
+The resulting `hidden.png` is a QR code and contains the flag …
 
 ![](hidden.png)
 
