@@ -94,8 +94,8 @@ $ cp rabbits.png rabbits.html && firefox rabbits.html
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 The formerly broken picture is now intact and showing the rabbits again. It's
-still unclear, what the Javascript does though. The HTML document is therefore
-prettified to make it human readable. The result can be seen here:
+still unclear, what the Javascript does though. The HTML document's contents are
+therefore prettified to make'em human readable. The result can be seen here:
 [rabbits\_prettified\_code.txt](rabbits_prettified_code.txt)
 
 The file is separated into three sections …
@@ -156,7 +156,7 @@ open('11.7z', 'wb').write(bytearray([i[_] ^ j[_%len(j)] for _ in range(len(i))])
 The code wants two inputs as CLI arguments:
 
 1. A binary file: `open(sys.argv[1], 'rb').read()`
-2. A UTF-8 string: `sys.argv[2].encode('utf-8') + b"\n")
+2. A UTF-8 string: `sys.argv[2].encode('utf-8') + b"\n")`
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 The string is used to split the file into to halves. The second half gets XOR'd
@@ -165,7 +165,7 @@ disk with the file name `11.7z`.
 
 Thinking the other way around, it should be possible to XOR the beginning of the
 byte array `j` = `Rabbit` = `0x52616262` with the [known beginning of 7z
-files]() = `0x377abcaf` and thus receive the first few bytes after the split
+files] = `0x377abcaf` and thus receive the first few bytes after the split
 string = `0x651BDECD`.
 
 [known beginning of 7z files]: https://7-zip.org/recover.html
@@ -188,16 +188,16 @@ $ ls -lFhd 11.7z
 ```
 
 Unpacking the the `11.7z` archive returns a tar file that in turn contains the
-folder `11/`. The `11/` folder contains some [docker stuff]. That's probably
-why this section is called "eleven ships". Docker has a whale-container-ship as
+folder `11/`. The `11/` folder contains some [Docker stuff]. That's probably
+why this section is called "eleven ships": Docker has a whale-container-ship as
 logo.
 
-[docker stuff]: https://blog.knoldus.com/docker-manifest-a-peek-into-images-manifest-json-files/
+[Docker stuff]: https://blog.knoldus.com/docker-manifest-a-peek-into-images-manifest-json-files/
 
 
 ### Ten (twentyfourpointone) pieces = 10 * 24.1 pieces = 241 pieces
 
-While investigating the docker files there was an interesting file named
+While investigating the Docker files there was an interesting file named
 `repositories` that contains the following …
 
 `{"12stepsofchristmas":{"11":"ab2b751e14409f169383b5802e61764fb4114839874ff342586ffa4f968de0c1"}}`
@@ -246,7 +246,6 @@ $ tree
 16 directories, 6 files
 ```
 
-<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 Further more the file
 `1d66b052bd26bb9725d5c15a5915bed7300e690facb51465f2d0e62c7d644649.json` is also
 remarkable as it includes a shell script containing such strings as `steghide`
@@ -269,9 +268,9 @@ chmod 0000 /home/bread/flimflam && \
 apk del steghide xxd # buildkit
 ```
 
-This script allows for the following conclusions: the file named `hidden.png`
-was hidden in another file called `bunnies12.jpg` which was further converted
-and chopped into pieces. The following steps reverse the process …
+This script leads to the conclusions: the file named `hidden.png` was hidden
+in another file called `bunnies12.jpg` which was further converted and
+chopped into pieces. The following steps reverse the process …
 
 ```sh
 $ cd ab2b751e14409f169383b5802e61764fb4114839874ff342586ffa4f968de0c1/
@@ -314,7 +313,7 @@ $ cat flom* > snoot.hex
 $ xxd -p -r snoot.hex > ../bunnies12.jpg
 ```
 
-Here's what `bunnies12.jpg` looks like:
+Here's what `bunnies12.jpg` looks like: it's Bunbun and Cutiepaw again …
 
 ![](bunnies12.jpg)
 
