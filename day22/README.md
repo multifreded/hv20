@@ -9,8 +9,8 @@
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: inik
-* Tag:    #reverse-engineering
-* Level:  hard
+* Tag:    `#reverse-engineering`
+* Level:  Hard
 
 A new apprentice Elf heard about "Configuration as Code". When he had to solve
 the problem to protected a secret he came up with this "very sophisticated 
@@ -25,7 +25,7 @@ padlock".
 
 ### A strange quoting app
 
-The archive contained a single file: An ELF x86 executable with the name
+The archive contains a single file: An ELF x86 executable with the name
 _padawanlock_:
 
 ```sh
@@ -33,8 +33,8 @@ $ file padawanlock
 padawanlock: ELF 32-bit LSB pie executable Intel 80386, version 1 (SYSV), dynamically linked, interpreter /lib/ld-, BuildID[sha1]=56e8cc633ab14ebd1c6fdd3bfda3ebd100a6a45e, for GNU/Linux 3.2.0, stripped
 ```
 
-When running the program, it asked for a 6 digit PIN. Upon entering a random
-PIN it printed a seemingly random message:
+When running the program, it asks for a 6 digit PIN. Upon entering a random
+PIN it prints a seemingly random message:
 
 ```sh
 $ ./padawanlock
@@ -42,9 +42,8 @@ PIN (6 digits): 123456
 Unlocked secret is: _IMPERIAL_CRUISER.)}
 ```
 
-While trying different numbers, a kind of pattern seems to emerge. The unlocked
-secrets are usually some fragments or sometimes even complete of Star Wars 
-quotes:
+While trying different PINs, a kind of pattern emerges. The "unlocked" secrets
+are fragments or sometimes even complete quotes from Star Wars …
 
 ```sh
 $ ./padawanlock
@@ -68,19 +67,21 @@ PIN (6 digits): 983671
 Unlocked secret is: RAL_ACKBAR{ITS_A_TRAP!}
 ```
 
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 The last examples show that if the right PIN is entered, a full quote would be
 returned with the following pattern: `<speaker>{<quote>}`. It's quite evident,
-that there is one quote who's speaker is `HV20` and who's quote is the flag.
+that there must be one quote who's speaker is `HV20` and who's quote is the
+flag.
 
 
 ### Looking into the abyss
 
-Was is a bit surprising is the fact that `padawanlock` has a file size of a
-whooping 354 MB. And don't get me wrong, it is actually filled with that much
+What is a bit surprising is the fact that `padawanlock` has the file size of a
+whopping 354 MB. And don't get me wrong, it is actually filled with that much
 code.
 
 After looking into the program with Ghidra it became clear that almost the
-whole executable consists of blocks of instructions of the following structure:
+whole executable consists of blocks of instructions of the following structure …
 
 ![](instruction_block.png)
 
@@ -89,25 +90,28 @@ Such a block does basically the following:
 1. Copy a big number to `ECX`.
 2. Stupidly decrement the number until it is zero.
 3. Write a single byte to the output buffer addressed by `EBX`.
-4. Jump forwards or backwards to a different instruction block address.
+4. Jump forwards or backwards to a different block start address.
 
-Step 2 seems to simply slow down normal operation to a point were it's not
-feasible to bruteforce the damn thing.
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+Step 2 is probably just to slow down execution to a degree were it's not
+feasible any more to bruteforce the damn thing.
 
-So the aim is probably to write a software that looks for specific starting
-blocks – i.e. blocks that return `0x48` = `H` – and follow the jump addresses
-if the continued sequence gives the string `HV20{`.
+So the road to a flag city is probably to write a software that looks for
+specific starting blocks – i.e. blocks that return `0x48` = `H` – and follow
+the jump addresses if the continued sequence of block outputs is the string
+`HV20{`.
 
 
 ### Slipping into a pretty stupid approach
 
-Since I was toying around with shell commands and scripts the whole time, I 
-somehow missed an opportunity to switch to a sane programming language. In the
-end, my solution was almost completly written in shell scripts which is slow
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
+Because I was toying around with shell commands and scripts the whole time, I 
+somehow missed the opportunity to switch to a sane programming language. In the
+end, my solution was almost completely written in shell scripts which is slow
 as hell even compared to other interpreted languages but whatever, right `:-)`
 
-Before dealing with the actual extraction of bytes, the code was decomposed
-into an assembler file with [distorm3]():
+Before dealing with the actual extraction of bytes, the code is decomposed
+into an assembler file with [distorm3] …
 
 [distorm3]: https://github.com/gdabah/distorm
 
@@ -126,8 +130,8 @@ $ python3 ./decomposer.py > padawanlock.as
 
 The first shell script searches in `padawanlock.as` for instruction blocks that
 output the byte `0x48` = `H` and writes their memory addresses to the file 
-`canditate_addrs.txt`. The instruction sequence 
-`C6 03 48` = `MOV byte ptr [EBX], 0x48` is used as an identifier.
+`canditate_addrs.txt`. The instruction sequence `C6 03 48` = 
+`MOV byte ptr [EBX], 0x48` is used as an identifier …
 
 ```sh
 #!/bin/bash
@@ -135,12 +139,12 @@ output the byte `0x48` = `H` and writes their memory addresses to the file
 grep 'c60348' padawanlock.as | grep -o '^0x........' > candidate_addrs.txt
 ```
 
-The resulting candidates list has a length of `35579`.
+The resulting candidates list has a length of 35579.
 
-The second shell script uses this address candidates to search for output 
+The second shell script uses these address candidates to search for output 
 sequences that continue in `V20{`. If it is successful, it prints the starting
 address, calculates and prints the PIN and also uses a third shell script to
-print the flag:
+print the flag …
 
 ```sh
 #!/bin/bash
@@ -198,7 +202,7 @@ echo "Failed to find HV20"
 exit 1
 ```
 
-The mentioned third shell script to print the flag:
+The mentioned third shell script to print the flag …
 
 ```sh
 #!/bin/bash
@@ -241,11 +245,13 @@ echo ""
 exit 0
 ```
 
-The successfull run of searching the flag took approximately 1 hour. Not 
-exactly my finest hour but a flag is a flag.
+The successful run of searching the flag took approximately 1 hour. Not 
+exactly my finest hour but a flag is a flag …
 
 ```sh
 $ ./search_flag.sh
+................................................................................
+…
 … [1 hour later] ...............................................................
 ................................................................................
 ................................................................................
@@ -259,8 +265,6 @@ Flag: HV20{C0NF1GUR4T10N_AS_C0D3_N0T_D0N3_R1GHT}
 …
 ```
 
-
-<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 --------------------------------------------------------------------------------
 
 Flag: `HV20{C0NF1GUR4T10N_AS_C0D3_N0T_D0N3_R1GHT}`
