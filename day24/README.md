@@ -10,8 +10,8 @@
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 * Author: scryh ([@scryh\_](https://twitter.com/scryh_),
                  <https://devel0pment.de/>)
-* Tags:   #crypto  #network-security #exploitation #reverse-engineering
-* Level:  leet
+* Tags:   `#crypto` `#network-security` `#exploitation` `#reverse-engineering`
+* Level:  1337
 
 In order to prevent the leakage of any flags, Santa decided to instruct his
 elves to implement a secure data storage, which encrypts all entered data before
@@ -55,7 +55,7 @@ than certain other things.
 
 ### What's in the box
 
-The downloadable zip archive contained a few files:
+The downloadable zip archive contains a few files …
 
 ```sh
 $ unzip -d Download Download.zip 
@@ -66,9 +66,8 @@ Archive:  Download.zip
   inflating: Download/attack.pcapng
 ```
 
-The file `data_storage` is an Linux executable. It's the main part of santa's 
-_secure data storage_ application. It uses standard input and output for
-communication.
+The file `data_storage` is an Linux executable. It's the main part of Santa's 
+_secure data storage_ application. It uses standard input and output for I/O …
 
 ```sh
 $ file Download/data_storage
@@ -91,7 +90,7 @@ user name exists, it wants the user to authenticate. Otherwise a new user is
 created which results in the file `data/<username>_pwd.txt` with seemingly
 binary data as contents. The binary contents always have the same number of
 bytes no matter the user name or password. It then asks the user to
-choose an action.
+choose an action …
 
 ```sh
 $ ls data
@@ -118,10 +117,10 @@ $ xxd data/leeloo_pwd.txt
 00000000: 18c8 89d2 8ea7 617a 8dd4 bf38 1755 18d3  ......az...8.U..
 ```
 
-If the user chooses to enter data, the program creates a new (or overwrites and
+If the user chooses to enter data, the program creates a new (or overwrites an
 existing) file `data/<username>_data.txt`. This data file contains binary data
 with the same amount of bytes as the input (assuming the terminating `\x00` byte
-of C strings is included in the cipher text).
+of C strings is included in the cipher text) …
 
 ```sh
 $ ./data_storage 
@@ -153,10 +152,11 @@ $ xxd data/leeloo_data.txt
 
 ### What happened during the attack
 
+<!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 The attacker started to communicate with the server in a normal fashion. He 
 logged in as user _evil0r_ with the password _lovebug1_. Upon being presented
-the application menu, the attacker sent the following packet contents as his
-attack:
+with the application menu, the attacker sent the following packet contents as
+his attack:
 
 ```sh
 $ xxd attack_payload.bin 
@@ -180,16 +180,16 @@ $ xxd attack_payload.bin
 00000110: b83c 0000 000f 050a                      .<......
 ```
 
-This payload consists of the menu choice `3` which would terminate the
+This payload consists of the menu choice `3` which would terminate the app
 `data_storage` under normal circumstances. What follows looks like a buffer
 overflow attack. The packet also contains fragments of the string 
 `data/santa_data.txt` which is probably the path to the file containing the
-encrypted flag (on the original server).
+encrypted flag on the original server.
 
 The response to this attack packet is firstly the message _good bye_  – as
 expected from the terminating _data\_storage_ application. Secondly and
 surprisingly the server sent a DNS query packet containing binary data which is
-most likely the encrypted data from the `santa_data.txt` file.
+most likely the encrypted data from the `santa_data.txt` file …
 
 ```sh
 $ xxd attack_response.bin 
@@ -201,18 +201,18 @@ $ xxd attack_response.bin
 
 ### Taking a look inside
 
-Ghidra was used for reverse engineering the binary files. Luckily the main
-structure function names were available in the binary. There are functions
+Ghidra is used for reverse engineering the binary files. Luckily the main
+structure function names are available in the binary. There are functions
 like `main`, `check_pwd`, `create_user`, `enter_data`, `delete_data`, etc. The
-function names an their usage through out the program correspond perfectly with
-the general usage experience when running the program.
+function names and their usage through out the program correspond perfectly
+with the general usage experience when running the program.
 
-The following functions were deemed interesting and were decompiled to C:
+The following functions were deemed interesting and were decompiled to C …
 
 * `calc_hash`\
   This function looks like a custom hash function. The password a user provides
-  is hashed by the program with this function and then stored into the
-  corresponding `data/<username>_pwd.txt` file.
+  is hashed with it and then stored into the corresponding
+  `data/<username>_pwd.txt` file.
 
 * `decrypt`\
   This function gathers the file contents of `data/<username>_data.txt`, the 
@@ -221,23 +221,23 @@ The following functions were deemed interesting and were decompiled to C:
   data is printed to standard out by other parts of the program.
 
 * `keystream_get_char`
-  This is the most inaccessible function of all of them. Its decompilation was
-  obviously incomplete or not entirely correct. It needed some guessing as to
+  This is the most inaccessible function of all. Its decompilation is
+  obviously incomplete or not entirely correct. It needs some guessing as to
   what actually happens in this function. It's safe to say that it is some kind
   of custom key stream generator that uses the user's password hash as basis.
 
 
 ### Drafting a strategy
 
-At this point a general theory of what happend could be formed as well as a
+At this point a general theory of what had happend can be formed as well as a
 strategy to obtain the flag:
 
 1. Santa used the original program. He created a user with a password randomly
-   chosen from the infamous [Rockyou data breach]() password list. The password's
+   chosen from the infamous [Rockyou data breach] password list. The password's
    hash was calculated and stored.
 
 2. Santa encrypted some data (the flag ;-). The keystream for this encryption
-   stems somehow from password hash.
+   stems somehow from the password hash.
 
 3. The attacker created an account and launched an attack to steal santa's 
    encrypted data.
@@ -252,8 +252,8 @@ pattern like `HV20{` emerges.
 
 ### Implementing the hash function
 
-The hash function was quite easy to implement since the decompiled c code from
-Ghidra could be used almost as is:
+The hash function is quite easy to implement since the decompiled C code from
+Ghidra can be used almost as is …
 
 ```c
 #include <stdio.h>
@@ -338,8 +338,8 @@ int main() {
 }
 ```
 
-Correctness was tested by comparing the hash produced by the newly implemented
-function with the hash produced by the original program:
+Correctness is tested by comparing the hash produced by the newly implemented
+function with the hash produced by the original program …
 
 ```sh
 $ xxd data/leeloo_pwd.txt 
@@ -352,11 +352,11 @@ $ printf "multipass" | ./hash_calc | xxd
 
 ### Understanding the `keystream_get_char` function
 
-While the hash function was easy peasy lemon squeezy, this little keystream
+While the hash function is easy peasy lemon squeezy, this little keystream
 function was more like… difficult difficult lemon difficult. Combining reading
 its assembly code, its decompiled C code with some guess work and a lot of trial
 and error, it was finally possible to understand, implement and verify what it
-does. The following decompiled C code…
+does. The following decompiled C code …
 
 ```c
 long keystream_get_char(uint param_1,long param_2)
@@ -375,7 +375,7 @@ long keystream_get_char(uint param_1,long param_2)
 }
 ```
 
-… could be translated to the following more readable code fragment …
+… can be translated to the following more readable code fragment …
 
 ```c
     unsigned char magic[10] = {0xde,0xad,0xbe,0xef,0xc0,0x12,0x34,0x56,0x78,0x9a};    
@@ -388,7 +388,7 @@ long keystream_get_char(uint param_1,long param_2)
     key_byte   = hash_byte ^ magic_byte ^ (unsigned char) i;    
 ```
 
-Essentially, any keystream byte consists of three XOR'd parts:
+Essentially, any keystream byte consists of three XOR'd parts …
 
 1. The index number `i`,
 2. the magic byte taken from `magic[i % 10]`, a 10 byte long buffer,
@@ -400,9 +400,9 @@ Essentially, any keystream byte consists of three XOR'd parts:
 ### Integrating everyting into one decrypting über-binary
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
-All parts were combined into the following C program. It directly takes a list
-of newline separated password strings from standard input and outputs decrypted
-data. The encrypted input data has to be put inside the code as array buffer.
+All parts are combined into the following C program. It directly takes a list of
+newline separated password strings from standard input and outputs decrypted
+data. The encrypted input data is put inside the code as array buffer …
 
 ```c
 #include <stdio.h>
@@ -515,8 +515,8 @@ int main() {
 }
 ```
 
-For testing purposes the encrypted data produced by the original program was
-put into the decryption implementation. The program was then fed with the
+For testing purposes the encrypted data produced by the original program is
+put into the decryption implementation. The program is then fed with the
 correct password and …
 
 ```sh
@@ -528,8 +528,8 @@ $ printf "multipass\n" | ./decrypt | xxd
 
 … Aw yiss! The decryption works.
 
-Next the data from the captured DNS request packet was included into the
-decryption program:
+Next the data from the captured DNS request packet is included into the
+decryption program …
 
 ```c
 …
@@ -537,10 +537,10 @@ unsigned char enc_data_buf[32] = {0xe5,0xaf,0xe5,0x9d,0x31,0xac,0xa3,0xca,0x21,0
 …
 ```
 
-But no matter how the data was arranged, nothing meaningful could be found :-/
+But no matter how the data was arranged, nothing meaningful could be found `:-/`.
 At least performance wise the program was very pleasing: in the order of 10
-seconds to try all ~14 Mio. passwords in a VM on a recent i5 laptop without any
-kind of parallelization.
+seconds to try all ~14 million passwords in a VM on a recent i5 laptop without any
+kind of parallelization …
 
 ```sh
 $ time cat /usr/share/wordlists/rockyou.txt | ./decrypt | cat -v | grep -i 'HV20{'
@@ -553,12 +553,12 @@ sys     0m3.421s
 
 ### "There must be something up with this input data..."
 
-After a frustrating phase of trial and so much error with no gain the next
+After a frustrating phase of trial and so much error with no gain, the next
 possible move was to investigate the attack buffer overflow more. Thanks to
-a hint from _mcia_ the attack payload was transfered to a file and loaded into
+a hint from _mcia_ the attack payload was transferred to a file and loaded into
 Ghidra (with the same language settings as the _data\_storage_ program).
 
-The following decompiled C code could be found:
+The following decompiled C code can be found:
 
 ```c
 /* WARNING: Control flow encountered bad instruction data */
@@ -591,9 +591,9 @@ void UndefinedFunction_00000064(void)
 }
 ```
 
-There was a loop with 32 iterations (the same as the amount of bytes of
-encrypted data) within which _some data_ was repeatedly XOR'd with the integer
-`0xdeadbeef`. Then there were 3 system calls that turned out to be:
+There is a loop with 32 iterations (the same as the amount of bytes of
+encrypted data) within which _some data_ is repeatedly XOR'd with the integer
+`0xdeadbeef`. Then there are 3 system calls that turned out to be …
 
 | %rax | Name   | Entry point | Implementation |
 |------|--------|-------------|----------------|
@@ -601,16 +601,16 @@ encrypted data) within which _some data_ was repeatedly XOR'd with the integer
 | 0x2c | sendto	| sys_sendto  | net/socket.c   |
 | 0x3c | exit   | sys_exit    | kernel/exit.c  |
 
-The second syscall was accompanied by the value `0x2a00a8c035000002`. With a bit
-of imagination you can see the target ip address and port number of the attack
-response DNS request packet:
+The second syscall is accompanied by the value `0x2a00a8c035000002`. With a bit
+of imagination you can see the target IP address and port number of the attack
+response in the DNS request packet …
 
 `0xc0` = `192`, `0xa8` = `168`, `0x00` = `0`, `0x2a` = `42` and `0x35` = `55`
 
 => IP _192.168.0.42_ with port _55_.
 
-It was simply assumed that the _some data_ from above was the encrypted flag.
-Naturally the XORing was reversed…
+It is simply assumed that the _some data_ from above is the encrypted flag.
+Naturally the XORing is reversed …
 
 ```python
 >>> data=0xe5afe59d31aca3ca211ec379a673235edab6a08d2ed3b7b66b55857ec834227a
@@ -619,7 +619,7 @@ Naturally the XORing was reversed…
 '0xa114843de120e14cea06ea749cd8e8035080d53c16d1a6884eb28a0278a8fa4'
 ```
 
-… and the resulting data was implanted into the decryption program:
+… and the resulting data is implanted into the decryption program …
 
 ```c
 …
@@ -627,7 +627,7 @@ unsigned char enc_data_buf[32] = {0x0a,0x11,0x48,0x43,0xde,0x12,0x0e,0x14,0xce,0
 …
 ```
 
-The whole shebang was run against the password list again and …
+The whole shebang is run against the password list again and …
 
 ```sh
 # time cat /usr/share/wordlists/rockyou.txt | ./decrypt | cat -v | grep -i 'HV20{'
