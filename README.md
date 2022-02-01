@@ -1,13 +1,14 @@
 # HV20 write-up - multifred
 
-This is the semi official write-up for hackvent 2020 from multifred.
+This is the official write-up for hackvent 2020 by multifred.
 
 <!-- ...10....:...20....:...30....:...40....:...50....:...60....:...70....:. -->
 Hackvent is a yearly CTF competition held by Hacking-Lab
 (<https://hacking-lab.com>) during sleepless December.
 
-<https://competition.hacking-lab.com>\
-[#hackvent](https://twitter.com/hashtag/hackvent)
+Ranking: [https://hackvent-stats.herokuapp.com/](meta/hackvent-stats.herokuapp.html)
+(webpage snapshot; original page is 404 by now) \
+Twitter: [#hackvent](https://twitter.com/hashtag/hackvent)
 
 Happy hacking! `\(^_^)/`
 
