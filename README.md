@@ -6,8 +6,8 @@ This is the official write-up for hackvent 2020 by multifred.
 Hackvent is a yearly CTF competition held by Hacking-Lab
 (<https://hacking-lab.com>) during sleepless December.
 
-Ranking: [https://hackvent-stats.herokuapp.com/](meta/hackvent-stats.herokuapp.html)
-(webpage snapshot; original page is 404 by now) \
+Ranking: [https://hackvent-stats.herokuapp.com/](https://htmlpreview.github.io/?https://github.com/multifreded/hv20/blob/main/meta/hackvent-stats.herokuapp.html)
+(snapshot; real page is 404 by now) \
 Twitter: [#hackvent](https://twitter.com/hashtag/hackvent)
 
 Happy hacking! `\(^_^)/`
